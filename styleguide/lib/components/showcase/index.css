@@ -1,0 +1,149 @@
+@import "highlight.js/styles/default";
+
+.t7-showcase {
+  position: relative;
+}
+
+[data-props="false"] .playground > div:first-child,
+[data-edit="false"] .playgroundCode,
+[data-output="false"] .t7-showcase-markup {
+  display: none;
+}
+
+.t7-showcase-toggle {
+  position: absolute !important;
+  right: 2em;
+  top: -0.5em;
+  font-size: 10px;
+  font-weight: 600;
+  position: relative;
+  color: rgba(33, 114, 186, 1);
+  text-transform: uppercase;
+}
+
+.t7-showcase-toggle > div {
+  display: inline-block;
+  margin-left: 1em
+}
+
+.t7-showcase-toggle [type="checkbox"] + label {
+  color: #999;
+}
+
+.t7-showcase-toggle [type="checkbox"]:checked + label {
+  color: #ccc;
+}
+
+.hljs,
+.hljs-subst {
+  color: #2172ba;
+}
+
+.hljs-type,
+.hljs-string,
+.hljs-number,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-quote,
+.hljs-template-tag,
+.hljs-deletion {
+  color: #024;
+}
+
+.previewArea {
+  padding: 2em 1em;
+}
+
+.playgroundCode {
+  border-bottom: 1px solid #eee;
+}
+
+.t7-showcase-markup {
+  border-top: 1px solid #eee;
+}
+
+.playground > div:first-child {
+  border-bottom: 1px solid #eee;
+  padding-top: 1em;
+}
+
+.playground > div:first-child::after,
+.playgroundCode::after,
+.playgroundPreview::after,
+.t7-showcase-markup::after {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  border-radius: 0 0 0 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-bottom: 1px solid #eee;
+  border-left: 1px solid #eee;
+  color: #999;
+  font-weight: bold;
+}
+
+.playground > div,
+.t7-showcase-markup {
+  position: relative;
+}
+
+.t7-showcase-markup::after {
+  content: 'output';
+}
+
+.playgroundCode::after {
+  content: 'edit';
+}
+
+.playgroundPreview::after {
+  content: 'preview';
+}
+
+.playground > div:first-child::after {
+  content: 'props';
+}
+
+.hljs {
+  background-color: #fff;
+  font-size: 14px;
+}
+
+.playground > div:first-child li b {
+  color: #666;
+}
+
+.playground > div:first-child li {
+  list-style-type: circle;
+  font-size: 13px;
+  color: #999;
+}
+
+
+.CodeMirror-scroll {
+  max-height: 200px;
+}
+
+@media only screen and ($minWidthScreenMd) {
+  .CodeMirror-scroll {
+    max-height: 400px;
+    height: 400px;
+  }
+  [data-edit="true"] .playgroundCode {
+    border-right: 1px solid #eee;
+    border-bottom: none;
+  }
+  [data-edit="true"] .playgroundPreview,
+  [data-edit="true"] .playgroundCode {
+    vertical-align: top;
+    display: inline-block;
+    width: 50%;
+  }
+  [data-edit="true"] .previewArea {
+    height: 400px;
+    overflow: auto;
+  }
+}
+
