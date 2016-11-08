@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 import { Route, IndexRoute, Router, hashHistory } from 'react-router'
 import Theme from './theme'
 
-import AppShell from './components/app_shel'
+import AppShell from './components/app_shell'
 
 import Example from './app/example'
 import Home from './app/home'

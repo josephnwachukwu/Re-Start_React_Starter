@@ -4,7 +4,7 @@ import './index.css'
 
 const Layout = () => (
   <div className='ua-page'>
-    This is a home page
+    Hello World! this is home for occm polaris.
   </div>
 )
 

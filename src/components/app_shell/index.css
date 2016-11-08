@@ -47,7 +47,6 @@
 }
 
 .ua-app-shell--home {
-  background-image: url('../../static/images/bg_home.jpg');
   background-position: top center;
   background-size: cover;
 }
