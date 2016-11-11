@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 
 import Layout from './layout'
+import HeaderDropdown from '../../components/header_dropdown'
 
 class Home extends Component {
 
@@ -17,13 +18,26 @@ class Home extends Component {
   }
 
   render () {
+    function onClick () {
+      alert('I was clicked')
+    }
+
+    const dropdown = [
+      {key: 1, name: 'Profile', onClick},
+      {key: 2, name: 'Logout', onClick}
+    ]
+
     const { handleUpdate, props, state } = this
     return (
-      <Layout
-        {...props}
-        {...state}
-        handleUpdate={handleUpdate}
-      />
+      <div>
+
+        <HeaderDropdown name='Erica' fields={dropdown} />
+        <Layout
+          {...props}
+          {...state}
+          handleUpdate={handleUpdate}
+        />
+      </div>
     )
   }
 }
