@@ -23,8 +23,8 @@ class Home extends Component {
     }
 
     const dropdown = [
-      {key: 1, name: 'Profile', onClick},
-      {key: 2, name: 'Logout', onClick}
+      {key: 0, name: 'Profile', onClick},
+      {key: 1, name: 'Logout', onClick}
     ]
 
     const { handleUpdate, props, state } = this
