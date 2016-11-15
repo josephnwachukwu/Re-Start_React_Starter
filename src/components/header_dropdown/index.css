@@ -78,7 +78,6 @@
 }
 
 .firm-dropdown .firm-dropdown__last-item {
-  cursor: pointer;
   border: solid lightgrey 1px;
   border-radius: 0 0 5px 5px;
   padding: 5px 10px;
