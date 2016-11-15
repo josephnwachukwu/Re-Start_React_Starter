@@ -28,7 +28,7 @@ const HeaderDropdown = props => {
               fields.map((field, key) => {
                 return (
                   <li key={key} className={key === 0 ? 'firm-dropdown__first-item' : key === fields.length - 1 ? 'firm-dropdown__last-item' : 'firm-dropdown__item'}>
-                    <a onClick={field.onClick}>{field.name}</a>
+                    <a className='firm-dropdown__link' onClick={field.onClick}>{field.name}</a>
                   </li>
                 )
               })
