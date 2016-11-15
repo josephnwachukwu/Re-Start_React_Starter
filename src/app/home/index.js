@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 
 import Layout from './layout'
-import HeaderDropdown from '../../components/header_dropdown'
+import Header from '../../components/header'
+import Footer from '../../components/footer'
 
 class Home extends Component {
 
@@ -31,12 +32,13 @@ class Home extends Component {
     return (
       <div>
 
-        <HeaderDropdown name='Erica' fields={dropdown} />
+        <Header name='Erica' fields={dropdown} />
         <Layout
           {...props}
           {...state}
           handleUpdate={handleUpdate}
         />
+        <Footer />
       </div>
     )
   }
