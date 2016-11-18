@@ -7,4 +7,4 @@ config.plugins.unshift(
     }
   })
 )
-module.exports = [ config, require('./styleguide') ]
+module.exports = [ config ]

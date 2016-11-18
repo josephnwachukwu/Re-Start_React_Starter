@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
-const styleguide = path.join(process.cwd(), 'styleguide')
+const polaris = path.join(process.cwd(), '/polaris')
 const src = path.join(process.cwd(), 'src')
 const dist = path.join(process.cwd(), 'dist')
 
@@ -17,7 +17,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [ src, styleguide ],
+        include: [ src, polaris ],
         exclude: /node_modules/
       },
       { test: /\.json$/, loader: 'json-loader' },
@@ -26,7 +26,7 @@ module.exports = {
       { test: /^(?!.*\.css\.svg$).*\.svg$/, loader: 'svg-react-loader' },
       {
         test: /\.css$/,
-        include: [ path.resolve('./node_modules'), src, styleguide ],
+        include: [ path.resolve('./node_modules'), src, polaris ],
         loader: ExtractTextPlugin.extract({
           fallbackLoader: 'style-loader',
           loader: [

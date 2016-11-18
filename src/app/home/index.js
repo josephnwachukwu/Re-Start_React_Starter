@@ -4,6 +4,7 @@ import Layout from './layout'
 import Header from '../../components/header'
 import Footer from '../../components/footer'
 import ClaimCard from '../../components/claim_card'
+import SideBar from '../../components/side_bar'
 
 class Home extends Component {
 
@@ -50,6 +51,14 @@ class Home extends Component {
             />
           </tbody>
         </table>
+        <div className='grid'>
+          <SideBar />
+          <Layout
+            {...props}
+            {...state}
+            handleUpdate={handleUpdate}
+          />
+        </div>
         <Footer />
       </div>
     )

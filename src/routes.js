@@ -6,6 +6,8 @@ import {
   hashHistory
 } from 'react-router'
 import Home from './app/home'
+// import NotFound from './app/not_found'
+// import Example from './app/example'
 
 export default (
   <Router history={hashHistory}>
