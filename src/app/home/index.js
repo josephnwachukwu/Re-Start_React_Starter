@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react'
 import Layout from './layout'
 import Header from '../../components/header'
 import Footer from '../../components/footer'
+import SideBar from '../../components/side_bar'
 
 class Home extends Component {
 
@@ -33,11 +34,14 @@ class Home extends Component {
       <div>
 
         <Header name='Erica' fields={dropdown} />
-        <Layout
-          {...props}
-          {...state}
-          handleUpdate={handleUpdate}
-        />
+        <div className='grid'>
+          <SideBar />
+          <Layout
+            {...props}
+            {...state}
+            handleUpdate={handleUpdate}
+          />
+        </div>
         <Footer />
       </div>
     )
