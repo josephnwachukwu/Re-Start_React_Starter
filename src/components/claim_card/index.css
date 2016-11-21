@@ -1,7 +1,18 @@
+.grid {
+  padding: 0;
+  margin: 0;
+}
+
+[class*="grid__col-"] {
+  text-align: center;
+  padding: 0;
+  margin: 0 0 -5px 0;
+}
+
 .firm-claim-card {
-  border: 1px solid lightgrey;
+  border: 1px solid $lightGray2;
   font-family: 'Arial', 'sans-serif';
-  font-size: 13px;
+  font-size: $fontXs;
 }
 
 .firm-claim-card:hover {
@@ -13,86 +24,52 @@
 }
 
 .firm-claim-card__icon {
-  width: 50px;
-  min-width: 50px;
-}
-
-.firm-claim-card__icon img {
-  padding: 10px;
-  margin: 0;
-}
-
-.firm-claim-card__icon p {
-  border-right: 1px solid lightgrey;
-  padding: 10px;
+  border-right: 1px solid $lightGray2;
+  padding: $gutterSm;
   margin: 0;
 }
 
 .firm-claim-card__number {
-  width: 175px;
-  min-width: 175px;
-}
-
-.firm-claim-card__number p {
-  border-right: 1px solid lightgrey;
-  padding: 10px;
+  border-right: 1px solid $lightGray2;
+  padding: $gutterSm;
   margin: 0;
 }
 
 .firm-claim-card__name {
-  width: 260px;
-  min-width: 260px;
-}
-
-.firm-claim-card__name p {
   font-weight: bold;
-  border-right: 1px solid lightgrey;
-  padding: 10px;
+  border-right: 1px solid $lightGray2;
+  padding: $gutterSm;
   margin: 0;
 }
 
 .firm-claim-card__birthday {
-  width: 110px;
-  min-width: 110px;
-  text-align: center;
-}
-
-.firm-claim-card__birthday p {
-  padding: 10px;
+  padding: $gutterSm;
   margin: 0;
 }
 
 .firm-claim-card__injury-date {
-  width: 130px;
-  min-width: 130px;
-  text-align: center;
-  border: 1px solid lightgrey;
-  background: #ccc;
-}
-
-.firm-claim-card__injury-date p {
-  padding: 10px;
+  border: 1px solid $lightGray2;
+  background: $lightGray;
+  padding: $gutterSm;
   margin: 0;
 }
 
 .firm-claim-card__buttons {
-  width: 280px;
-  min-width: 280px;
-  text-align: center;
+  padding: $gutterSm 0;
 }
 
-.firm-claim-card__buttons .firm-claim-card__quote-button {
-  color: #999;
+.firm-claim-card__quote-button {
+  color: $gray2;
   background: #f0f8fa;
-  border-radius: 5px 5px 0 0;
-  padding: 10px;
-  margin: 0 5px;
+  border-radius: $gutterXs $gutterXs 0 0;
+  padding: $gutterSm;
+  margin: 0 $gutterXs;
 }
 
-.firm-claim-card__buttons .firm-claim-card__order-button {
-  color: white;
+.firm-claim-card__order-button {
+  color: $white;
   background: #16529b;
-  border-radius: 5px 5px 0 0;
-  padding: 10px;
-  margin: 0 5px;
+  border-radius: $gutterXs $gutterXs 0 0;
+  padding: $gutterSm;
+  margin: 0 $gutterXs;
 }

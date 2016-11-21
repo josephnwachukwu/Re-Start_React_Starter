@@ -1,5 +1,5 @@
 .firm-header {
-  margin: 20px;
+  margin: $gutterLg;
 }
 
 .firm-header .firm-header__icon {

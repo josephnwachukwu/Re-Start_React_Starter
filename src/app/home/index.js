@@ -30,6 +30,14 @@ class Home extends Component {
       {key: 1, name: 'Logout', onClick}
     ]
 
+    const card = {
+      pinned: false,
+      number: 'WC12312234234',
+      name: 'Mitchelson, Sam',
+      birthday: '01/01/1980',
+      injuryDate: '01/01/2016'
+    }
+
     const { handleUpdate, props, state } = this
     return (
       <div>
@@ -39,18 +47,10 @@ class Home extends Component {
           {...state}
           handleUpdate={handleUpdate}
         />
-        <table>
-          <tbody>
-            <ClaimCard
-              pinned={false}
-              number='WC12312234234'
-              name='Mitchelson, Sam'
-              birthday='01/01/1980'
-              injuryDate='01/01/2016'
-              onClick={onClick}
-            />
-          </tbody>
-        </table>
+        <ClaimCard
+          card={card}
+          onClick={onClick}
+        />
         <div className='grid'>
           <SideBar />
           <Layout

@@ -3,26 +3,40 @@ import './index.css'
 
 const ClaimCard = props => {
   return (
-    <tr className='firm-claim-card'>
-      <td className='firm-claim-card__icon' onClick={props.onClick}><img src={props.pinned ? 'src/theme/icons/Pin-1.svg' : 'src/theme/icons/Unpin-1.svg'} /></td>
-      <td className='firm-claim-card__number' onClick={props.onClick}><p>{props.number}</p></td>
-      <td className='firm-claim-card__name' onClick={props.onClick}><p>{props.name}</p></td>
-      <td className='firm-claim-card__birthday' onClick={props.onClick}><p>{props.birthday}</p></td>
-      <td className='firm-claim-card__injury-date' onClick={props.onClick}><p>{props.injuryDate}</p></td>
-      <td className='firm-claim-card__buttons'>
-        <a className='firm-claim-card__quote-button' href='javascript:;'>Quick Quote</a>
-        <a className='firm-claim-card__order-button' href='javascript:;'>Quick Order</a>
-      </td>
-    </tr>
+    <div className='grid firm-claim-card' onClick={props.onClick}>
+      <div className='grid__col-1'>
+        <img className='firm-claim-card__icon' src={props.card.pinned ? 'src/theme/icons/Pin-1.svg' : 'src/theme/icons/Unpin-1.svg'} />
+      </div>
+      <div className='grid__col-2'>
+        <p className='firm-claim-card__number'>{props.card.number}</p>
+      </div>
+      <div className='grid__col-2'>
+        <p className='firm-claim-card__name'>{props.card.name}</p>
+      </div>
+      <div className='grid__col-2'>
+        <p className='firm-claim-card__birthday'>{props.card.birthday}</p>
+      </div>
+      <div className='grid__col-2'>
+        <p className='firm-claim-card__injury-date'>{props.card.injuryDate}</p>
+      </div>
+      <div className='grid__col-3'>
+        <div className='firm-claim-card__buttons'>
+          <a className='firm-claim-card__quote-button' href='javascript:void(0)'>Quick Quote</a>
+          <a className='firm-claim-card__order-button' href='javascript:void(0)'>Quick Order</a>
+        </div>
+      </div>
+    </div>
   )
 }
 
 ClaimCard.propTypes = {
-  pinned: PropTypes.bool,
-  number: PropTypes.string,
-  name: PropTypes.string,
-  birthday: PropTypes.string,
-  injuryDate: PropTypes.string,
+  card: PropTypes.shape({
+    pinned: PropTypes.bool,
+    number: PropTypes.string,
+    name: PropTypes.string,
+    birthday: PropTypes.string,
+    injuryDate: PropTypes.string
+  }),
   onClick: PropTypes.func
 }
 
