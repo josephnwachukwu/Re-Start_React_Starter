@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react'
 import Layout from './layout'
 import Header from '../../components/header'
 import Footer from '../../components/footer'
+import ClaimCard from '../../components/claim_card'
 import SideBar from '../../components/side_bar'
 
 class Home extends Component {
@@ -29,11 +30,27 @@ class Home extends Component {
       {key: 1, name: 'Logout', onClick}
     ]
 
+    const card = {
+      pinned: false,
+      number: 'WC12312234234',
+      name: 'Mitchelson, Sam',
+      birthday: '01/01/1980',
+      injuryDate: '01/01/2016'
+    }
+
     const { handleUpdate, props, state } = this
     return (
       <div>
-
         <Header name='Erica' fields={dropdown} />
+        <Layout
+          {...props}
+          {...state}
+          handleUpdate={handleUpdate}
+        />
+        <ClaimCard
+          card={card}
+          onClick={onClick}
+        />
         <div className='grid'>
           <SideBar />
           <Layout

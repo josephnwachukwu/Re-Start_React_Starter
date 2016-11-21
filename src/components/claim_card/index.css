@@ -1,0 +1,75 @@
+.grid {
+  padding: 0;
+  margin: 0;
+}
+
+[class*="grid__col-"] {
+  text-align: center;
+  padding: 0;
+  margin: 0 0 -5px 0;
+}
+
+.firm-claim-card {
+  border: 1px solid $lightGray2;
+  font-family: 'Arial', 'sans-serif';
+  font-size: $fontXs;
+}
+
+.firm-claim-card:hover {
+  background: #f0f8fa;
+}
+
+.firm-claim-card:hover .firm-claim-card__injury-date {
+  background: #d8dfe1;
+}
+
+.firm-claim-card__icon {
+  border-right: 1px solid $lightGray2;
+  padding: $gutterSm;
+  margin: 0;
+}
+
+.firm-claim-card__number {
+  border-right: 1px solid $lightGray2;
+  padding: $gutterSm;
+  margin: 0;
+}
+
+.firm-claim-card__name {
+  font-weight: bold;
+  border-right: 1px solid $lightGray2;
+  padding: $gutterSm;
+  margin: 0;
+}
+
+.firm-claim-card__birthday {
+  padding: $gutterSm;
+  margin: 0;
+}
+
+.firm-claim-card__injury-date {
+  border: 1px solid $lightGray2;
+  background: $lightGray;
+  padding: $gutterSm;
+  margin: 0;
+}
+
+.firm-claim-card__buttons {
+  padding: $gutterSm 0;
+}
+
+.firm-claim-card__quote-button {
+  color: $gray2;
+  background: #f0f8fa;
+  border-radius: $gutterXs $gutterXs 0 0;
+  padding: $gutterSm;
+  margin: 0 $gutterXs;
+}
+
+.firm-claim-card__order-button {
+  color: $white;
+  background: #16529b;
+  border-radius: $gutterXs $gutterXs 0 0;
+  padding: $gutterSm;
+  margin: 0 $gutterXs;
+}
