@@ -6,6 +6,7 @@ import Footer from '../../components/footer'
 import ClaimCard from '../../components/claim_card'
 import SideBar from '../../components/side_bar'
 
+
 class Home extends Component {
 
   constructor (props) {
@@ -42,11 +43,6 @@ class Home extends Component {
     return (
       <div>
         <Header name='Erica' fields={dropdown} />
-        <Layout
-          {...props}
-          {...state}
-          handleUpdate={handleUpdate}
-        />
         <ClaimCard
           card={card}
           onClick={onClick}
