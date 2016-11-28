@@ -1,37 +1,28 @@
-# mWeb-Design
-
-Front-end assets created by TandemSeven for United mWeb
-
-Assets: [United Dropbox](https://www.dropbox.com/sh/ouzssug51yyg1fp/AADYhoJ8HDAocfSt4QoWLlr7a?dl=0)
+# OCCM PolarisUI
 
 ## Deployed Demo
 
 This repository is continuously integrated and deployed
 
-http://t7interactive.com/mWeb/
-
-username: `mwebdesign`
-password: `tandem7!`
+http://devopspolarisui.azurewebsites.net
 
 ## Local Setup Instructions
 
 ### Prerequisites
 
 The following items are necessary in order run the code in this repository
-
-- [Github](https://github.com) account with permission to access this repository
 - [Git](http://git-scm.com) installed on your computer
 - [Node & NPM](http://nodejs.org) installed on your computer
 
 ### Clone Repository
 ```
-git clone https://github.com/TandemSeven/mWeb-Design
+git clone https://occm.visualstudio.com/_git/PolarisUI
 ```
 
-### Navigate into mWeb-Design
+### Navigate into PolarisUI
 
 ```
-cd mWeb-design
+cd PolarisUI
 ```
 
 ### Install Dependencies
@@ -41,10 +32,10 @@ npm install
 
 ### Start Development Server
 ```
-npm start
+npm run start
 ```
 
-*Devlopment build viewable from [http://localhost:8080](http://localhost:8080)*
+*Devlopment build viewable at [http://localhost:8080](http://localhost:8080)*
 
 ### Generate Production Build
 ```
@@ -58,7 +49,22 @@ Generates a production build of the source code in the `dist/` folder
 You can view the production build locally by running the distribution server
 
 ```
-npm run dist
+npm run serve-dist
 ```
 
-*Production build viewable from [http://localhost:3000](http://localhost:3000)*
+*Production build viewable at [http://localhost:3000](http://localhost:3000)*
+
+### Run Unit Tests
+```
+npm run test
+```
+
+### Run linters
+```
+npm run lint
+```
+
+### Using SVG's in the code
+
+This article gives a good explanation of how to incorporate SVGs into your code and it's what we followed.
+https://diessi.ca/blog/svg-images-as-react-components-with-webpack/

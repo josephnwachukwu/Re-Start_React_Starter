@@ -1,0 +1,22 @@
+.subheader {
+  text-align: left;
+}
+
+.subheader__header {
+  color: #3498db;
+  font-style: italic;
+  padding-left: 20px;
+  font-size: 28px;
+  margin: 10px 0;
+}
+
+.subheader__badge {
+  border-radius: 10px;
+  font-style: normal;
+  font-size: 22px;
+  height: 40px;
+  line-height: 40px;
+  padding: 5px 15px;
+  color: #000;
+  margin-left: 20px;
+}

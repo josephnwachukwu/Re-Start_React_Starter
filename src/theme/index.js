@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react'
 
 import 'sanitize.css/sanitize.css'
 import 'reflex-grid'
-import './index.css'
 
 export default class Theme extends Component {
   render () {

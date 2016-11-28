@@ -1,0 +1,8 @@
+.firm-header {
+  margin: $gutterLg;
+  text-align: left;
+}
+
+.firm-header .firm-header__icon {
+  height: 40px;
+}

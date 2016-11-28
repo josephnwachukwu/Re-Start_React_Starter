@@ -5,7 +5,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
-const polaris = path.join(process.cwd(), '/polaris')
 const src = path.join(process.cwd(), 'src')
 const dist = path.join(process.cwd(), 'dist')
 
@@ -17,7 +16,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [ src, polaris ],
+        include: [ src ],
         exclude: /node_modules/
       },
       { test: /\.json$/, loader: 'json-loader' },
@@ -26,7 +25,7 @@ module.exports = {
       { test: /^(?!.*\.css\.svg$).*\.svg$/, loader: 'svg-react-loader' },
       {
         test: /\.css$/,
-        include: [ path.resolve('./node_modules'), src, polaris ],
+        include: [ path.resolve('./node_modules'), src ],
         loader: ExtractTextPlugin.extract({
           fallbackLoader: 'style-loader',
           loader: [
@@ -38,7 +37,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new FaviconsWebpackPlugin(path.join(src, 'static/images/icon.png')),
+    new FaviconsWebpackPlugin(path.join(src, 'static/images/favicon.ico')),
     new webpack.LoaderOptionsPlugin({
       options: {
         context: process.cwd(),
@@ -67,5 +66,10 @@ module.exports = {
   devServer: {
     host: '0.0.0.0',
     historyApiFallback: true
+  },
+  externals: {
+    'react/addons': true,
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true
   }
 }
