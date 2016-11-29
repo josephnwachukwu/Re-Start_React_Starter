@@ -1,28 +1,34 @@
 import React, {PropTypes} from 'react'
+
+import Pin from '../../../theme/icons/Pin-1.svg'
+import Unpin from '../../../theme/icons/Unpin-1.svg'
+
 import './index.css'
 
 const ClaimCard = props => {
   return (
-    <div className='grid firm-claim-card' onClick={props.onClick}>
+    <div className='grid claim-card' onClick={props.onClick}>
       <div className='grid__col-1'>
-        <img className='firm-claim-card__icon' src={props.card.pinned ? 'src/theme/icons/Pin-1.svg' : 'src/theme/icons/Unpin-1.svg'} />
+        <a className='claim-card__icon'>
+          {props.card.pinned ? <Pin /> : <Unpin />}
+        </a>
       </div>
       <div className='grid__col-2'>
-        <p className='firm-claim-card__number'>{props.card.number}</p>
+        <p className='claim-card__number'>{props.card.number}</p>
       </div>
       <div className='grid__col-2'>
-        <p className='firm-claim-card__name'>{props.card.name}</p>
+        <p className='claim-card__name'>{props.card.name}</p>
       </div>
-      <div className='grid__col-2'>
-        <p className='firm-claim-card__birthday'>{props.card.birthday}</p>
+      <div className='grid__col-auto'>
+        <p className='claim-card__birthday'>{props.card.birthday}</p>
       </div>
-      <div className='grid__col-2'>
-        <p className='firm-claim-card__injury-date'>{props.card.injuryDate}</p>
+      <div className='grid__col-auto'>
+        <p className='claim-card__injury-date'>{props.card.injuryDate}</p>
       </div>
-      <div className='grid__col-3'>
-        <div className='firm-claim-card__buttons'>
-          <a className='firm-claim-card__quote-button' href='javascript:void(0)'>Quick Quote</a>
-          <a className='firm-claim-card__order-button' href='javascript:void(0)'>Quick Order</a>
+      <div className='grid__col-4'>
+        <div className='claim-card__buttons'>
+          <a className='claim-card__quote-button' href='javascript:void(0)'>Quick Quote</a>
+          <a className='claim-card__order-button' href='javascript:void(0)'>Quick Order</a>
         </div>
       </div>
     </div>

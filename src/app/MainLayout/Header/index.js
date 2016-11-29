@@ -10,8 +10,8 @@ const Header = props => {
   var fields = props.fields
 
   return (
-    <div className='firm-header'>
-      <Logo className='firm-header__icon' />
+    <div className='header'>
+      <Logo className='header__icon' />
       <HeaderDropdown name={name} fields={fields} />
     </div>
   )

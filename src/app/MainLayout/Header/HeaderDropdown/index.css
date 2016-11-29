@@ -1,29 +1,29 @@
-.firm-dropdown {
+.dropdown {
   position: relative;
   float: right;
   z-index: 1000;
 }
 
-.firm-dropdown span {
+.dropdown span {
   color: $gray;
   font-size: $fontXs;
 }
 
-.firm-dropdown__trigger {
+.dropdown__trigger {
   border-radius: $gutterXs;
   padding: $gutterSm $gutterNormal;
 }
 
-.firm-dropdown__trigger:hover {
+.dropdown__trigger:hover {
   background: $lightGray;
 }
 
-.firm-dropdown__icon {
+.dropdown__icon {
   padding: $gutterSm 0;
   margin-right: $gutterSm;
 }
 
-.firm-dropdown__name {
+.dropdown__name {
   font-weight: bold;
 }
 
@@ -43,43 +43,43 @@
   display: block;
 }
 
-.firm-dropdown ul {
+.dropdown ul {
   background: white;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.firm-dropdown__link {
+.dropdown__link {
   font-size: $fontSm;
   color: black;
 }
 
-.firm-dropdown__first-item {
+.dropdown__first-item {
   border: solid lightgrey 1px;
   border-radius: $gutterXs $gutterXs 0 0;
   padding: $gutterXs $gutterSm;
   margin: 0;
 }
 
-.firm-dropdown__link {
+.dropdown__link {
   cursor: pointer;
 }
 
-.firm-dropdown__item {
+.dropdown__item {
   cursor: pointer;
   border: solid lightgrey 1px;
   padding: $gutterXs $gutterSm;
   margin: 0;
 }
 
-.firm-dropdown__last-item {
+.dropdown__last-item {
   border: solid lightgrey 1px;
   border-radius: 0 0 $gutterXs $gutterXs;
   padding: $gutterXs $gutterSm;
   margin: 0;
 }
 
-.firm-dropdown__link:hover {
+.dropdown__link:hover {
   color: $lightBlue;
 }

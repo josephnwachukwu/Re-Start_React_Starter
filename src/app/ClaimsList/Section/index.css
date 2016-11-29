@@ -1,0 +1,33 @@
+.grid {
+  padding: 0;
+  margin: 0;
+}
+
+[class*="grid__col-"] {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.section__count {
+  width: 40px;
+  font-size: $fontXs;
+  padding: $gutterSm;
+  background: $lightBlue;
+  border-top: 1px solid $lightGray2;
+  border-bottom: 1px solid $lightGray2;
+}
+
+.section__title {
+  width: calc(100% - 40px);
+  text-align: left;
+  font-size: $fontLg;
+  font-weight: bold;
+  padding: $gutterXs;
+  border-top: 1px solid $lightGray2;
+  border-bottom: 1px solid $lightGray2;
+}
+
+.section__cards {
+  margin-left: 50px;
+}

@@ -4,32 +4,34 @@ import Dropdown, { DropdownTrigger, DropdownContent } from 'react-simple-dropdow
 import './index.css'
 
 const HeaderDropdown = props => {
-  var name = props.name
-  var fields = props.fields
-  var shown = false
+  const name = props.name
+  const fields = props.fields
+  let shown = false
 
   function onClick () {
     if (shown) {
       Dropdown.hide()
+      shown = false
     } else {
       Dropdown.show()
+      shown = true
     }
   }
 
   return (
-    <div className='firm-dropdown'>
-      <span className='firm-dropdown__icon'>□</span>
+    <div className='dropdown'>
+      <span className='dropdown__icon'>□</span>
       <Dropdown>
-        <DropdownTrigger className='firm-dropdown__trigger' onClick={onClick}>
-          <span>Welcome <span className='firm-dropdown__name'>{name}</span> □</span>
+        <DropdownTrigger className='dropdown__trigger' onClick={onClick}>
+          <span>Welcome <span className='dropdown__name'>{name}</span> □</span>
         </DropdownTrigger>
         <DropdownContent>
-          <ul className='firm-dropdown__ul'>
+          <ul className='dropdown__ul'>
             {
               fields.map((field, key) => {
                 return (
-                  <li key={key} className={key === 0 ? 'firm-dropdown__first-item' : key === fields.length - 1 ? 'firm-dropdown__last-item' : 'firm-dropdown__item'}>
-                    <a className='firm-dropdown__link' onClick={field.onClick}>{field.name}</a>
+                  <li key={key} className={key === 0 ? 'dropdown__first-item' : key === fields.length - 1 ? 'dropdown__last-item' : 'dropdown__item'}>
+                    <a className='dropdown__link' onClick={field.onClick}>{field.name}</a>
                   </li>
                 )
               })
