@@ -1,0 +1,8 @@
+.claims-navigation__letter {
+  line-height: 40px;
+}
+
+.claims-navigation__letter a {
+  text-decoration: none;
+  color: #333;
+}

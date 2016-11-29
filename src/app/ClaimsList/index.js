@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import ClaimCard from './ClaimCard'
 import Subheader from './Subheader'
+import LetterNav from './LetterNav'
 
 export default class ClaimsList extends Component {
   render () {
@@ -20,6 +21,7 @@ export default class ClaimsList extends Component {
     return (
       <div>
         <Subheader />
+        <LetterNav />
         <ClaimCard
           card={card}
           onClick={onClick}
