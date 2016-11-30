@@ -1,7 +1,7 @@
 import React from 'react'
 import { expect } from 'chai'
 import { shallow, mount } from 'enzyme'
-import Foo from './Foo'
+import Foo from './index.js'
 
 describe('Foo example component', function () {
   it('contains the div we expect', function () {

@@ -3,23 +3,23 @@ import ClaimCard from '../ClaimCard'
 import './index.css'
 
 const Section = props => {
-  const cards = props.cards || []
+  const claims = props.claims || []
+  const title = props.title !== 'Pinned' ? props.title.toUpperCase() : 'Pinned'
 
   return (
-    <div id={props.title} className='grid section'>
+    <div id={title} className='grid section'>
       <div className='grid__col-1 section__count'>
-        {cards.length}
+        {claims.length}
       </div>
       <div className='grid__col-auto section__title'>
-        {props.title}
+        {title}
       </div>
       <div className='grid__col-12 section__cards'>
         {
-          cards.map((card, key) => {
+          claims.map((claim, key) => {
             return (
               <ClaimCard
-                card={card.card}
-                onClick={card.onClick}
+                claim={claim}
                 key={key}
               />
             )
@@ -32,7 +32,7 @@ const Section = props => {
 
 Section.propTypes = {
   title: PropTypes.string,
-  cards: PropTypes.array
+  claims: PropTypes.array
 }
 
 export default Section

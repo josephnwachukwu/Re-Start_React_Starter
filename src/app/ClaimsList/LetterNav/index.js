@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './index.css'
 
-import Letter from '../letter'
+import Letter from './Letter'
 
 export default class LetterNav extends Component {
   render () {
