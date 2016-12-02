@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Route, IndexRoute, Router, hashHistory } from 'react-router'
 
+import './index.css'
+
 import Theme from './theme'
 import MainLayout from './app/MainLayout'
 import Dashboard from './app/Dashboard'

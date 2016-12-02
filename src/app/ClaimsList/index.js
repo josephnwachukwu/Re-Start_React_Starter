@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import _ from 'lodash'
 
 // import { getClaimsList } from './Api'
 import mockData from './Api/mockData.json'
@@ -13,7 +14,7 @@ export default class ClaimsList extends Component {
 
     this.state = {
       claims: [],
-      binnedClaims: []
+      binnedClaims: {}
     }
   }
 
@@ -31,39 +32,43 @@ export default class ClaimsList extends Component {
   }
 
   binClaims (claims = []) {
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('')
     let binnedClaims = {
       Pinned: []
     }
     let letter
     let isPinned
 
+    alphabet.forEach((letter) => {
+      binnedClaims[letter] = []
+    })
+
     claims.forEach((claim) => {
-      letter = claim.PatientLastName[0].toLowerCase()
+      letter = claim.PatientLastName[0].toUpperCase()
       isPinned = claim.IsPinned
 
       if (isPinned) {
         binnedClaims.Pinned.push(claim)
       }
 
-      if (Array.isArray(binnedClaims[letter])) {
-        binnedClaims[letter].push(claim)
-      } else {
-        binnedClaims[letter] = [ claim ]
-      }
+      binnedClaims[letter].push(claim)
     })
 
     return binnedClaims
   }
 
   render () {
-    const sortedTitles = Array.sort(Object.keys(this.state.binnedClaims))
+    let sortedTitles = _.without(Array.sort(Object.keys(this.state.binnedClaims)), 'Pinned')
+    sortedTitles.unshift('Pinned')
 
     return (
       <div>
         <Subheader
           claimCount={this.state.claims.length}
         />
-        <LetterNav />
+        <LetterNav
+          claims={this.state.binnedClaims}
+        />
         {
           sortedTitles.map((title) => {
             return (

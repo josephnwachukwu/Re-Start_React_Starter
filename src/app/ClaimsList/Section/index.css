@@ -18,7 +18,7 @@
   border-bottom: 1px solid $lightGray2;
 }
 
-.section__title {
+.section__title-block {
   width: calc(100% - 40px);
   text-align: left;
   font-size: $fontLg;
@@ -26,6 +26,17 @@
   padding: $gutterXs;
   border-top: 1px solid $lightGray2;
   border-bottom: 1px solid $lightGray2;
+}
+
+.section__title {
+  float: left;
+}
+
+.section__title-empty-text {
+  float: right;
+  font-weight: normal;
+  font-size: $fontSm;
+  padding-top: 4px;
 }
 
 .section__cards {

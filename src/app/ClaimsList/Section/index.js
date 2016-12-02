@@ -4,15 +4,21 @@ import './index.css'
 
 const Section = props => {
   const claims = props.claims || []
-  const title = props.title !== 'Pinned' ? props.title.toUpperCase() : 'Pinned'
+  const title = props.title
+  const emptySectionTitleText = `You have no patients with last name beginning with ${title}`
 
   return (
     <div id={title} className='grid section'>
       <div className='grid__col-1 section__count'>
         {claims.length}
       </div>
-      <div className='grid__col-auto section__title'>
-        {title}
+      <div className='grid__col-auto'>
+        <div className='grid__cell section__title-block'>
+          <div className='section__title'>{title}</div>
+          {!claims.length &&
+            <div className='section__title-empty-text'>{emptySectionTitleText}</div>
+          }
+        </div>
       </div>
       <div className='grid__col-12 section__cards'>
         {

@@ -1,38 +1,24 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import './index.css'
 
 import Letter from './Letter'
 
 export default class LetterNav extends Component {
   render () {
-    const letters = [
-      'A',
-      'B',
-      'C',
-      'D',
-      'E',
-      'F',
-      'G',
-      'H',
-      'I',
-      'J',
-      'K',
-      'L',
-      'M',
-      'N',
-      'O',
-      'P',
-      'Q',
-      'R',
-      'S',
-      'T',
-      'U',
-      'V',
-      'W',
-      'X',
-      'Y',
-      'Z'
-    ].map((title, i) => <Letter key={i} title={title} />)
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('')
+
+    const letters = alphabet.map((letter, i) => {
+      const sectionClaims = this.props.claims[letter]
+      let disabled = Array.isArray(sectionClaims) ? sectionClaims.length === 0 : false
+
+      return (
+        <Letter
+          key={i}
+          title={letter}
+          disabled={disabled}
+        />
+      )
+    })
 
     return (
       <div className='grid'>
@@ -42,4 +28,8 @@ export default class LetterNav extends Component {
       </div>
     )
   }
+}
+
+LetterNav.propTypes = {
+  claims: PropTypes.object
 }
