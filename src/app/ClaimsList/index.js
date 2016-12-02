@@ -70,6 +70,7 @@ export default class ClaimsList extends Component {
               <Section
                 key={title}
                 title={title}
+                onClick={() => { alert('ClaimCard Clicked') }}
                 claims={this.state.binnedClaims[title]}
               />
             )

@@ -20,6 +20,7 @@ const Section = props => {
             return (
               <ClaimCard
                 claim={claim}
+                onClick={props.onClick}
                 key={key}
               />
             )
@@ -32,6 +33,7 @@ const Section = props => {
 
 Section.propTypes = {
   title: PropTypes.string,
+  onClick: PropTypes.func,
   claims: PropTypes.array
 }
 

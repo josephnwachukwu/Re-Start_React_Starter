@@ -10,26 +10,26 @@ export default class ClaimCard extends Component {
   constructor (props) {
     super(props)
 
-    this.onClick = this.onClick.bind(this)
-  }
-
-  onClick () {
-    alert('ClaimCard was clicked')
-  }
-
-  render () {
-    const name = `${this.props.claim.PatientLastName}, ${this.props.claim.PatientFirstName}`
+    const name = `${props.claim.PatientLastName}, ${props.claim.PatientFirstName}`
     const DOI = format(
-      this.props.claim.DOI,
+      props.claim.DOI,
       'MM/DD/YYYY'
     )
     const DOB = format(
-      this.props.claim.DOB,
+      props.claim.DOB,
       'MM/DD/YYYY'
     )
 
+    this.state = {
+      name,
+      DOI,
+      DOB
+    }
+  }
+
+  render () {
     return (
-      <div className='grid claim-card' onClick={this.onClick}>
+      <div className='grid claim-card' onClick={this.props.onClick}>
         <div className='grid__col-1'>
           <a className='claim-card__icon'>
             {this.props.claim.IsPinned ? <Pin /> : <Unpin />}
@@ -39,13 +39,13 @@ export default class ClaimCard extends Component {
           <p className='claim-card__number'>{this.props.claim.ClaimNumber}</p>
         </div>
         <div className='grid__col-2'>
-          <p className='claim-card__name'>{name}</p>
+          <p className='claim-card__name'>{this.state.name}</p>
         </div>
         <div className='grid__col-auto'>
-          <p className='claim-card__birthday'>{DOB}</p>
+          <p className='claim-card__birthday'>{this.state.DOB}</p>
         </div>
         <div className='grid__col-auto'>
-          <p className='claim-card__injury-date'>{DOI}</p>
+          <p className='claim-card__injury-date'>{this.state.DOI}</p>
         </div>
         <div className='grid__col-4'>
           <div className='claim-card__buttons'>
@@ -66,5 +66,6 @@ ClaimCard.propTypes = {
     PatientLastName: PropTypes.string,
     DOB: PropTypes.string,
     DOI: PropTypes.string
-  })
+  }),
+  onClick: PropTypes.func
 }
