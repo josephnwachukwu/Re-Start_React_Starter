@@ -15,7 +15,6 @@ export default class ClaimCard extends Component {
 
   onClick () {
     alert('ClaimCard Clicked')
-    return true
   }
 
   render () {
