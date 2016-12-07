@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import _ from 'lodash'
 
-// import { getClaimsList } from './Api'
-import mockData from './Api/mockData.json'
+import { getClaimsList } from './Api'
 
 import Section from './Section'
 import Subheader from './Subheader'
@@ -19,16 +18,16 @@ export default class ClaimsList extends Component {
   }
 
   componentDidMount () {
-    // TODO: DC 11-29-2016: Gets CORS issue sorted out so we can fetch
-    // the mock data from the endpoint.
     // TODO: DC 11-29-2016: Figure out where adjusterId will be coming from
 
-    // const adjusterId = '74653102-3a4e-41f0-937f-9e610a3d1ade'
-    // console.log(getClaimsList(adjusterId))
-    this.setState({
-      claims: mockData.Payload,
-      binnedClaims: this.binClaims(mockData.Payload)
-    })
+    const adjusterId = 'fdbdd892-8dd8-4fbf-8ea7-8c2dbdb40b2b'
+    getClaimsList(adjusterId)
+      .then((response) => {
+        this.setState({
+          claims: response.Payload,
+          binnedClaims: this.binClaims(response.Payload)
+        })
+      })
   }
 
   binClaims (claims = []) {
@@ -58,7 +57,7 @@ export default class ClaimsList extends Component {
   }
 
   render () {
-    let sortedTitles = _.without(Array.sort(Object.keys(this.state.binnedClaims)), 'Pinned')
+    let sortedTitles = _.without(Object.keys(this.state.binnedClaims).sort(), 'Pinned')
     sortedTitles.unshift('Pinned')
 
     return (
