@@ -6,15 +6,9 @@ import Letter from './Letter'
 
 describe('Letter Nav component', function () {
   it('disables navigation for empty sections', function () {
-    const alphabet = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('')
-    let binnedClaims = {}
     let claimsCheck = 0
 
-    alphabet.forEach((letter) => {
-      binnedClaims[letter] = []
-    })
-
-    shallow(<LetterNav claims={binnedClaims} />).find(Letter).forEach((letter) => {
+    shallow(<LetterNav />).find(Letter).forEach((letter) => {
       if (letter.props().disabled === true) {
         claimsCheck++
       }
