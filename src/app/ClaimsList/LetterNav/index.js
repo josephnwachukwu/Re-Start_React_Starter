@@ -8,7 +8,8 @@ export default class LetterNav extends Component {
     const alphabet = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('')
 
     const letters = alphabet.map((letter, i) => {
-      const sectionClaims = this.props.claims[letter]
+      const claims = this.props.claims || {}
+      const sectionClaims = claims[letter] || []
       let disabled = Array.isArray(sectionClaims) ? sectionClaims.length === 0 : false
 
       return (
