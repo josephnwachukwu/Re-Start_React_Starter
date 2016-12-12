@@ -10,6 +10,7 @@ export default class LetterNav extends Component {
     const letters = alphabet.map((letter, i) => {
       const claims = this.props.claims || {}
       const sectionClaims = claims[letter] || []
+
       let disabled = Array.isArray(sectionClaims) ? sectionClaims.length === 0 : false
 
       return (

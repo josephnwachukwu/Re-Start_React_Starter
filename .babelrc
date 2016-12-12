@@ -1,10 +1,9 @@
 {
-  "presets": [ "es2015", "react", "stage-2" ],
+  "presets": [ "es2015", "react" ],
   "env": {
     "development": {
       "plugins": [
-        "transform-react-jsx-source",
-        "transform-async-to-generator"
+        "transform-react-jsx-source"
       ]
     }
   }

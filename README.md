@@ -68,3 +68,21 @@ npm run lint
 
 This article gives a good explanation of how to incorporate SVGs into your code and it's what we followed.
 https://diessi.ca/blog/svg-images-as-react-components-with-webpack/
+
+### Unit testing resources
+
+#### Mocha - unit test runner
+https://mochajs.org
+
+#### Assertions - BDD style
+http://chaijs.com/api/bdd
+
+#### Spies and Stubs - for mocking functions
+http://sinonjs.org
+
+#### Proxyquire - injecting mock modules
+https://github.com/thlorenz/proxyquire
+https://engineering.thetrainline.com/2016/07/22/use-proxyquire-to-mock-your-react-components
+
+#### Enzyme - React testing utils
+http://airbnb.io/enzyme

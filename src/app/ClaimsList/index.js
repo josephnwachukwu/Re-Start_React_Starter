@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import _ from 'lodash'
 
-import { getClaimsList } from './Api'
+import { getClaimsList } from './api'
 
 import Section from './Section'
 import Subheader from './Subheader'
