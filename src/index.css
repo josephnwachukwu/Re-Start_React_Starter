@@ -1,3 +1,18 @@
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('./theme/fonts/Proxima Nova/ProximaNova Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-weight: bold;
+  src: url('./theme/fonts/Proxima Nova/ProximaNova Bold.otf') format('opentype');
+}
+
+* {
+  font-family: 'Proxima Nova', sans-serif;
+}
+
 a[disabled],
 a[disabled]:hover {
   pointer-events: none;

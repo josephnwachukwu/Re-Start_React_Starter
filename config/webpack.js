@@ -19,6 +19,10 @@ module.exports = {
         include: [ src ],
         exclude: /node_modules/
       },
+      {
+        test: /\.(jpg|png|gif|otf|eot|ttf|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'url'
+      },
       { test: /\.json$/, loader: 'json-loader' },
       { test: /\.(jpg|png|gif)$/, loader: 'url-loader' },
       { test: /\.css\.svg$/, loader: 'svg-url-loader' },

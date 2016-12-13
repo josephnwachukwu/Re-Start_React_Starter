@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import _ from 'lodash'
 
-import { getClaimsList } from './api'
+import { getClaimsList } from './Api'
 
 import Section from './Section'
 import Subheader from './Subheader'
 import LetterNav from './LetterNav'
 import ColumnHeader from './ColumnHeader'
+import LoadingSpinner from '../../theme/spinners/ring-alt-loader.svg'
+
+import './index.css'
 
 export default class ClaimsList extends Component {
   constructor (props) {
@@ -14,7 +17,8 @@ export default class ClaimsList extends Component {
 
     this.state = {
       claims: [],
-      binnedClaims: {}
+      binnedClaims: {},
+      loading: true
     }
   }
 
@@ -26,7 +30,8 @@ export default class ClaimsList extends Component {
       .then((response) => {
         this.setState({
           claims: response.Payload,
-          binnedClaims: this.binClaims(response.Payload)
+          binnedClaims: this.binClaims(response.Payload),
+          loading: false
         })
       })
   }
@@ -58,33 +63,37 @@ export default class ClaimsList extends Component {
   }
 
   render () {
+    const loading = this.state.loading
     let sortedTitles = _.without(Object.keys(this.state.binnedClaims).sort(), 'Pinned')
     sortedTitles.unshift('Pinned')
 
-    return (
-      <div>
-        <Subheader
-          claimCount={this.state.claims.length}
-        />
+    if (loading) {
+      return (
+        <LoadingSpinner className='claims-list-container__loading-spinner' />
+      )
+    } else {
+      return (
+        <div>
+          <Subheader
+            claimCount={this.state.claims.length}
+          />
 
-        <LetterNav claims={this.state.binnedClaims} />
-        <ColumnHeader />
+          <LetterNav claims={this.state.binnedClaims} />
+          <ColumnHeader />
 
-        {
-          sortedTitles.map((title) => {
-            return (
-              <Section
-                key={title}
-                title={title}
-                claims={this.state.binnedClaims[title]}
-              />
-            )
-          })
-        }
-      </div>
-    )
+          {
+            sortedTitles.map((title) => {
+              return (
+                <Section
+                  key={title}
+                  title={title}
+                  claims={this.state.binnedClaims[title]}
+                />
+              )
+            })
+          }
+        </div>
+      )
+    }
   }
-}
-
-ClaimsList.propTypes = {
 }

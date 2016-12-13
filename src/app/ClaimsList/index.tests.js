@@ -81,6 +81,7 @@ describe('ClaimsList component', function () {
   })
 
   it('sorts the section titles as expected', function () {
+    const loading = false
     const claims = [
       {
         'PatientFirstName': 'Jon',
@@ -155,7 +156,8 @@ describe('ClaimsList component', function () {
     const claimsList = shallow(<ClaimsList />)
     claimsList.setState({
       claims,
-      binnedClaims
+      binnedClaims,
+      loading
     })
 
     expect(claimsList.find(Section).length).to.equal(3)
@@ -165,6 +167,7 @@ describe('ClaimsList component', function () {
   })
 
   it('to pass the correct number of claims to the the claims header', function () {
+    const loading = false
     const claims = [
       {
         'PatientFirstName': 'Jon',
@@ -275,7 +278,8 @@ describe('ClaimsList component', function () {
     const claimsList = shallow(<ClaimsList />)
     claimsList.setState({
       claims,
-      binnedClaims
+      binnedClaims,
+      loading
     })
 
     expect(claimsList.find(Subheader).prop('claimCount')).to.equal(3)
@@ -286,7 +290,7 @@ describe('ClaimsList component', function () {
     const ClaimsListPatched = proxyquire(
       './index.js',
       {
-        './api': {
+        './Api': {
           getClaimsList
         }
       }

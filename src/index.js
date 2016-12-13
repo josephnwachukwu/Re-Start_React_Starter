@@ -8,14 +8,17 @@ import Theme from './theme'
 import MainLayout from './app/MainLayout'
 import Dashboard from './app/Dashboard'
 import ClaimsList from './app/ClaimsList'
+import PatientInfo from './app/PatientInfo'
 import NotFound from './app/NotFound'
 
 ReactDOM.render(
   <Theme>
     <Router history={hashHistory}>
       <Route path='/' component={MainLayout}>
-        <IndexRoute component={ClaimsList} />
+        <IndexRoute component={Dashboard} />
+        <Route path='activeclaims' component={ClaimsList} />
         <Route path='dashboard' component={Dashboard} />
+        <Route path='patientinfo' component={PatientInfo} />
       </Route>
       <Route path='*' component={NotFound} />
     </Router>

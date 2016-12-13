@@ -1,0 +1,123 @@
+.action-card__triangle {
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid $purple;
+}
+
+.action-card__icon {
+  max-width: 58px;
+  min-width: 58px;
+  margin: $gutterXs 0;
+}
+
+.action-card__icon a {
+  margin: $gutterXs 0;
+  padding: $gutterXs 0;
+  height: 20px;
+  width: 100%;
+}
+
+.action-card .action-card__date {
+  color: $gray5;
+  margin: $gutterXs 0;
+  border-left: 1px solid $lightGray;
+  border-right: 1px solid $lightGray;
+  max-width: 58px;
+  min-width: 58px;
+}
+
+.action-card--active .action-card__date {
+  color: $black;
+  margin: $gutterXs 0;
+  border-left: 1px solid $lightGray;
+  border-right: 1px solid $lightGray;
+  max-width: 58px;
+  min-width: 58px;
+}
+
+.action-card__month {
+  padding-top: $gutterXs;
+  font-weight: bold;
+  font-size: $fontXs;
+  line-height: 14px;
+}
+
+.action-card__day {
+  padding-bottom: $gutterXs;
+  font-size: $fontXxl;
+  font-weight: bold;
+  line-height: 24px;
+}
+
+.action-card__body {
+  display: inline-block;
+}
+
+.action-card__title {
+  float: left;
+  color: $gray;
+  font-size: $fontSm;
+  padding: $gutterLg $gutterMd;
+}
+
+.action-card--active .action-card__title {
+  color: $black;
+  font-weight: bold;
+}
+
+.action-card__status {
+  float: right;
+  padding: $gutterLg 0;
+  font-size: $fontXs;
+}
+
+.action-card__tag {
+  float: right;
+  padding: $gutterLg $gutterLg $gutterLg $gutterXs;
+  color: $gray4;
+  font-size: $fontXs;
+  font-weight: bold;
+  min-width: 105px;
+  text-align: left;
+}
+
+.action-card--active .action-card__tag {
+  color: $black;
+}
+
+.action-card__button {
+  float: right;
+  margin: $gutterXs 0;
+  padding: $gutterNormal 0;
+  border-left: 1px solid $lightGray;
+  max-width: 58px;
+  min-width: 58px;
+}
+
+.action-card__button:hover {
+  cursor: pointer;
+  background-color: $lightBlue;
+}
+
+.action-card--active .action-card__dropdown {
+  font-size: $fontSm;
+  margin: $gutterSm 0;
+}
+
+.action-card__dropdown-tag {
+  margin-left: 116px;
+  padding: $gutterSm $gutterLg;
+  border-right: 1px solid $lightGray;
+  border-left: 1px solid $lightGray;
+  text-align: left;
+  color: $black;
+  font-weight: bold;
+}
+
+.action-card__dropdown-content {
+  padding: $gutterSm 0 $gutterSm $gutterLg;
+  text-align: left;
+  color: $black2;
+}
