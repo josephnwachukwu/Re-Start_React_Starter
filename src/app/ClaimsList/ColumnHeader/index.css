@@ -1,0 +1,10 @@
+.claims__listHeader {
+  height: 40px;
+  margin-left: 50px;
+  background-color: $lightGray2;
+}
+
+.claims__listheader div {
+  border-left: $lightGray 1px solid;
+  line-height: 40px;
+}

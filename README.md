@@ -69,6 +69,9 @@ npm run lint
 This article gives a good explanation of how to incorporate SVGs into your code and it's what we followed.
 https://diessi.ca/blog/svg-images-as-react-components-with-webpack/
 
+### node version
+Node 6.9.1 is enforced because it is needed to run babel-loader and its related modules properly
+
 ### Unit testing resources
 
 #### Mocha - unit test runner
@@ -86,3 +89,4 @@ https://engineering.thetrainline.com/2016/07/22/use-proxyquire-to-mock-your-reac
 
 #### Enzyme - React testing utils
 http://airbnb.io/enzyme
+

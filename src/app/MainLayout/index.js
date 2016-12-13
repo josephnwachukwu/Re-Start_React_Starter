@@ -23,10 +23,10 @@ class MainLayout extends Component {
             fields={dropdown}
           />
         </div>
-        <div className='grid__col-1'>
+        <div className='grid__col-lg-1 grid__col-md-3'>
           <SideBar />
         </div>
-        <div className='main-content grid__col-11'>
+        <div className='main-content grid__col-lg-11 grid__col-md-9'>
           {this.props.children}
         </div>
         <div className='grid__col-12'>

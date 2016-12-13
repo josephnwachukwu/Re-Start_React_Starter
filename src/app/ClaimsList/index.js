@@ -6,6 +6,7 @@ import { getClaimsList } from './api'
 import Section from './Section'
 import Subheader from './Subheader'
 import LetterNav from './LetterNav'
+import ColumnHeader from './ColumnHeader'
 
 export default class ClaimsList extends Component {
   constructor (props) {
@@ -65,9 +66,10 @@ export default class ClaimsList extends Component {
         <Subheader
           claimCount={this.state.claims.length}
         />
-        <LetterNav
-          claims={this.state.binnedClaims}
-        />
+
+        <LetterNav claims={this.state.binnedClaims} />
+        <ColumnHeader />
+
         {
           sortedTitles.map((title) => {
             return (
