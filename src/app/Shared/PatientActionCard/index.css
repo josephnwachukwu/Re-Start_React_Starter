@@ -6,7 +6,8 @@
   border-left: 10px solid $purple;
 }
 
-.action-card__icon {
+.action-card--active .action-card__icon,
+.action-card .action-card__icon {
   max-width: 58px;
   min-width: 58px;
   margin: $gutterXs 0;
