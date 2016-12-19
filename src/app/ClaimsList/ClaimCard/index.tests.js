@@ -35,14 +35,14 @@ describe('Claim Card component', function () {
       ClaimNumber: 'WC10003',
       PatientFirstName: 'Don',
       PatientLastName: 'Draper',
-      DOB: '1954-12-07T22:36:12.075Z',
-      DOI: '2016-12-07T22:36:12.075Z'
+      DOB: '1954-12-07T00:00:00Z',
+      DOI: '2016-12-01T00:00:00Z'
     }
 
     const claimCard = shallow(<ClaimCard claim={claimPinned} />)
 
     expect(claimCard.find('.claim-card__birthday').text()).to.equal('12/07/1954')
-    expect(claimCard.find('.claim-card__injury-date').text()).to.equal('12/07/2016')
+    expect(claimCard.find('.claim-card__injury-date').text()).to.equal('12/01/2016')
   })
 
   it('has the correct name', function () {

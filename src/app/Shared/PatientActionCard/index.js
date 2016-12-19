@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import format from 'date-fns/format'
+import { stripTimezone } from '../../Shared/utils'
 
 import Diagnostics from '../../../theme/icons/Diagnostics.svg'
 import HomeHealth from '../../../theme/icons/Home-Health.svg'
@@ -100,8 +101,9 @@ export default class PatientActionCard extends Component {
   render () {
     const action = this.props.action
     const status = action.Status.toUpperCase()
-    const month = format(action.ActionDate, 'MMM')
-    const day = format(action.ActionDate, 'D')
+    const date = stripTimezone(action.ActionDate)
+    const month = format(date, 'MMM')
+    const day = format(date, 'D')
 
     return (
       <div className={this.state.dropdownActive ? 'grid action-card--active' : 'grid action-card'}>

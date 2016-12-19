@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import { stripTimezone } from '../../Shared/utils'
 import format from 'date-fns/format'
 
 import Pin from '../../../theme/icons/Pin-1.svg'
@@ -20,11 +21,11 @@ export default class ClaimCard extends Component {
   render () {
     const name = `${this.props.claim.PatientLastName}, ${this.props.claim.PatientFirstName}`
     const DOI = format(
-      this.props.claim.DOI,
+      stripTimezone(this.props.claim.DOI),
       'MM/DD/YYYY'
     )
     const DOB = format(
-      this.props.claim.DOB,
+      stripTimezone(this.props.claim.DOB),
       'MM/DD/YYYY'
     )
 

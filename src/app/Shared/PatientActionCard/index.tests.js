@@ -14,7 +14,7 @@ describe('Patient Action Card component', function () {
       Status: 'PENDING',
       StatusDetail: null,
       ActionTitle: 'Language Appointment',
-      ActionDate: '2016-12-05 T00:00:00.000Z',
+      ActionDate: '2016-12-05T00:00:00.000Z',
       ActionDetail: [
         {
           Name: 'Service Type',
@@ -52,7 +52,7 @@ describe('Patient Action Card component', function () {
       Status: 'PENDING',
       StatusDetail: null,
       ActionTitle: 'Language Appointment',
-      ActionDate: '2016-12-05 T00:00:00.000Z',
+      ActionDate: '2016-12-05T00:00:00.000Z',
       ActionDetail: [
         {
           Name: 'Service Type',
@@ -87,7 +87,7 @@ describe('Patient Action Card component', function () {
       Status: 'PENDING',
       StatusDetail: null,
       ActionTitle: 'Language Appointment',
-      ActionDate: '2016-12-05 T00:00:00.000Z',
+      ActionDate: '2016-12-05T00:00:00.000Z',
       ActionDetail: [
         {
           Name: 'Service Type',
@@ -122,7 +122,7 @@ describe('Patient Action Card component', function () {
       Status: 'PENDING',
       StatusDetail: null,
       ActionTitle: 'Language Appointment',
-      ActionDate: '2016-12-05 T00:00:00.000Z',
+      ActionDate: '2016-12-05T00:00:00.000Z',
       ActionDetail: [
         {
           Name: 'Service Type',
