@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { stripTimezone } from '../../Shared/utils'
+import { stripTimezone } from '../../Shared/Utils'
 import format from 'date-fns/format'
 
 import Pin from '../../../theme/icons/Pin-1.svg'

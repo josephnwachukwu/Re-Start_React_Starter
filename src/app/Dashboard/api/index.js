@@ -1,6 +1,8 @@
+import { getAPIBaseURL } from '../../Shared/Utils'
+
 function getClaimActions (adjusterId) {
-  const baseUrl = '//app-d-polarisgatewayapi.azurewebsites.net/api/v0.1/gateway/adjusters'
-  const url = `${baseUrl}/${adjusterId}/claimactions?type=pinned`
+  const baseUrl = getAPIBaseURL()
+  const url = `${baseUrl}/adjusters/${adjusterId}/claimactions?type=pinned`
 
   return fetch(url, {
     credentials: 'omit',

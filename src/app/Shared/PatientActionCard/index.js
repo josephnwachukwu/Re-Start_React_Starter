@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import format from 'date-fns/format'
-import { stripTimezone } from '../../Shared/utils'
+import { stripTimezone } from '../../Shared/Utils'
 
 import Diagnostics from '../../../theme/icons/Diagnostics.svg'
 import HomeHealth from '../../../theme/icons/Home-Health.svg'

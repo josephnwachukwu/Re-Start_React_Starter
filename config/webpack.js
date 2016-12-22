@@ -7,6 +7,7 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 const src = path.join(process.cwd(), 'src')
 const dist = path.join(process.cwd(), 'dist')
+const config = path.join(process.cwd(), 'config')
 
 module.exports = {
   entry: [ 'babel-polyfill', 'whatwg-fetch', src ],
@@ -23,7 +24,10 @@ module.exports = {
         test: /\.(jpg|png|gif|otf|eot|ttf|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'url'
       },
-      { test: /\.json$/, loader: 'json-loader' },
+      { test: /\.json$/,
+        loader: 'json-loader',
+        include: [ config, src ]
+      },
       { test: /\.(jpg|png|gif)$/, loader: 'url-loader' },
       { test: /\.css\.svg$/, loader: 'svg-url-loader' },
       { test: /^(?!.*\.css\.svg$).*\.svg$/, loader: 'svg-react-loader' },
