@@ -1,13 +1,13 @@
 .patient-info-container__title span {
   padding: $gutterLg 0;
-  background: $lightGray4;
+  background: $lightGray3;
   font-size: $fontXs;
   font-weight: bold;
 }
 
 .patient-info-container__divider {
   height: 5px;
-  background: $lightGray4;
+  background: $lightGray3;
 }
 
 .patient-info-container__loading-spinner {

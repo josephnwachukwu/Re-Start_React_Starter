@@ -33,7 +33,7 @@
 }
 
 .patient-action-card .patient-action-card__date {
-  color: $gray5;
+  color: $gray4;
   margin: $gutterXs 0;
   max-width: 68px;
   min-width: 68px;
@@ -43,7 +43,7 @@
 .patient-action-card--active .patient-action-card__date {
   color: $black;
   margin: $gutterXs 0;
-  padding: 0 $gutterNormal;
+  padding: 0 $gutterDefault;
   max-width: 68px;
   min-width: 68px;
   height: 32px;
@@ -104,7 +104,7 @@
 .patient-action-card__tag {
   float: right;
   padding: $gutterSm $gutterLg $gutterSsm $gutterXs;
-  color: $gray4;
+  color: $gray3;
   font-size: $fontXs;
   font-weight: bold;
   min-width: 105px;
@@ -118,7 +118,7 @@
 .patient-action-card .patient-action-card__button,
 .patient-action-card--active .patient-action-card__button {
   float: right;
-  padding: $gutterNormal $gutterLg;
+  padding: $gutterDefault $gutterLg;
   max-width: 68px;
   min-width: 34px;
   align-items: center;

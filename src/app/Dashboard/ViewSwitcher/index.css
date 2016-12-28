@@ -1,5 +1,5 @@
 .view-switcher .view-switcher__buttons {
-  background: $blue2;
+  background: $blue;
   padding: $gutterXxxl 0;
   justify-content: center;
 }
@@ -7,7 +7,7 @@
 .view-switcher .view-switcher__collapse-button {
   display: inline-block;
   margin-right: $gutterXl;
-  padding: $gutterSsm $gutterXs $gutterSsm $gutterNormal;
+  padding: $gutterSsm $gutterXs $gutterSsm $gutterDefault;
   width: 125px;
   font-size: $fontXxs;
   font-weight: bold;
@@ -25,7 +25,7 @@
   width: 50px;
   height: 32px;
   margin: 3px 2px 0 0;
-  padding: $gutterSsm $gutterNormal;
+  padding: $gutterSsm $gutterDefault;
   background: $white;
   border-radius: 4px 0 0 4px;
 }
@@ -34,7 +34,7 @@
   width: 50px;
   height: 32px;
   margin: 3px 2px 0 0;
-  padding: $gutterSsm $gutterNormal;
+  padding: $gutterSsm $gutterDefault;
   background: $lightBlue3;
   border-radius: 4px 0 0 4px;
 }
@@ -43,7 +43,7 @@
   width: 50px;
   height: 32px;
   margin: 3px 0 0;
-  padding: $gutterSsm $gutterNormal;
+  padding: $gutterSsm $gutterDefault;
   background: $white;
   border-radius: 0 4px 4px 0;
 }
@@ -52,7 +52,7 @@
   width: 50px;
   height: 32px;
   margin: 3px 0 0;
-  padding: $gutterSsm $gutterNormal;
+  padding: $gutterSsm $gutterDefault;
   background: $lightBlue3;
   border-radius: 0 4px 4px 0;
 }

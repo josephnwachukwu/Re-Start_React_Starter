@@ -6,7 +6,7 @@
 .patient-card--row .patient-card--row__header,
 .patient-card--col .patient-card--col__header {
   margin: $gutterXs;
-  background: $lightGray5;
+  background: $lightGray4;
 }
 
 .patient-card--row__header .patient-card--row__pin {
@@ -16,7 +16,7 @@
 }
 
 .patient-card--row__header .patient-card--row__title {
-  padding: $gutterSm 0 $gutterNormal 0;
+  padding: $gutterSm 0 $gutterDefault 0;
   text-align: left;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .patient-card--row__num {
-  color: $gray5;
+  color: $gray4;
   font-weight: bold;
   font-size: $fontSm;
   height: 15px;
@@ -56,7 +56,7 @@
 }
 
 .patient-card--col__header .patient-card--col__title {
-  padding: $gutterSm 0 $gutterNormal 0;
+  padding: $gutterSm 0 $gutterDefault 0;
   text-align: left;
 }
 
@@ -69,7 +69,7 @@
 }
 
 .patient-card--col__num {
-  color: $gray5;
+  color: $gray4;
   font-weight: bold;
   font-size: $fontSm;
   height: 15px;

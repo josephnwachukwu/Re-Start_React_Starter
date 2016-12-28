@@ -4,29 +4,33 @@ import './index.css'
 
 const ColumnHeader = props => {
   return (
-    <div className='grid claims__listHeader'>
-      <div className='grid__col-1 claims__column-header'>
+    <div className='grid'>
+      <div className='grid__col-12 claims__column-header'>
+        <div className='grid'>
+          <div className='grid__col-1'>
         Pin
-      </div>
+          </div>
 
-      <div className='grid__col-2'>
+          <div className='grid__col-2'>
         Claim Number
-      </div>
+          </div>
 
-      <div className='grid__col-2'>
+          <div className='grid__col-2'>
         Name
-      </div>
+          </div>
 
-      <div className='grid__col-auto'>
+          <div className='grid__col-2'>
         Date of Birth
-      </div>
+          </div>
 
-      <div className='grid__col-auto'>
+          <div className='grid__col-2'>
         Date of Injury
-      </div>
+          </div>
 
-      <div className='grid__col-4'>
+          <div className='grid__col-3'>
         Quick Actions
+          </div>
+        </div>
       </div>
     </div>
   )

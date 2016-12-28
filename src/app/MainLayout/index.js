@@ -23,10 +23,10 @@ class MainLayout extends Component {
             fields={dropdown}
           />
         </div>
-        <div className='grid__col-lg-1 grid__col-md-3'>
-          <SideBar />
+        <div>
+          <SideBar location={this.props.location} />
         </div>
-        <div className='main-content grid__col-lg-11 grid__col-md-9'>
+        <div className='main-content grid__col-lg-auto grid__col-md-auto'>
           {this.props.children}
         </div>
         <div className='grid__col-12'>
@@ -38,7 +38,8 @@ class MainLayout extends Component {
 }
 
 MainLayout.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
+  location: PropTypes.object
 }
 
 export default MainLayout

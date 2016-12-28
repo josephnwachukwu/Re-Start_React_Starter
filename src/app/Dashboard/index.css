@@ -1,3 +1,8 @@
 .dashboard-container__loading-spinner {
   margin: 200px auto;
 }
+
+.dashbord-container__header {
+  height: 100px;
+  background: #2d83b4;
+}

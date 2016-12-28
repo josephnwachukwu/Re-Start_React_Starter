@@ -1,11 +1,13 @@
 .footer {
-  background: rgb(237, 237, 237);
-  height: 130px;
+  background: #fff;
+  border: 1px solid #ddd;
+  height: 160px;
   width: 100%;
   min-width: 1005px;
-  padding: 30px;
   overflow: hidden;
   text-align: left;
+  padding: 50px 50px 0 145px;
+  bottom: 0;
 }
 
 .footer__icon {

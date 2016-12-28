@@ -42,13 +42,13 @@ export default class ClaimCard extends Component {
         <div className='grid__col-2'>
           <p className='claim-card__name'>{name}</p>
         </div>
-        <div className='grid__col-auto'>
+        <div className='grid__col-2'>
           <p className='claim-card__birthday'>{DOB}</p>
         </div>
-        <div className='grid__col-auto'>
+        <div className='grid__col-2'>
           <p className='claim-card__injury-date'>{DOI}</p>
         </div>
-        <div className='grid__col-4'>
+        <div className='grid__col-3'>
           <div className='claim-card__buttons'>
             <a className='claim-card__quote-button' href='javascript:void(0)'>Quick Quote</a>
             <a className='claim-card__order-button' href='javascript:void(0)'>Quick Order</a>

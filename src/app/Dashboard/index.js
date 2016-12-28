@@ -63,17 +63,16 @@ export default class Dashboard extends Component {
             toggleCardExpanded={this.toggleCardExpanded}
             toggleCardLayout={this.toggleCardLayout}
           />
-          <div>Dashboard Placeholder</div>
           <div className='grid'>
             {
-              claims.map((claim, key) => {
+              claims.map((claim) => {
                 return (
                   <PatientCard
                     numActions='5'
                     layout={cardLayout}
                     expanded={cardExpanded}
                     claim={claim}
-                    key={key}
+                    key={claim.ClaimSystemId}
                   />
                 )
               })

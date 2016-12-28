@@ -2,16 +2,18 @@
   position: relative;
   float: right;
   z-index: 1000;
+  margin-top: 0;
 }
 
 .dropdown span {
-  color: $gray;
-  font-size: $fontXs;
+  color: $gray3;
+  font-size: $fontDefault;
 }
 
 .dropdown__trigger {
   border-radius: $gutterXs;
-  padding: $gutterSm $gutterNormal;
+  padding: $gutterSm $gutterDefault;
+  text-decoration: none;
 }
 
 .dropdown__trigger:hover {

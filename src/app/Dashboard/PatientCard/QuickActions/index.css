@@ -9,7 +9,7 @@
   line-height: 15px;
   font-size: $fontXs;
   color: $gray;
-  margin: $gutterNormal $gutterLg $gutterNormal 0;
+  margin: $gutterDefault $gutterLg $gutterDefault 0;
 }
 
 .quick-actions__expand-all {
@@ -22,7 +22,7 @@
   color: $lightBlue2;
   border: 1px solid $lightBlue2;
   border-radius: 4px;
-  padding: $gutterSm $gutterNormal;
+  padding: $gutterSm $gutterDefault;
   margin: $gutterXs 0;
 }
 
@@ -41,7 +41,7 @@
   color: $white;
   background-color: $lightBlue2;
   border-radius: 4px;
-  padding: $gutterSm $gutterNormal;
+  padding: $gutterSm $gutterDefault;
   margin: $gutterXs $gutterSm;
 }
 
@@ -59,7 +59,7 @@
   color: $white;
   background-color: $lightBlue2;
   border-radius: 4px;
-  padding: $gutterSm $gutterNormal;
+  padding: $gutterSm $gutterDefault;
   margin: $gutterXs 0;
 }
 

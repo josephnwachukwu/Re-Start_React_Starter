@@ -1,8 +1,22 @@
 .header {
-  margin: $gutterLg;
+  padding: $gutterLg;
   text-align: left;
+  background: #fff;
+  box-shadow: 0 -5px 20px 1px rgba(0, 0, 0, 0.2);
 }
 
 .header .header__icon {
   height: 40px;
+}
+
+.header__login-figure,
+.header__settings {
+  height: 30px;
+  width: 30px;
+  background: #2d7dab;
+  display: block;
+  float: right;
+  margin: auto 15px;
+  border-radius: 50%;
+  padding: 6px;
 }

@@ -14,7 +14,7 @@
 
 .claim-card__icon {
   padding: 0;
-  margin: $gutterNormal 0 0 0;
+  margin: $gutterDefault 0 0 0;
 }
 
 .claim-card__number {

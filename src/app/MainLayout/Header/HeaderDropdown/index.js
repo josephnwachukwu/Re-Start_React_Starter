@@ -23,7 +23,7 @@ const HeaderDropdown = props => {
       <span className='dropdown__icon'>□</span>
       <Dropdown>
         <DropdownTrigger className='dropdown__trigger' onClick={onClick}>
-          <span>Welcome <span className='dropdown__name'>{name}</span> □</span>
+          <span>Welcome <span className='dropdown__name'>{name}</span></span>
         </DropdownTrigger>
         <DropdownContent>
           <ul className='dropdown__ul'>

@@ -1,36 +1,69 @@
 .sidebar {
-  min-width: 110px;
+  width: 100px;
+  letter-spacing: normal;
 }
 
 .sideBar__menu {
   list-style: none;
-  background-color: #efefef;
+  background-color: #fff;
   text-align: center;
   padding-left: 0;
   margin: 0;
+  border-right: #d5d5d8 1px solid;
+  box-shadow: 5px 0 20px 1px rgba(0, 0, 0, 0.1);
+  height: 100%;
 }
 
-.sideBar__menu li {
+.sidebar__menu-item {
   padding: 10px;
   margin: 0;
+  height: 100px;
+  width: 100px;
 }
 
-.sideBar__menu li:hover {
-  background-color: rgba(52, 152, 219, 1);
+.sidebar__menu-item span {
+  font-size: 12px;
+  color: #444;
+  text-transform: uppercase;
+  line-height: 12px;
+  margin: 10px 0;
+  display: block;
+  text-decoration: none;
 }
 
-.sideBar__menu li:hover .badge {
-  background-color: #fff;
+.sidebar__menu-item:hover {
+  background-color: $lightGray3;
+}
+
+.sidebar__menu-item:hover g {
+  fill: #1e6491;
+}
+
+.sidebar__menu-item.active {
+  background-image: linear-gradient(0deg, #3c93c6 0%, #62b5e5 100%);
 }
 
 .sideBar__menu a {
   font-size: 12px;
-  color: #999;
+  color: #444;
   text-transform: uppercase;
-  font-weight: 700;
   line-height: 12px;
-  margin: 10px 5px;
+  margin: 10px 0;
   display: block;
+  text-decoration: none;
+}
+
+.sideBar__menu g {
+  fill: #62b5e5;
+}
+
+.sidebar__menu-item.active g,
+.sidebar__menu-item:hover .badge {
+  fill: #fff;
+}
+
+.sideBar__menu svg {
+  line-height: 48px;
 }
 
 .sideBar__menu img {
@@ -40,15 +73,18 @@
   height: 48px;
   border: #999 1px solid;
   margin: 5px auto;
+  line-height: 48px;
 }
 
 .sideBar__menu .badge {
-  background-color: #999;
-  border-radius: 12px;
-  width: 50px;
-  margin: 3px auto;
+  background-color: #666;
+  border-radius: 7px;
+  width: 34px;
+  margin: -10px 0 0 40px;
   display: block;
-  height: 20px;
+  height: 12px;
   font-size: 11px;
-  line-height: 20px;
+  line-height: 13px;
+  position: relative;
+  z-index: 2;
 }
