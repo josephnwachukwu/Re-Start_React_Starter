@@ -1,9 +1,11 @@
 import React from 'react'
 import { expect } from 'chai'
 import { shallow } from 'enzyme'
+
 import ClaimCard from './index.js'
-import Pin from '../../../theme/icons/Pin-1.svg'
-import Unpin from '../../../theme/icons/Unpin-1.svg'
+
+import Pinned from '../../../theme/icons/Pinned.svg'
+import Unpinned from '../../../theme/icons/Unpinned.svg'
 
 describe('Claim Card component', function () {
   it('has the correct icons', function () {
@@ -25,8 +27,8 @@ describe('Claim Card component', function () {
       DOI: '2016-04-19T00:00:00.000Z'
     }
 
-    expect(shallow(<ClaimCard claim={claimPinned} />).find(Pin).length).to.equal(1)
-    expect(shallow(<ClaimCard claim={claimUnpinned} />).find(Unpin).length).to.equal(1)
+    expect(shallow(<ClaimCard claim={claimPinned} />).find(Pinned).length).to.equal(1)
+    expect(shallow(<ClaimCard claim={claimUnpinned} />).find(Unpinned).length).to.equal(1)
   })
 
   it('has the correct DOB and DOI', function () {

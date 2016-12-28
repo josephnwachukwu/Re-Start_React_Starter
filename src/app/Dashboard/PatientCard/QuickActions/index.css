@@ -1,0 +1,74 @@
+.quick-actions .quick-action__buttons {
+  margin: $gutterXs $gutterLg $gutterSm $gutterLg;
+  display: inline-block;
+}
+
+.quick-actions__label {
+  float: right;
+  width: 90px;
+  line-height: 15px;
+  font-size: $fontXs;
+  color: $gray;
+  margin: $gutterNormal $gutterLg $gutterNormal 0;
+}
+
+.quick-actions__expand-all {
+  float: right;
+  height: 35px;
+  width: 100px;
+  line-height: 14px;
+  font-size: $fontXs;
+  font-weight: bold;
+  color: $lightBlue2;
+  border: 1px solid $lightBlue2;
+  border-radius: 4px;
+  padding: $gutterSm $gutterNormal;
+  margin: $gutterXs 0;
+}
+
+.quick-actions__expand-all:hover {
+  color: $lightBlue3;
+  border: 1px solid $lightBlue3;
+}
+
+.quick-actions__quick-order {
+  float: right;
+  height: 35px;
+  width: 105px;
+  line-height: 14px;
+  font-size: $fontXs;
+  font-weight: bold;
+  color: $white;
+  background-color: $lightBlue2;
+  border-radius: 4px;
+  padding: $gutterSm $gutterNormal;
+  margin: $gutterXs $gutterSm;
+}
+
+.quick-actions__quick-order:hover {
+  background-color: $lightBlue3;
+}
+
+.quick-actions__quick-quote {
+  float: right;
+  height: 35px;
+  width: 105px;
+  line-height: 14px;
+  font-size: $fontXs;
+  font-weight: bold;
+  color: $white;
+  background-color: $lightBlue2;
+  border-radius: 4px;
+  padding: $gutterSm $gutterNormal;
+  margin: $gutterXs 0;
+}
+
+.quick-actions__quick-quote:hover {
+  background-color: $lightBlue3;
+}
+
+.quick-actions__expand-all,
+.quick-actions__quick-order,
+.quick-actions__quick-quote:hover {
+  cursor: pointer;
+}

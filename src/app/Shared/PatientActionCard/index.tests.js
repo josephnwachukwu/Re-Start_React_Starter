@@ -3,7 +3,7 @@ import { expect } from 'chai'
 import { shallow } from 'enzyme'
 import PatientActionCard from './index.js'
 
-import Diagnostics from '../../../theme/icons/Diagnostics.svg'
+import Diagnostics from '../../../theme/icons/PatientCard/Diagnostics.svg'
 import Pending from '../../../theme/icons/Status-Pending.svg'
 
 describe('Patient Action Card component', function () {
@@ -39,10 +39,10 @@ describe('Patient Action Card component', function () {
       ]
     }
 
-    const component = shallow(<PatientActionCard action={patientAction} />)
-    expect(component.find('.action-card__tag').text()).to.equal('PENDING')
-    expect(component.find('.action-card__month').text()).to.equal('DEC')
-    expect(component.find('.action-card__day').text()).to.equal('5')
+    const component = shallow(<PatientActionCard layout='row' action={patientAction} />)
+    expect(component.find('.patient-action-card__tag').text()).to.equal('PENDING')
+    expect(component.find('.patient-action-card__month').text()).to.equal('DEC')
+    expect(component.find('.patient-action-card__day').text()).to.equal('5')
   })
 
   it('has the correct status icon', function () {
@@ -80,7 +80,7 @@ describe('Patient Action Card component', function () {
     expect(shallow(<PatientActionCard action={patientAction} />).find(Pending).length).to.equal(1)
   })
 
-  it('has the correct icon', function () {
+  it('has the correct product line icon', function () {
     const patientAction = {
       ProductLine: 'DIAGNOSTICS',
       ServiceType: 'STANDARD',
@@ -148,8 +148,8 @@ describe('Patient Action Card component', function () {
     }
 
     const component = shallow(<PatientActionCard action={patientAction} />)
-    component.find('.action-card__button').simulate('click')
+    component.find('.patient-action-card__button').simulate('click')
     expect(component.state('dropdownActive')).to.equal(true)
-    expect(component.find('.action-card__dropdown').length).to.equal(1)
+    expect(component.find('.patient-action-card__dropdown').length).to.equal(1)
   })
 })

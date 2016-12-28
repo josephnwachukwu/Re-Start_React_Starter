@@ -9,6 +9,12 @@
   src: url('./theme/fonts/Proxima Nova/ProximaNova Bold.otf') format('opentype');
 }
 
+@font-face {
+  font-family: 'Proxima Nova';
+  font-weight: 500;
+  src: url('./theme/fonts/Proxima Nova/ProximaNova Semibold.otf') format('opentype');
+}
+
 * {
   font-family: 'Proxima Nova', sans-serif;
 }

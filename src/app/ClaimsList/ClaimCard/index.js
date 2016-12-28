@@ -2,8 +2,8 @@ import React, { Component, PropTypes } from 'react'
 import { stripTimezone } from '../../Shared/Utils'
 import format from 'date-fns/format'
 
-import Pin from '../../../theme/icons/Pin-1.svg'
-import Unpin from '../../../theme/icons/Unpin-1.svg'
+import Pinned from '../../../theme/icons/Pinned.svg'
+import Unpinned from '../../../theme/icons/Unpinned.svg'
 
 import './index.css'
 
@@ -33,7 +33,7 @@ export default class ClaimCard extends Component {
       <div className='grid claim-card' onClick={this.onClick}>
         <div className='grid__col-1'>
           <a className='claim-card__icon'>
-            {this.props.claim.IsPinned ? <Pin /> : <Unpin />}
+            {this.props.claim.IsPinned ? <Pinned /> : <Unpinned />}
           </a>
         </div>
         <div className='grid__col-2'>

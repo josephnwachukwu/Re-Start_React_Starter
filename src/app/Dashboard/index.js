@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 
 import { getClaimActions } from './Api'
 
-import PatientActionCard from '../Shared/PatientActionCard'
+import PatientCard from './PatientCard'
+import ViewSwitcher from './ViewSwitcher'
 import LoadingSpinner from '../../theme/spinners/ring-alt-loader.svg'
 
 import './index.css'
@@ -11,9 +12,14 @@ export default class Dashboard extends Component {
   constructor (props) {
     super(props)
 
+    this.toggleCardExpanded = this.toggleCardExpanded.bind(this)
+    this.toggleCardLayout = this.toggleCardLayout.bind(this)
+
     this.state = {
       claims: [],
-      loading: true
+      loading: true,
+      cardExpanded: true,
+      cardLayout: 'col'
     }
   }
 
@@ -30,9 +36,19 @@ export default class Dashboard extends Component {
       })
   }
 
+  toggleCardExpanded () {
+    this.setState({cardExpanded: !this.state.cardExpanded})
+  }
+
+  toggleCardLayout (layout) {
+    this.setState({cardLayout: layout})
+  }
+
   render () {
     const loading = this.state.loading
-    const claims = this.state.claims || []
+    const claims = this.state.claims
+    const cardLayout = this.state.cardLayout
+    const cardExpanded = this.state.cardExpanded
 
     if (loading) {
       return (
@@ -41,21 +57,28 @@ export default class Dashboard extends Component {
     } else {
       return (
         <div>
+          <ViewSwitcher
+            cardExpanded={cardExpanded}
+            cardLayout={cardLayout}
+            toggleCardExpanded={this.toggleCardExpanded}
+            toggleCardLayout={this.toggleCardLayout}
+          />
           <div>Dashboard Placeholder</div>
-          {
-            claims.map((claim) => {
-              let actions = claim.Actions || []
-
-              return actions.map((action) => {
+          <div className='grid'>
+            {
+              claims.map((claim, key) => {
                 return (
-                  <PatientActionCard
-                    action={action}
-                    key={action.ActionId}
+                  <PatientCard
+                    numActions='5'
+                    layout={cardLayout}
+                    expanded={cardExpanded}
+                    claim={claim}
+                    key={key}
                   />
                 )
               })
-            })
-          }
+            }
+          </div>
         </div>
       )
     }

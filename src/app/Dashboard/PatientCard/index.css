@@ -1,0 +1,83 @@
+.patient-card .patient-card--row,
+.patient-card .patient-card--col {
+  margin: $gutterLg;
+}
+
+.patient-card--row .patient-card--row__header,
+.patient-card--col .patient-card--col__header {
+  margin: $gutterXs;
+  background: $lightGray5;
+}
+
+.patient-card--row__header .patient-card--row__pin {
+  padding: $gutterXl;
+  max-width: 60px;
+  min-width: 60px;
+}
+
+.patient-card--row__header .patient-card--row__title {
+  padding: $gutterSm 0 $gutterNormal 0;
+  text-align: left;
+}
+
+.patient-card--row__name {
+  color: $lightBlue2;
+  font-weight: 500;
+  font-size: $fontXxxxl;
+  height: 40px;
+  line-height: 40px;
+}
+
+.patient-card--row__num {
+  color: $gray5;
+  font-weight: bold;
+  font-size: $fontSm;
+  height: 15px;
+  line-height: 15px;
+}
+
+.patient-card--row__header .patient-card--row__icon {
+  padding: $gutterXxl 0;
+  margin-right: $gutterXl;
+  max-width: 15px;
+  min-width: 15px;
+}
+
+.patient-card__border {
+  margin: 0 $gutterXs;
+  height: 1px;
+  background: $lightGray;
+}
+
+.patient-card--col__header .patient-card--col__pin {
+  padding: $gutterXl;
+  max-width: 60px;
+  min-width: 60px;
+}
+
+.patient-card--col__header .patient-card--col__title {
+  padding: $gutterSm 0 $gutterNormal 0;
+  text-align: left;
+}
+
+.patient-card--col__name {
+  color: $lightBlue2;
+  font-weight: 500;
+  font-size: $fontXxxxl;
+  height: 40px;
+  line-height: 40px;
+}
+
+.patient-card--col__num {
+  color: $gray5;
+  font-weight: bold;
+  font-size: $fontSm;
+  height: 15px;
+  line-height: 15px;
+}
+
+.patient-card--col__border {
+  margin: 0 $gutterXs;
+  height: 1px;
+  background: $lightGray;
+}
