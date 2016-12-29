@@ -5,4 +5,5 @@
 .dashbord-container__header {
   height: 100px;
   background: #2d83b4;
+  padding: 0 40px;
 }

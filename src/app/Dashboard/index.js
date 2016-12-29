@@ -5,6 +5,7 @@ import { getClaimActions } from './Api'
 import PatientCard from './PatientCard'
 import ViewSwitcher from './ViewSwitcher'
 import LoadingSpinner from '../../theme/spinners/ring-alt-loader.svg'
+import PatientCount from './PatientCount'
 
 import './index.css'
 
@@ -56,27 +57,41 @@ export default class Dashboard extends Component {
       )
     } else {
       return (
-        <div>
-          <ViewSwitcher
-            cardExpanded={cardExpanded}
-            cardLayout={cardLayout}
-            toggleCardExpanded={this.toggleCardExpanded}
-            toggleCardLayout={this.toggleCardLayout}
-          />
-          <div className='grid'>
-            {
-              claims.map((claim) => {
-                return (
-                  <PatientCard
-                    numActions='5'
-                    layout={cardLayout}
-                    expanded={cardExpanded}
-                    claim={claim}
-                    key={claim.ClaimSystemId}
-                  />
-                )
-              })
-            }
+        <div className='dashbord-container'>
+          <div className='dashbord-container__header'>
+            <div className='grid'>
+              <div className='grid__col-4'>
+                <PatientCount
+                  pinnedCount={26}
+                  totalCount={150}
+                />
+              </div>
+              <div className='grid__col-8'>
+                <ViewSwitcher
+                  cardExpanded={cardExpanded}
+                  cardLayout={cardLayout}
+                  toggleCardExpanded={this.toggleCardExpanded}
+                  toggleCardLayout={this.toggleCardLayout}
+                />
+              </div>
+            </div>
+          </div>
+          <div className='dashboard-container__body'>
+            <div className='grid'>
+              {
+                claims.map((claim) => {
+                  return (
+                    <PatientCard
+                      numActions='5'
+                      layout={cardLayout}
+                      expanded={cardExpanded}
+                      claim={claim}
+                      key={claim.ClaimSystemId}
+                    />
+                  )
+                })
+              }
+            </div>
           </div>
         </div>
       )

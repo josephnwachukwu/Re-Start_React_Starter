@@ -20,8 +20,8 @@
     "type": "git",
     "url": "https://occm.visualstudio.com/_git/PolarisUI"
   },
-  "engines" : {
-    "node" : "6.9.1"
+  "engines": {
+    "node": "6.9.1"
   },
   "keywords": [],
   "author": "",
@@ -103,6 +103,7 @@
     "react-simple-dropdown": "^1.1.4",
     "reflex-grid": "^1.1.1",
     "sanitize.css": "4.1.0",
+    "victory": "^0.14.2",
     "whatwg-fetch": "1.0.0"
   }
 }
