@@ -12,4 +12,19 @@ function getClaimActions (adjusterId) {
   })
 }
 
-export { getClaimActions }
+function getMetrics (adjusterId) {
+  const baseUrl = getAPIBaseURL()
+  const url = `${baseUrl}/adjusters/${adjusterId}/metrics`
+
+  return fetch(url, {
+    credentials: 'omit',
+    mode: 'cors'
+  }).then((response) => {
+    return response.json()
+  })
+}
+
+export {
+  getClaimActions,
+  getMetrics
+}

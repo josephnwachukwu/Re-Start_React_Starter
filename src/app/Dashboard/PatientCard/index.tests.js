@@ -1,12 +1,15 @@
 import React from 'react'
 import { expect } from 'chai'
 import { shallow } from 'enzyme'
+
 import PatientCard from './index.js'
 import PatientActionCard from '../../Shared/PatientActionCard'
 
 describe('Patient Card component', function () {
   it('has the correct patient name', function () {
-    const patientAction = {}
+    const patientAction = {
+      ActionId: '1'
+    }
     const claim = {
       PatientFirstName: 'John',
       PatientLastName: 'Smith',
@@ -26,7 +29,9 @@ describe('Patient Card component', function () {
   })
 
   it('expands when clicked', function () {
-    const patientAction = []
+    const patientAction = {
+      ActionId: '1'
+    }
     const claim = {
       PatientFirstName: 'John',
       PatientLastName: 'Smith',
@@ -49,7 +54,17 @@ describe('Patient Card component', function () {
   })
 
   it('has the expected number of cards', function () {
-    const patientActions = [ {}, {}, {} ]
+    const patientActions = [
+      {
+        ActionId: '1'
+      },
+      {
+        ActionId: '2'
+      },
+      {
+        ActionId: '3'
+      }
+    ]
     const claim = {
       PatientFirstName: 'John',
       PatientLastName: 'Smith',
@@ -71,7 +86,9 @@ describe('Patient Card component', function () {
   })
 
   it('it displays the correct layout', function () {
-    const patientAction = []
+    const patientAction = {
+      ActionId: '1'
+    }
     const claim = {
       PatientFirstName: 'John',
       PatientLastName: 'Smith',

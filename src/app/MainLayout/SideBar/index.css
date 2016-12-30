@@ -11,7 +11,6 @@
   margin: 0;
   border-right: #d5d5d8 1px solid;
   box-shadow: 5px 0 20px 1px rgba(0, 0, 0, 0.1);
-  height: 100%;
 }
 
 .sidebar__menu-item {
@@ -19,6 +18,7 @@
   margin: 0;
   height: 100px;
   width: 100px;
+  border-right: #d5d5d8 1px solid;
 }
 
 .sidebar__menu-item span {

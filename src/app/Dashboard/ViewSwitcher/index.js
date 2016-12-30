@@ -14,7 +14,7 @@ const ViewSwitcher = props => {
   return (
     <div className='view-switcher'>
       <div className='grid view-switcher__buttons'>
-        <div className='grid__col- view-switcher__collapse-button' onClick={props.toggleCardExpanded}>
+        <div className='grid__col-2 view-switcher__collapse-button' onClick={props.toggleCardExpanded}>
           <span className='view-switcher__collapse-button--text'>{props.cardExpanded ? 'COLLAPSE ALL' : 'EXPAND ALL'}</span>
           <TemporaryIcon />
         </div>

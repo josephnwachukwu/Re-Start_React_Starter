@@ -1,7 +1,7 @@
 .view-switcher .view-switcher__buttons {
   background: $blue;
   padding: $gutterXxxl 0;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .view-switcher .view-switcher__collapse-button {
