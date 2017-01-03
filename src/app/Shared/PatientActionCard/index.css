@@ -68,7 +68,6 @@
   border-left: 1px solid $lightGray;
   border-right: 1px solid $lightGray;
   height: 40px;
-  overflow: hidden;
 }
 
 .patient-action-card__body .patient-action-card__title {
@@ -130,7 +129,7 @@
 }
 
 .patient-action-card__dropdown-border {
-  margin: 0 $gutterXs $gutterSm $gutterXs;
+  margin: -$gutterXs $gutterXs $gutterSm $gutterXs;
   height: 1px;
   background: $lightGray;
 }

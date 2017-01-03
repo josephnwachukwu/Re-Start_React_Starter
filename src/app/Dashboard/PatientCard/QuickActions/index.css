@@ -22,7 +22,7 @@
   color: $lightBlue2;
   border: 1px solid $lightBlue2;
   border-radius: 4px;
-  padding: $gutterSm $gutterDefault;
+  padding: calc($gutterSm + 1) $gutterDefault;
   margin: $gutterXs 0;
 }
 
@@ -41,7 +41,7 @@
   color: $white;
   background-color: $lightBlue2;
   border-radius: 4px;
-  padding: $gutterSm $gutterDefault;
+  padding: calc($gutterSm + 1) $gutterDefault;
   margin: $gutterXs $gutterSm;
 }
 
@@ -59,7 +59,7 @@
   color: $white;
   background-color: $lightBlue2;
   border-radius: 4px;
-  padding: $gutterSm $gutterDefault;
+  padding: calc($gutterSm + 1) $gutterDefault;
   margin: $gutterXs 0;
 }
 

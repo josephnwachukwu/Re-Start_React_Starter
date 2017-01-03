@@ -2,13 +2,15 @@
   background: $blue;
   padding: $gutterXxxl 0;
   justify-content: flex-end;
+  height: 100px;
 }
 
 .view-switcher .view-switcher__collapse-button {
   display: inline-block;
-  margin-right: $gutterXl;
+  margin: 3px $gutterXl;
   padding: $gutterSsm $gutterXs $gutterSsm $gutterDefault;
   width: 125px;
+  height: 32px;
   font-size: $fontXxs;
   font-weight: bold;
   text-align: center;
@@ -18,7 +20,26 @@
 }
 
 .view-switcher__collapse-button .view-switcher__collapse-button--text {
+  padding-top: 2px;
+  margin-left: $gutterSm;
+}
+
+.view-switcher__collapse-button .view-switcher__expand-button--text {
+  padding-top: 2px;
   margin-right: $gutterSm;
+}
+
+.view-switcher__collapse-button--circle {
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  top: -3px;
+  background: $lightBlue3;
+  margin-right: $gutterSm;
+}
+
+.view-switcher__collapse-button:hover .view-switcher__collapse-button--circle {
+  background: $darkBlue;
 }
 
 .view-switcher .view-switcher__row-button--active {
@@ -39,6 +60,10 @@
   border-radius: 4px 0 0 4px;
 }
 
+.view-switcher .view-switcher__row-button:hover {
+  background: $darkBlue;
+}
+
 .view-switcher .view-switcher__col-button--active {
   width: 50px;
   height: 32px;
@@ -55,6 +80,10 @@
   padding: $gutterSsm $gutterDefault;
   background: $lightBlue3;
   border-radius: 0 4px 4px 0;
+}
+
+.view-switcher .view-switcher__col-button:hover {
+  background: $darkBlue;
 }
 
 .view-switcher__collapse-button,

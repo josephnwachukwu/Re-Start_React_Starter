@@ -20,7 +20,7 @@ export default class PatientCard extends Component {
     this.renderView = this.renderView.bind(this)
 
     // Only keep numActions worth of actions
-    let actions = []
+    let actions
     actions = _.take(props.claim.Actions, props.numActions)
 
     this.state = {
@@ -42,7 +42,7 @@ export default class PatientCard extends Component {
   renderCards (layout) {
     if (this.state.expanded) {
       return (
-        this.state.actions.map((action, key) => {
+        this.state.actions.map((action) => {
           return (
             <div key={action.ActionId}>
               <div className='patient-card__border' />

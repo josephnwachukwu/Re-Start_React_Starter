@@ -5,6 +5,7 @@ module.exports = {
   'lightGray4': '#f6f6f8',
   'lightGray5': '#ccc',
   'lightGray6': '#888',
+  'lightGray7': '#f4f4f3',
   'gray': '#666',
   'gray2': '#999',
   'gray3': '#444',
@@ -21,6 +22,7 @@ module.exports = {
   'black': '#222',
   'black2': '#101010',
 
+  'gutterXxxxl': '40px',
   'gutterXxxl': '32px',
   'gutterXxl': '30px',
   'gutterXl': '25px',
