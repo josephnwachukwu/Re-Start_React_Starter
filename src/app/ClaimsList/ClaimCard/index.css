@@ -12,11 +12,6 @@
   background: #d8dfe1;
 }
 
-.claim-card__icon {
-  padding: 0;
-  margin: $gutterDefault 0 0 0;
-}
-
 .claim-card__number {
   border-left: 1px solid $lightGray2;
   border-right: 1px solid $lightGray2;

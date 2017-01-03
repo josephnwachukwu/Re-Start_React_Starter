@@ -10,7 +10,6 @@
 }
 
 .patient-card--row__header .patient-card--row__pin {
-  padding: $gutterXl;
   max-width: 60px;
   min-width: 60px;
 }
@@ -50,7 +49,6 @@
 }
 
 .patient-card--col__header .patient-card--col__pin {
-  padding: $gutterXl;
   max-width: 60px;
   min-width: 60px;
 }

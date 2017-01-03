@@ -15,6 +15,7 @@ export default class Dashboard extends Component {
 
     this.toggleCardExpanded = this.toggleCardExpanded.bind(this)
     this.toggleCardLayout = this.toggleCardLayout.bind(this)
+    this.updatePinnedStatus = this.updatePinnedStatus.bind(this)
 
     this.state = {
       claims: [],
@@ -60,6 +61,22 @@ export default class Dashboard extends Component {
     this.setState({cardLayout: layout})
   }
 
+  updatePinnedStatus (claimId, pinnedStatus) {
+    let claims = this.state.claims
+
+    for (let i = 0; i < claims.length; i++) {
+      let claim = claims[i]
+      if (claim.ClaimSystemId === claimId) {
+        claim.PinnedStatus = pinnedStatus
+        break
+      }
+    }
+
+    this.setState({
+      claims
+    })
+  }
+
   render () {
     const loading = this.state.loading
     const claims = this.state.claims
@@ -96,15 +113,18 @@ export default class Dashboard extends Component {
             <div className='grid'>
               {
                 claims.map((claim) => {
-                  return (
-                    <PatientCard
-                      numActions='5'
-                      layout={cardLayout}
-                      expanded={cardExpanded}
-                      claim={claim}
-                      key={claim.ClaimSystemId}
-                    />
-                  )
+                  if (claim.PinnedStatus === true) {
+                    return (
+                      <PatientCard
+                        numActions='5'
+                        layout={cardLayout}
+                        expanded={cardExpanded}
+                        claim={claim}
+                        updatePinnedStatus={this.updatePinnedStatus}
+                        key={claim.ClaimSystemId}
+                      />
+                    )
+                  }
                 })
               }
             </div>

@@ -1,11 +1,16 @@
+.dropdown-container,
 .dropdown {
   position: relative;
   float: right;
   z-index: 1000;
-  margin-top: 0;
+  margin: 4px 0 0;
 }
 
-.dropdown span {
+.dropdown-container {
+  margin-right: 13px;
+}
+
+.dropdown-container span {
   color: $gray3;
   font-size: $fontDefault;
 }
@@ -21,15 +26,15 @@
 }
 
 .dropdown__icon {
-  padding: $gutterSm 0;
-  margin-right: $gutterSm;
+  margin: 4px $gutterSm 0 0;
+  float: left;
 }
 
 .dropdown__name {
   font-weight: bold;
 }
 
-.dropdown {
+.dropdown-container {
   display: inline-block;
 }
 

@@ -3,6 +3,8 @@ module.exports = {
   'lightGray2': '#f2f2f2',
   'lightGray3': '#f1f1f3',
   'lightGray4': '#f6f6f8',
+  'lightGray5': '#ccc',
+  'lightGray6': '#888',
   'gray': '#666',
   'gray2': '#999',
   'gray3': '#444',

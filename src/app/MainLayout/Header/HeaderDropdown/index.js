@@ -19,8 +19,8 @@ const HeaderDropdown = props => {
   }
 
   return (
-    <div className='dropdown'>
-      <span className='dropdown__icon'>□</span>
+    <div className='dropdown-container'>
+      <div className='dropdown__icon'>□</div>
       <Dropdown>
         <DropdownTrigger className='dropdown__trigger' onClick={onClick}>
           <span>Welcome <span className='dropdown__name'>{name}</span></span>

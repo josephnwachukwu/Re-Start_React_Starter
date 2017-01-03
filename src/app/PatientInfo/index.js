@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import PatientActionCard from '../Shared/PatientActionCard'
-import actionCardMockData from './Api/actionCardMockData.json'
+import { getClaimActions } from './Api'
 
 import LoadingSpinner from '../../theme/spinners/ring-alt-loader.svg'
 
@@ -18,10 +18,14 @@ export default class PatientInfo extends Component {
   }
 
   componentDidMount () {
-    this.setState({
-      actions: actionCardMockData.Payload[0].Actions,
-      loading: false
-    })
+    const claimId = 'f389d478-a64b-4693-b6ad-923bd6f24716'
+    getClaimActions(claimId)
+      .then((response) => {
+        this.setState({
+          actions: response.Payload.Actions,
+          loading: false
+        })
+      })
   }
 
   render () {

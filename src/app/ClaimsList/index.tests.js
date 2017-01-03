@@ -10,7 +10,7 @@ import Subheader from './Subheader'
 
 proxyquire.noCallThru()
 
-describe('ClaimsList component', function () {
+describe('ClaimsList container component', function () {
   it('has a binClaims method that bins/chunks claims based on patient lastname and pinned status', function () {
     const claimsList = shallow(<ClaimsList />)
 

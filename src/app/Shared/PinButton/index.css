@@ -1,0 +1,29 @@
+.pin-button-container {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.pin-button {
+  cursor: pointer;
+  height: 31px;
+  width: 30px;
+  padding-top: 4px;
+}
+
+.pin-button--pinned g {
+  fill: $lightBlue2;
+}
+
+.pin-button--pinned:hover g {
+  fill: $lightBlue3;
+}
+
+.pin-button--unpinned g {
+  fill: $lightGray5;
+}
+
+.pin-button--unpinned:hover g {
+  fill: $lightGray6;
+}

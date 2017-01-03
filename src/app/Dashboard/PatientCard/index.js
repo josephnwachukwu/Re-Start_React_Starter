@@ -4,8 +4,7 @@ import _ from 'lodash'
 import PatientActionCard from '../../Shared/PatientActionCard'
 import QuickActions from './QuickActions'
 
-import Pinned from '../../../theme/icons/Pinned.svg'
-import Unpinned from '../../../theme/icons/Unpinned.svg'
+import PinButton from '../../Shared/PinButton'
 
 import Collapsed from '../../../theme/icons/PatientCard/Collapsed.svg'
 import Expanded from '../../../theme/icons/PatientCard/Expanded.svg'
@@ -61,7 +60,6 @@ export default class PatientCard extends Component {
   renderView () {
     const layout = this.props.layout
     const claimNum = this.props.claim.ClaimNumber
-    const pinned = this.props.claim.PinnedStatus
     const name = this.props.claim.PatientFirstName + ' ' + this.props.claim.PatientLastName
     const expanded = this.state.expanded
 
@@ -71,7 +69,11 @@ export default class PatientCard extends Component {
           <div className='patient-card--col'>
             <div className='grid patient-card--col__header'>
               <div className='grid__col-1 patient-card--col__pin'>
-                {pinned ? <Pinned /> : <Unpinned />}
+                <PinButton
+                  claimId={this.props.claim.ClaimSystemId}
+                  pinned={this.props.claim.PinnedStatus}
+                  updatePinnedStatus={this.props.updatePinnedStatus}
+                />
               </div>
               <div className='grid__col-auto patient-card--col__title'>
                 <span className='patient-card--col__name'>{name}</span>
@@ -94,11 +96,15 @@ export default class PatientCard extends Component {
           <div className='patient-card--row'>
             <div className='grid patient-card--row__header'>
               <div className='grid__col-1 patient-card--row__pin'>
-                {pinned ? <Pinned /> : <Unpinned />}
+                <PinButton
+                  claimId={this.props.claim.ClaimSystemId}
+                  pinned={this.props.claim.PinnedStatus}
+                  updatePinnedStatus={this.props.updatePinnedStatus}
+                />
               </div>
               <div className='grid__col-auto patient-card--row__title'>
                 <span className='patient-card--row__name'>{name}</span>
-                <span className='patient-card-row__num'>{claimNum}</span>
+                <span className='patient-card--row__num'>{claimNum}</span>
               </div>
               <div className='grid__col-1 patient-card--row__icon' onClick={this.toggleExpanded}>
                 {expanded ? <Expanded /> : <Collapsed />}
@@ -133,6 +139,7 @@ PatientCard.propTypes = {
   expanded: PropTypes.bool,
   claim: PropTypes.shape({
     ClaimNumber: PropTypes.string,
+    ClaimSystemId: PropTypes.string,
     PatientFirstName: PropTypes.string,
     PatientLastName: PropTypes.string,
     PinnedStatus: PropTypes.bool,
@@ -153,5 +160,6 @@ PatientCard.propTypes = {
         )
       })
     )
-  })
+  }),
+  updatePinnedStatus: PropTypes.func
 }

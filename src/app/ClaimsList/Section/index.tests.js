@@ -1,6 +1,7 @@
 import React from 'react'
 import { expect } from 'chai'
 import { mount } from 'enzyme'
+
 import Section from './index.js'
 
 describe('Section component', function () {

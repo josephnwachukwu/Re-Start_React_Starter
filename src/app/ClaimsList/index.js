@@ -20,6 +20,8 @@ export default class ClaimsList extends Component {
       binnedClaims: {},
       loading: true
     }
+
+    this.updatePinnedStatus = this.updatePinnedStatus.bind(this)
   }
 
   componentDidMount () {
@@ -62,6 +64,23 @@ export default class ClaimsList extends Component {
     return binnedClaims
   }
 
+  updatePinnedStatus (claimId, pinnedStatus) {
+    let claims = this.state.claims
+
+    for (let i = 0; i < claims.length; i++) {
+      let claim = claims[i]
+      if (claim.ClaimSystemId === claimId) {
+        claim.IsPinned = pinnedStatus
+        break
+      }
+    }
+
+    this.setState({
+      claims,
+      binnedClaims: this.binClaims(claims)
+    })
+  }
+
   render () {
     const loading = this.state.loading
     let sortedTitles = _.without(Object.keys(this.state.binnedClaims).sort(), 'Pinned')
@@ -88,6 +107,7 @@ export default class ClaimsList extends Component {
                   key={title}
                   title={title}
                   claims={this.state.binnedClaims[title]}
+                  updatePinnedStatus={this.updatePinnedStatus}
                 />
               )
             })

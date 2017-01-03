@@ -4,7 +4,7 @@ import { mount } from 'enzyme'
 import sinon from 'sinon'
 import proxyquire from 'proxyquire'
 
-describe('Dashboard component', function () {
+describe('Dashboard container component', function () {
   it('should call the getClaimActions and getMetrics methods on componentDidMount and set loading state to false', function (done) {
     const getClaimActions = sinon.stub().returns(Promise.resolve([]))
     const getMetrics = sinon.stub().returns(Promise.resolve([]))

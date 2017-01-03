@@ -26,7 +26,8 @@ const Section = props => {
             return (
               <ClaimCard
                 claim={claim}
-                key={key}
+                key={claim.ClaimSystemId || key}
+                updatePinnedStatus={props.updatePinnedStatus}
               />
             )
           })
@@ -38,7 +39,8 @@ const Section = props => {
 
 Section.propTypes = {
   title: PropTypes.string,
-  claims: PropTypes.array
+  claims: PropTypes.array,
+  updatePinnedStatus: PropTypes.func
 }
 
 export default Section

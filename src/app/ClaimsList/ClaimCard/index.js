@@ -2,8 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { stripTimezone } from '../../Shared/Utils'
 import format from 'date-fns/format'
 
-import Pinned from '../../../theme/icons/Pinned.svg'
-import Unpinned from '../../../theme/icons/Unpinned.svg'
+import PinButton from '../../Shared/PinButton'
 
 import './index.css'
 
@@ -31,10 +30,12 @@ export default class ClaimCard extends Component {
 
     return (
       <div className='grid claim-card' onClick={this.onClick}>
-        <div className='grid__col-1'>
-          <a className='claim-card__icon'>
-            {this.props.claim.IsPinned ? <Pinned /> : <Unpinned />}
-          </a>
+        <div className='grid__col-1 claim-card__pin'>
+          <PinButton
+            claimId={this.props.claim.ClaimSystemId}
+            pinned={this.props.claim.IsPinned}
+            updatePinnedStatus={this.props.updatePinnedStatus}
+          />
         </div>
         <div className='grid__col-2'>
           <p className='claim-card__number'>{this.props.claim.ClaimNumber}</p>
@@ -62,10 +63,12 @@ export default class ClaimCard extends Component {
 ClaimCard.propTypes = {
   claim: PropTypes.shape({
     IsPinned: PropTypes.bool,
+    ClaimSystemId: PropTypes.string,
     ClaimNumber: PropTypes.string,
     PatientFirstName: PropTypes.string,
     PatientLastName: PropTypes.string,
     DOB: PropTypes.string,
     DOI: PropTypes.string
-  })
+  }),
+  updatePinnedStatus: PropTypes.func
 }
