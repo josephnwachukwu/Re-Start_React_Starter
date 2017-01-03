@@ -90,8 +90,8 @@ export default class Dashboard extends Component {
       )
     } else {
       return (
-        <div className='dashbord-container'>
-          <div className='dashbord-container__header'>
+        <div className='dashboard-container'>
+          <div className='dashboard-container__header'>
             <div className='grid'>
               <div className='grid__col-4'>
                 <PatientCount

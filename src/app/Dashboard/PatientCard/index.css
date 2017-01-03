@@ -1,11 +1,14 @@
 .patient-card .patient-card--row,
 .patient-card .patient-card--col {
-  margin: $gutterLg;
+  margin: $gutterDefault $gutterLg;
+  padding: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .patient-card--row .patient-card--row__header,
 .patient-card--col .patient-card--col__header {
   margin: $gutterXs;
+  width: calc(100% - 10px);
   background: $lightGray4;
 }
 

@@ -97,7 +97,7 @@ export default class PatientActionCard extends Component {
               return (
                 <div className='grid patient-action-card__dropdown-card' key={index}>
                   <div className='grid__col-2 patient-action-card__dropdown-padding' />
-                  <div className='grid__col-3 patient-action-card__dropdown-tag'>
+                  <div className='grid__col-4 patient-action-card__dropdown-tag'>
                     {field.Name}
                   </div>
                   <div className='grid__col-auto patient-action-card__dropdown-content'>
@@ -132,7 +132,7 @@ export default class PatientActionCard extends Component {
             <span className='patient-action-card__day'>{day}</span>
           </div>
           <div className='grid__col-auto patient-action-card__body'>
-            <div className='grid__col-8 patient-action-card__title'>
+            <div className='grid__col-9 patient-action-card__title'>
               {action.ActionTitle}
             </div>
             <div className='patient-action-card--col__status'>

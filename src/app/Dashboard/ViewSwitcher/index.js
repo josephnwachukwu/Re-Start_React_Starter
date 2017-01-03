@@ -6,17 +6,33 @@ import ListView from '../../../theme/icons/ToggleViewer-List.svg'
 import CardViewActive from '../../../theme/icons/ToggleViewer-Card-Active.svg'
 import ListViewActive from '../../../theme/icons/ToggleViewer-List-Active.svg'
 
-import TemporaryIcon from '../../../theme/icons/Temporary-Icon.svg'
-
 import './index.css'
 
 const ViewSwitcher = props => {
+  function toggleCollapseExpand () {
+    if (props.cardExpanded) {
+      return (
+        <div className='grid view-switcher__collapse-button--container'>
+          <span className={'grid__col-4 view-switcher__collapse-button--circle'} />
+          <span className='grid__col-8 view-switcher__collapse-button--text'>COLLAPSE ALL</span>
+        </div>
+      )
+    } else if (!props.cardExpanded) {
+      return (
+        <div className='grid view-switcher__collapse-button--container'>
+          <span className='grid__col-8 view-switcher__expand-button--text'>EXPAND ALL</span>
+          <span className={'grid__col-4 view-switcher__collapse-button--circle'} />
+        </div>
+      )
+    }
+  }
+
+  // TODO: CF 01-03-2016: add sliding animation
   return (
     <div className='view-switcher'>
       <div className='grid view-switcher__buttons'>
         <div className='grid__col-2 view-switcher__collapse-button' onClick={props.toggleCardExpanded}>
-          <span className='view-switcher__collapse-button--text'>{props.cardExpanded ? 'COLLAPSE ALL' : 'EXPAND ALL'}</span>
-          <TemporaryIcon />
+          {toggleCollapseExpand()}
         </div>
         <div
           className={props.cardLayout === 'row' ? 'grid__col-1 view-switcher__row-button--active' : 'grid__col-1 view-switcher__row-button'}
