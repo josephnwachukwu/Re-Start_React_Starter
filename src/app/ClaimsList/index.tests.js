@@ -11,6 +11,33 @@ import Subheader from './Subheader'
 proxyquire.noCallThru()
 
 describe('ClaimsList container component', function () {
+  it('has an updatePinnedStatus method that updates the pinned status for a claim', function () {
+    const initialClaims = [
+      {
+        'PatientFirstName': 'Jon',
+        'PatientLastName': 'Lang',
+        'DOB': '1967-08-27T00:00:00.000Z',
+        'DOI': '2016-07-11T00:00:00.000Z',
+        'ClaimNumber': 'WC12312234235',
+        'IsActive': true,
+        'ClaimSystemId': '857a126b-854a-4ea9-8214-60751e390da3',
+        'PatientId': 'ec054230-ec1f-4aaa-861d-4e84160797f1',
+        'AdjusterId': 'dd054230-ec1f-4aaa-861d-4e84160799f4',
+        'IsPinned': true
+      }
+    ]
+
+    const claimsList = shallow(<ClaimsList />)
+
+    claimsList.setState({
+      claims: initialClaims
+    })
+
+    expect(claimsList.state('claims')[0].IsPinned).to.equal(true)
+    claimsList.instance().updatePinnedStatus('857a126b-854a-4ea9-8214-60751e390da3', false)
+    expect(claimsList.state('claims')[0].IsPinned).to.equal(false)
+  })
+
   it('has a binClaims method that bins/chunks claims based on patient lastname and pinned status', function () {
     const claimsList = shallow(<ClaimsList />)
 

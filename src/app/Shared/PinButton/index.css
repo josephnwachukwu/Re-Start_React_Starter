@@ -5,6 +5,10 @@
   align-items: center;
 }
 
+.pin-button--loading {
+  height: 31px;
+}
+
 .pin-button {
   cursor: pointer;
   height: 31px;

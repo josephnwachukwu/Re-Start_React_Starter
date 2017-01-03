@@ -70,9 +70,9 @@ export default class Dashboard extends Component {
       }
     }
 
-    getMetrics(this.state.adjusterId)
+    return getMetrics(this.state.adjusterId)
       .then((response) => {
-        this.setState({
+        return this.setState({
           metrics: response.Payload,
           claims
         })

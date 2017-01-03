@@ -75,10 +75,12 @@ export default class ClaimsList extends Component {
       }
     }
 
-    this.setState({
-      claims,
-      binnedClaims: this.binClaims(claims)
-    })
+    return Promise.resolve(
+      this.setState({
+        claims,
+        binnedClaims: this.binClaims(claims)
+      })
+    )
   }
 
   render () {

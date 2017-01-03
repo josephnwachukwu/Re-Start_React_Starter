@@ -4,6 +4,7 @@ import { setPinnedStatus } from './Api'
 
 import Pin from '../../../theme/icons/Pinned.svg'
 import Unpin from '../../../theme/icons/Unpinned.svg'
+import LoadingSpinner from '../../../theme/spinners/ring-alt-loader.svg'
 
 import './index.css'
 
@@ -12,7 +13,8 @@ export default class PinButton extends Component {
     super(props)
 
     this.state = {
-      clickable: true
+      clickable: true,
+      loading: false
     }
 
     this.onClick = this.onClick.bind(this)
@@ -24,16 +26,21 @@ export default class PinButton extends Component {
 
     if (this.state.clickable) {
       this.setState(
-        { clickable: false },
+        {
+          clickable: false,
+          loading: true
+        },
         () => {
           setPinnedStatus(this.props.claimId, newPinnedStatus)
             .then((response) => {
               // Call parent handler on success of API call
               this.props.updatePinnedStatus(this.props.claimId, newPinnedStatus)
-
-              this.setState({
-                clickable: true
-              })
+                .then(() => {
+                  this.setState({
+                    clickable: true,
+                    loading: false
+                  })
+                })
             })
         }
       )
@@ -43,16 +50,25 @@ export default class PinButton extends Component {
   render () {
     const disabledClass = (!this.state.clickable) ? 'disabled' : ''
     const pinnedClass = this.props.pinned ? 'pin-button--pinned' : 'pin-button--unpinned'
+    const loading = this.state.loading
 
-    return (
-      <div className='pin-button-container'>
-        <div
-          className={`pin-button ${pinnedClass} ${disabledClass}`}
-          onClick={this.onClick}>
-          {this.props.pinned ? <Pin /> : <Unpin />}
+    if (loading) {
+      return (
+        <div className='pin-button-container'>
+          <LoadingSpinner className='pin-button--loading' />
         </div>
-      </div>
-    )
+      )
+    } else {
+      return (
+        <div className='pin-button-container'>
+          <div
+            className={`pin-button ${pinnedClass} ${disabledClass}`}
+            onClick={this.onClick}>
+            {this.props.pinned ? <Pin /> : <Unpin />}
+          </div>
+        </div>
+      )
+    }
   }
 }
 
