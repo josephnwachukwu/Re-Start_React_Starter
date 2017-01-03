@@ -45,7 +45,7 @@ const PatientCount = props => {
         />
       </div>
       <div className='patient-count__info'>
-        <p className='patient-count__fraction'><strong>{props.pinnedCount}</strong> out of <strong>{props.totalCount}</strong></p>
+        <p className='patient-count__fraction'>You have <strong>{props.pinnedCount}</strong> out of <strong>{props.totalCount}</strong></p>
         <p className='patient-count__text'>patients pinned</p>
       </div>
       <button className='patient-count__help'>?</button>
