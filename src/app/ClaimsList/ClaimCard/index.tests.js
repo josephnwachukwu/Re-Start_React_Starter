@@ -34,5 +34,5 @@ describe('Claim Card component', function () {
     expect(shallow(<ClaimCard claim={claimPinned} />).find('.claim-card__name').text()).to.equal('Draper, Don')
   })
 
-  // TODO: CF 12/05/2016: Add a test for onClick function when function is implemented”
+  // TODO: CF 12-05-2016: Add a test for onClick function when function is implemented”
 })

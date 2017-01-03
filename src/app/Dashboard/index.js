@@ -17,28 +17,26 @@ export default class Dashboard extends Component {
     this.toggleCardLayout = this.toggleCardLayout.bind(this)
     this.updatePinnedStatus = this.updatePinnedStatus.bind(this)
 
+    // TODO: DC 12-12-2016: Figure out where adjusterId will be coming from
     this.state = {
       claims: [],
       loading: true,
       cardExpanded: true,
       cardLayout: 'col',
-      metrics: {}
+      metrics: {},
+      adjusterId: 'fdbdd892-8dd8-4fbf-8ea7-8c2dbdb40b2b'
     }
   }
 
   componentDidMount () {
-    // TODO: DC 12-12-2016: Figure out where adjusterId will be coming from
-
-    const adjusterId = 'fdbdd892-8dd8-4fbf-8ea7-8c2dbdb40b2b'
-
-    let getClaimsPromise = getClaimActions(adjusterId)
+    let getClaimsPromise = getClaimActions(this.state.adjusterId)
       .then((response) => {
         this.setState({
           claims: response.Payload
         })
       })
 
-    let getMetricsPromise = getMetrics(adjusterId)
+    let getMetricsPromise = getMetrics(this.state.adjusterId)
       .then((response) => {
         this.setState({
           metrics: response.Payload
@@ -72,9 +70,13 @@ export default class Dashboard extends Component {
       }
     }
 
-    this.setState({
-      claims
-    })
+    getMetrics(this.state.adjusterId)
+      .then((response) => {
+        this.setState({
+          metrics: response.Payload,
+          claims
+        })
+      })
   }
 
   render () {
