@@ -12,16 +12,20 @@ const ViewSwitcher = props => {
   function toggleCollapseExpand () {
     if (props.cardExpanded) {
       return (
-        <div className='grid view-switcher__collapse-button--container'>
-          <span className={'grid__col-4 view-switcher__collapse-button--circle'} />
-          <span className='grid__col-8 view-switcher__collapse-button--text'>COLLAPSE ALL</span>
+        <div className='grid__col-3 view-switcher__collapse-button' onClick={props.toggleCardExpanded}>
+          <div className='grid view-switcher__collapse-button--container'>
+            <span className='grid__col-8 view-switcher__collapse-button--text'>COLLAPSE ALL</span>
+            <span className={'grid__col-4 view-switcher__collapse-button--circle'} />
+          </div>
         </div>
       )
     } else if (!props.cardExpanded) {
       return (
-        <div className='grid view-switcher__collapse-button--container'>
-          <span className='grid__col-8 view-switcher__expand-button--text'>EXPAND ALL</span>
-          <span className={'grid__col-4 view-switcher__collapse-button--circle'} />
+        <div className='grid__col-3 view-switcher__expand-button' onClick={props.toggleCardExpanded}>
+          <div className='grid view-switcher__expand-button--container'>
+            <span className={'grid__col-4 view-switcher__expand-button--circle'} />
+            <span className='grid__col-8 view-switcher__expand-button--text'>EXPAND ALL</span>
+          </div>
         </div>
       )
     }
@@ -31,9 +35,7 @@ const ViewSwitcher = props => {
   return (
     <div className='view-switcher'>
       <div className='grid view-switcher__buttons'>
-        <div className='grid__col-2 view-switcher__collapse-button' onClick={props.toggleCardExpanded}>
-          {toggleCollapseExpand()}
-        </div>
+        {toggleCollapseExpand()}
         <div
           className={props.cardLayout === 'row' ? 'grid__col-1 view-switcher__row-button--active' : 'grid__col-1 view-switcher__row-button'}
           onClick={() => props.toggleCardLayout('row')}>

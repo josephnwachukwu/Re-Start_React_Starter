@@ -23,6 +23,7 @@ describe('View Switcher component', function () {
     const viewSwitcher = shallow(
       <ViewSwitcher
         cardLayout='row'
+        cardExpanded
         toggleCardExpanded={click}
         toggleCardLayout={click}
       />
