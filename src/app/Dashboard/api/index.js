@@ -2,7 +2,7 @@ import { getAPIBaseURL } from '../../Shared/Utils'
 
 function getClaimActions (adjusterId) {
   const baseUrl = getAPIBaseURL()
-  const url = `${baseUrl}/adjusters/${adjusterId}/claimactions?type=pinned`
+  const url = `${baseUrl}/adjusters/${adjusterId}/claimactions?type=all`
 
   return fetch(url, {
     credentials: 'omit',
