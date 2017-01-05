@@ -115,16 +115,18 @@ export default class Dashboard extends Component {
             <div className='grid'>
               {
                 claims.map((claim) => {
-                  return (
-                    <PatientCard
-                      numActions='5'
-                      layout={cardLayout}
-                      expanded={cardExpanded}
-                      claim={claim}
-                      updatePinnedStatus={this.updatePinnedStatus}
-                      key={claim.ClaimSystemId}
-                    />
-                  )
+                  if (claim.PinnedStatus === true) {
+                    return (
+                      <PatientCard
+                        numActions='5'
+                        layout={cardLayout}
+                        expanded={cardExpanded}
+                        claim={claim}
+                        updatePinnedStatus={this.updatePinnedStatus}
+                        key={claim.ClaimSystemId}
+                      />
+                    )
+                  }
                 })
               }
             </div>
