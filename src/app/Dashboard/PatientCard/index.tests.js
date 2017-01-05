@@ -49,8 +49,10 @@ describe('Patient Card component', function () {
       />
     )
 
+    expect(patientCard.state().expanded).to.equal(false)
     patientCard.find('.patient-card--row__icon').simulate('click')
     expect(patientCard.state().expanded).to.equal(true)
+    expect(patientCard.find(PatientActionCard).length).to.equal(1)
   })
 
   it('has the expected number of cards', function () {
@@ -105,5 +107,22 @@ describe('Patient Card component', function () {
         claim={claim}
       />
     ).find('.patient-card--col').length).to.equal(1)
+  })
+
+  it('updates when new props are passed', function () {
+    const claim = {}
+
+    const patientCard = shallow(
+      <PatientCard
+        numActions='3'
+        layout='row'
+        expanded={false}
+        claim={claim}
+      />
+    )
+
+    expect(patientCard.state().expanded).to.equal(false)
+    patientCard.setProps({expanded: true})
+    expect(patientCard.state().expanded).to.equal(true)
   })
 })

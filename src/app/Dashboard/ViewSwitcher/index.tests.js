@@ -1,6 +1,6 @@
 import React from 'react'
 import { expect } from 'chai'
-import { shallow } from 'enzyme'
+import { mount, shallow } from 'enzyme'
 import ViewSwitcher from './index.js'
 
 import CardView from '../../../theme/icons/ToggleViewer-Card.svg'
@@ -17,7 +17,7 @@ describe('View Switcher component', function () {
     expect(shallow(<ViewSwitcher cardExpanded />).find('.view-switcher__collapse-button--text').text()).to.equal('COLLAPSE ALL')
   })
 
-  it('has clickable buttons', function () {
+  it('has working buttons', function () {
     let test = 0
     const click = () => { test++ }
     const viewSwitcher = shallow(
@@ -35,5 +35,12 @@ describe('View Switcher component', function () {
     expect(test).to.equal(2)
     viewSwitcher.find('.view-switcher__col-button').simulate('click')
     expect(test).to.equal(3)
+  })
+
+  it('updates when props are changed', function () {
+    const viewSwitcher = mount(<ViewSwitcher cardLayout='row' cardExpanded={false} />)
+    viewSwitcher.setProps({cardLayout: 'col', cardExpanded: true})
+    expect(viewSwitcher.props().cardLayout).to.equal('col')
+    expect(viewSwitcher.props().cardExpanded).to.equal(true)
   })
 })

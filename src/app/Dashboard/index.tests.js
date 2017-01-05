@@ -4,6 +4,9 @@ import { mount, shallow } from 'enzyme'
 import sinon from 'sinon'
 import proxyquire from 'proxyquire'
 
+import LoadingSpinner from '../../theme/spinners/ring-alt-loader.svg'
+import Dashboard from './index.js'
+
 describe('Dashboard container component', function () {
   it('should call the getClaimActions and getMetrics methods on componentDidMount and set loading state to false', function (done) {
     const getClaimActions = sinon.stub().returns(Promise.resolve([]))
@@ -98,5 +101,27 @@ describe('Dashboard container component', function () {
     expect(dashboard.state('claims')[0].PinnedStatus).to.equal(true)
     dashboard.instance().updatePinnedStatus('cf2de328-e9f0-46ff-80c6-4de61af1177d', false)
     expect(dashboard.state('claims')[0].PinnedStatus).to.equal(false)
+  })
+
+  it('has a working toggleCardExpanded function', function () {
+    const dashboard = shallow(<Dashboard />)
+    expect(dashboard.state().cardExpanded).to.equal(true)
+    dashboard.instance().toggleCardExpanded()
+    expect(dashboard.state().cardExpanded).to.equal(false)
+  })
+
+  it('has a working toggleCardLayout function', function () {
+    const dashboard = shallow(<Dashboard />)
+    expect(dashboard.state().cardLayout).to.equal('col')
+    dashboard.instance().toggleCardLayout('row')
+    expect(dashboard.state().cardLayout).to.equal('row')
+  })
+
+  it('displays the loading spinner while loading', function () {
+    const dashboard = shallow(<Dashboard />)
+    expect(dashboard.state().loading).to.equal(true)
+    expect(dashboard.find(LoadingSpinner).length).to.equal(1)
+    dashboard.setState({loading: false})
+    expect(dashboard.find(LoadingSpinner).length).to.equal(0)
   })
 })

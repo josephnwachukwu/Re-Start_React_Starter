@@ -115,7 +115,7 @@ describe('Patient Action Card component', function () {
     expect(shallow(<PatientActionCard action={patientAction} />).find(Diagnostics).length).to.equal(1)
   })
 
-  it('has working dropdown functionality', function () {
+  it('expands when clicked', function () {
     const patientAction = {
       ProductLine: 'DIAGNOSTICS',
       ServiceType: 'STANDARD',
