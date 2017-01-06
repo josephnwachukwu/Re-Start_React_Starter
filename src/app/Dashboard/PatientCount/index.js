@@ -24,11 +24,11 @@ const PatientCount = props => {
               fill: (d) => {
                 switch (d.patients) {
                   case 'total':
-                    return variables.lightBlue3
+                    return variables.lapisLazuli
                   case 'pinned':
-                    return variables.neonGreen
+                    return variables.mintGreen
                   default:
-                    return variables.lightBlue3
+                    return variables.lapisLazuli
                 }
               }
             }

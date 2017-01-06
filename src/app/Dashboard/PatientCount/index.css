@@ -43,7 +43,7 @@
 }
 
 .patient-count__help {
-  background: $lightBlue3;
+  background: $lapisLazuli;
   color: $white;
   font-size: 21px;
   border-radius: 4px;
@@ -54,5 +54,5 @@
 }
 
 .patient-count__help:hover {
-  background: $darkBlue;
+  background: $midnightBlue;
 }

@@ -1,6 +1,6 @@
 .footer {
-  background: #fff;
-  border: 1px solid #ddd;
+  background: $white;
+  border: 1px solid $gainsboro;
   height: 160px;
   width: 100%;
   min-width: 1005px;

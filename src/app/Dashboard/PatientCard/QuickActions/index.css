@@ -8,7 +8,7 @@
   width: 90px;
   line-height: 15px;
   font-size: $fontXs;
-  color: $gray;
+  color: $dimGray;
   margin: $gutterDefault $gutterLg $gutterDefault 0;
 }
 
@@ -19,16 +19,16 @@
   line-height: 14px;
   font-size: $fontXs;
   font-weight: bold;
-  color: $lightBlue2;
-  border: 1px solid $lightBlue2;
+  color: $steelBlue;
+  border: 1px solid $steelBlue;
   border-radius: 4px;
   padding: calc($gutterSm + 1) $gutterDefault;
   margin: $gutterXs 0;
 }
 
 .quick-actions__expand-all:hover {
-  color: $lightBlue3;
-  border: 1px solid $lightBlue3;
+  color: $lapisLazuli;
+  border: 1px solid $lapisLazuli;
 }
 
 .quick-actions__quick-order {
@@ -39,14 +39,14 @@
   font-size: $fontXs;
   font-weight: bold;
   color: $white;
-  background-color: $lightBlue2;
+  background-color: $steelBlue;
   border-radius: 4px;
   padding: calc($gutterSm + 1) $gutterDefault;
   margin: $gutterXs $gutterSm;
 }
 
 .quick-actions__quick-order:hover {
-  background-color: $lightBlue3;
+  background-color: $lapisLazuli;
 }
 
 .quick-actions__quick-quote {
@@ -57,14 +57,14 @@
   font-size: $fontXs;
   font-weight: bold;
   color: $white;
-  background-color: $lightBlue2;
+  background-color: $steelBlue;
   border-radius: 4px;
   padding: calc($gutterSm + 1) $gutterDefault;
   margin: $gutterXs 0;
 }
 
 .quick-actions__quick-quote:hover {
-  background-color: $lightBlue3;
+  background-color: $lapisLazuli;
 }
 
 .quick-actions__expand-all,

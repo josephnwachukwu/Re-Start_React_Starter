@@ -3,7 +3,7 @@
 }
 
 .patient-action-card-container .patient-action-card--active {
-  background: $lightBlue4;
+  background: $whiteSmoke;
   margin: $gutterXs;
 }
 
@@ -13,7 +13,7 @@
   top: 0;
   position: absolute;
   border-bottom: 10px solid transparent;
-  border-left: 10px solid $purple;
+  border-left: 10px solid $purpleHeart;
 }
 
 .patient-action-card--active .patient-action-card__icon,
@@ -22,7 +22,7 @@
   min-width: 68px;
   height: 40px;
   margin: $gutterXs 0;
-  border-right: 1px solid $lightGray;
+  border-right: 1px solid $gainsboro;
 }
 
 .patient-action-card__icon .patient-action-card__product-icon {
@@ -33,7 +33,7 @@
 }
 
 .patient-action-card .patient-action-card__date {
-  color: $gray4;
+  color: $auroMetalSaurus;
   margin: $gutterXs 0;
   max-width: 68px;
   min-width: 68px;
@@ -41,7 +41,7 @@
 }
 
 .patient-action-card--active .patient-action-card__date {
-  color: $black;
+  color: $deepSpace;
   margin: $gutterXs 0;
   padding: 0 $gutterDefault;
   max-width: 68px;
@@ -65,14 +65,14 @@
 .patient-action-card--active .patient-action-card__body {
   display: inline-block;
   margin: $gutterXs 0;
-  border-left: 1px solid $lightGray;
-  border-right: 1px solid $lightGray;
+  border-left: 1px solid $gainsboro;
+  border-right: 1px solid $gainsboro;
   height: 40px;
 }
 
 .patient-action-card__body .patient-action-card__title {
   float: left;
-  color: $gray;
+  color: $dimGray;
   font-size: $fontSm;
   padding: 0 0 0 $gutterLg;
   text-align: left;
@@ -84,7 +84,7 @@
 }
 
 .patient-action-card--active .patient-action-card__title {
-  color: $black;
+  color: $deepSpace;
   font-weight: bold;
 }
 
@@ -103,7 +103,7 @@
 .patient-action-card__tag {
   float: right;
   padding: $gutterSm $gutterLg $gutterSsm $gutterXs;
-  color: $gray3;
+  color: $outerSpace;
   font-size: $fontXs;
   font-weight: bold;
   min-width: 105px;
@@ -111,7 +111,7 @@
 }
 
 .patient-action-card--active .patient-action-card__tag {
-  color: $black;
+  color: $deepSpace;
 }
 
 .patient-action-card .patient-action-card__button,
@@ -125,13 +125,13 @@
 
 .patient-action-card__button:hover {
   cursor: pointer;
-  background-color: $lightBlue;
+  background-color: $mayaBlue;
 }
 
 .patient-action-card__dropdown-border {
   margin: -$gutterXs $gutterXs $gutterSm $gutterXs;
   height: 1px;
-  background: $lightGray;
+  background: $gainsboro;
 }
 
 .patient-action-card--active .patient-action-card__dropdown {
@@ -150,9 +150,9 @@
 
 .patient-action-card__dropdown-card .patient-action-card__dropdown-tag {
   padding: $gutterSm $gutterLg;
-  border-right: 1px solid $lightGray;
-  border-left: 1px solid $lightGray;
-  color: $black;
+  border-right: 1px solid $gainsboro;
+  border-left: 1px solid $gainsboro;
+  color: $deepSpace;
   font-weight: bold;
   text-align: left;
   max-width: 180px;
@@ -160,7 +160,7 @@
 
 .patient-action-card__dropdown-card .patient-action-card__dropdown-content {
   padding: $gutterSm 0 $gutterSm $gutterLg;
-  color: $black2;
+  color: $deepSpace;
   text-align: left;
   overflow: hidden;
 }

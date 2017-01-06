@@ -4,10 +4,10 @@
 
 .claims-navigation__letter-anchor {
   text-decoration: none;
-  color: #333;
+  color: $outerSpace;
 }
 
 .claims-navigation__letter-anchor[disabled],
 .claims-navigation__letter-anchor[disabled]:hover {
-  color: #e1e1e1;
+  color: $gainsboro;
 }

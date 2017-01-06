@@ -1,10 +1,10 @@
 .claims__column-header {
   height: 40px;
   margin-left: 50px;
-  background-color: $lightGray2;
+  background-color: $gainsboro;
 }
 
 .claims__column-header div {
-  border-left: $lightGray 1px solid;
+  border-left: $gainsboro 1px solid;
   line-height: 40px;
 }

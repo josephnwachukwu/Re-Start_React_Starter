@@ -1,27 +1,27 @@
 .claim-card {
-  border: 1px solid $lightGray2;
+  border: 1px solid $gainsboro;
   font-family: 'Arial', 'sans-serif';
   font-size: $fontXs;
 }
 
 .claim-card:hover {
-  background: #f0f8fa;
+  background: $whiteSmoke;
 }
 
 .claim-card:hover .claim-card__injury-date {
-  background: #d8dfe1;
+  background: $gainsboro;
 }
 
 .claim-card__number {
-  border-left: 1px solid $lightGray2;
-  border-right: 1px solid $lightGray2;
+  border-left: 1px solid $gainsboro;
+  border-right: 1px solid $gainsboro;
   padding: $gutterSm 0;
   margin: $gutterXs 0;
 }
 
 .claim-card__name {
   font-weight: bold;
-  border-right: 1px solid $lightGray2;
+  border-right: 1px solid $gainsboro;
   padding: $gutterSm 0;
   margin: $gutterXs 0;
 }
@@ -32,8 +32,8 @@
 }
 
 .claim-card__injury-date {
-  border: 1px solid $lightGray2;
-  background: $lightGray;
+  border: 1px solid $gainsboro;
+  background: $gainsboro;
   padding: $gutterSm 0;
   margin: $gutterXs 0;
 }
@@ -44,8 +44,8 @@
 }
 
 .claim-card__quote-button {
-  color: $gray2;
-  background: #f0f8fa;
+  color: $taupeGray;
+  background: $whiteSmoke;
   border-radius: $gutterXs $gutterXs 0 0;
   padding: $gutterSm;
   margin: 0 $gutterXs;
@@ -53,7 +53,7 @@
 
 .claim-card__order-button {
   color: $white;
-  background: #16529b;
+  background: $steelBlue;
   border-radius: $gutterXs $gutterXs 0 0;
   padding: $gutterSm;
   margin: 0 $gutterXs;

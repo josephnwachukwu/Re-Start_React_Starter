@@ -9,7 +9,7 @@
 .patient-card--col .patient-card--col__header {
   margin: $gutterXs;
   width: calc(100% - 10px);
-  background: $lightGray4;
+  background: $whiteSmoke;
 }
 
 .patient-card--row__header .patient-card--row__pin {
@@ -23,7 +23,7 @@
 }
 
 .patient-card--row__name {
-  color: $lightBlue2;
+  color: $steelBlue;
   font-weight: 500;
   font-size: $fontXxxxl;
   height: 40px;
@@ -31,7 +31,7 @@
 }
 
 .patient-card--row__num {
-  color: $gray4;
+  color: $auroMetalSaurus;
   font-weight: bold;
   font-size: $fontSm;
   height: 15px;
@@ -48,7 +48,7 @@
 .patient-card__border {
   margin: 0 $gutterXs;
   height: 1px;
-  background: $lightGray;
+  background: $gainsboro;
 }
 
 .patient-card--col__header .patient-card--col__pin {
@@ -62,7 +62,7 @@
 }
 
 .patient-card--col__name {
-  color: $lightBlue2;
+  color: $steelBlue;
   font-weight: 500;
   font-size: $fontXxxxl;
   height: 40px;
@@ -70,7 +70,7 @@
 }
 
 .patient-card--col__num {
-  color: $gray4;
+  color: $auroMetalSaurus;
   font-weight: bold;
   font-size: $fontSm;
   height: 15px;
@@ -80,5 +80,5 @@
 .patient-card--col__border {
   margin: 0 $gutterXs;
   height: 1px;
-  background: $lightGray;
+  background: $gainsboro;
 }

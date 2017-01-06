@@ -11,7 +11,7 @@
 }
 
 .dropdown-container span {
-  color: $gray3;
+  color: $outerSpace;
   font-size: $fontDefault;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .dropdown__trigger:hover {
-  background: $lightGray;
+  background: $gainsboro;
 }
 
 .dropdown__icon {
@@ -51,7 +51,7 @@
 }
 
 .dropdown ul {
-  background: white;
+  background: $white;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -59,11 +59,11 @@
 
 .dropdown__link {
   font-size: $fontSm;
-  color: black;
+  color: $steelBlue;
 }
 
 .dropdown__first-item {
-  border: solid lightgrey 1px;
+  border: solid $gainsboro 1px;
   border-radius: $gutterXs $gutterXs 0 0;
   padding: $gutterXs $gutterSm;
   margin: 0;
@@ -75,18 +75,18 @@
 
 .dropdown__item {
   cursor: pointer;
-  border: solid lightgrey 1px;
+  border: solid $gainsboro 1px;
   padding: $gutterXs $gutterSm;
   margin: 0;
 }
 
 .dropdown__last-item {
-  border: solid lightgrey 1px;
+  border: solid $gainsboro 1px;
   border-radius: 0 0 $gutterXs $gutterXs;
   padding: $gutterXs $gutterSm;
   margin: 0;
 }
 
 .dropdown__link:hover {
-  color: $lightBlue;
+  color: $lapisLazuli;
 }

@@ -1,5 +1,5 @@
 .dashboard-container {
-  background: $lightGray7;
+  background: $antiFlashWhite2;
 }
 
 .dashboard-container__loading-spinner {
@@ -8,7 +8,7 @@
 
 .dashboard-container__header {
   height: 100px;
-  background: #2d83b4;
+  background: $steelBlue;
   padding: 0 40px;
 }
 

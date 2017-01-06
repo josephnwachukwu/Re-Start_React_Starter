@@ -3,7 +3,7 @@
 }
 
 .subheader__header {
-  color: #3498db;
+  color: $celestialBlue1;
   font-style: italic;
   padding-left: 20px;
   font-size: 28px;
@@ -17,6 +17,6 @@
   height: 40px;
   line-height: 40px;
   padding: 5px 15px;
-  color: #000;
+  color: $deepSpace;
   margin-left: 20px;
 }

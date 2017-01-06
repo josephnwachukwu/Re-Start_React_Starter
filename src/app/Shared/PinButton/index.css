@@ -17,17 +17,17 @@
 }
 
 .pin-button--pinned g {
-  fill: $lightBlue2;
+  fill: $steelBlue;
 }
 
 .pin-button--pinned:hover g {
-  fill: $lightBlue3;
+  fill: $lapisLazuli;
 }
 
 .pin-button--unpinned g {
-  fill: $lightGray5;
+  fill: $pastelGray;
 }
 
 .pin-button--unpinned:hover g {
-  fill: $lightGray6;
+  fill: $taupeGray;
 }

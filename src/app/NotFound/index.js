@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 import './index.css'
 
 const NotFound = props => (
-  <div>
+  <div className='page-not-found'>
     <p>
       Page not found.
     </p>
