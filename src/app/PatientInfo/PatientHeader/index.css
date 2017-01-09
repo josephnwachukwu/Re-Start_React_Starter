@@ -1,0 +1,46 @@
+.patient-header {
+  display: inline-block;
+  height: 100px;
+  background: $steelBlue;
+}
+
+.patient-header__icon {
+  float: left;
+  height: $gutterXxl;
+  width: $gutterXxl;
+  margin: 37px $gutterDefault 33px $gutterXxxxl;
+}
+
+.patient-header__icon:hover {
+  cursor: pointer;
+}
+
+.patient-header__icon:hover circle {
+  fill: $midnightBlue;
+}
+
+.patient-header__label {
+  float: left;
+  text-align: left;
+  color: $white;
+}
+
+.patient-header__label-name {
+  height: $gutterXxxxl;
+  margin: $gutterXl 0 -6px 0;
+  font-weight: 500;
+  font-size: $fontXxxxl;
+}
+
+.patient-header__label-claim-number {
+  height: 17px;
+  margin: 0 0 $gutterXl 0;
+  font-weight: bold;
+  font-size: $fontSm;
+}
+
+.patient-header__quick-actions {
+  float: right;
+  margin: 34px $gutterXxl;
+  height: $gutterXxxl;
+}

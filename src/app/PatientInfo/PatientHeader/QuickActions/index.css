@@ -1,0 +1,69 @@
+.patient-quick-action__buttons {
+  display: inline-block;
+}
+
+.patient-quick-actions__label {
+  height: 32px;
+  float: left;
+  font-size: $fontXs;
+  color: $white;
+  padding: $gutterSsm 0;
+  margin: 0 $gutterLg;
+}
+
+.patient-quick-actions__notate-file {
+  height: 32px;
+  width: 100px;
+  float: left;
+  font-size: $fontXs;
+  font-weight: bold;
+  color: $lapisLazuli;
+  background: $white;
+  border: 1px solid $lapisLazuli;
+  border-radius: 4px;
+  padding: $gutterSsm $gutterMd;
+  text-align: center;
+}
+
+.patient-quick-actions__notate-file:hover {
+  color: $midnightBlue;
+  border: 1px solid $midnightBlue;
+}
+
+.patient-quick-actions__quick-quote {
+  height: 32px;
+  width: 108px;
+  float: left;
+  font-size: $fontXs;
+  font-weight: bold;
+  color: $white;
+  background-color: $lapisLazuli;
+  border-radius: 4px;
+  padding: $gutterSsm $gutterMd;
+  margin: 0 $gutterSm;
+  text-align: center;
+}
+
+.patient-quick-actions__create-order {
+  height: 32px;
+  width: 111px;
+  float: left;
+  font-size: $fontXs;
+  font-weight: bold;
+  color: $white;
+  background-color: $lapisLazuli;
+  border-radius: 4px;
+  padding: $gutterSsm $gutterLg;
+  text-align: center;
+}
+
+.patient-quick-actions__quick-quote:hover,
+.patient-quick-actions__create-order:hover {
+  background-color: $midnightBlue;
+}
+
+.patient-quick-actions__notate-file,
+.patient-quick-actions__create-order,
+.patient-quick-actions__quick-quote:hover {
+  cursor: pointer;
+}
