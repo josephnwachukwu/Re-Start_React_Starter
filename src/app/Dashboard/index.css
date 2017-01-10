@@ -2,16 +2,22 @@
   background: $antiFlashWhite2;
 }
 
-.dashboard-container__loading-spinner {
-  margin: 200px auto;
+.dashboard-spinner-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dashboard-container__header {
+  display: flex;
   height: 100px;
   background: $steelBlue;
   padding: 0 40px;
 }
 
 .dashboard-container__body {
-  margin: $gutterDefault $gutterLg;
+  margin: $gutterDefault $gutterLg 0 $gutterLg;
+  display: flex;
+  flex-wrap: wrap;
 }

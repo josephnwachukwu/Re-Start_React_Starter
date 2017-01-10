@@ -37,7 +37,9 @@ export default class PatientInfo extends Component {
 
     if (loading) {
       return (
-        <LoadingSpinner className='patient-info-container__loading-spinner' />
+        <div className='patient-info-spinner-container'>
+          <LoadingSpinner />
+        </div>
       )
     } else {
       return (

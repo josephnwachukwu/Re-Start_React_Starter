@@ -90,11 +90,13 @@ export default class ClaimsList extends Component {
 
     if (loading) {
       return (
-        <LoadingSpinner className='claims-list-container__loading-spinner' />
+        <div className='claims-list-spinner-container'>
+          <LoadingSpinner />
+        </div>
       )
     } else {
       return (
-        <div>
+        <div className='claims-list-container'>
           <Subheader
             claimCount={this.state.claims.length}
           />

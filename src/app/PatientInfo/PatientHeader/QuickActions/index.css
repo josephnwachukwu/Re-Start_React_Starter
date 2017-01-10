@@ -1,5 +1,7 @@
 .patient-quick-action__buttons {
   display: inline-block;
+  z-index: 2;
+  position: relative;
 }
 
 .patient-quick-actions__label {

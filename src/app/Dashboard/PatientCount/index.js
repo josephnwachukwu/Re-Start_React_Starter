@@ -7,7 +7,7 @@ import './index.css'
 
 const PatientCount = props => {
   return (
-    <div className='patient-count grid__cell'>
+    <div className='patient-count'>
       <div className='patient-count__pie-chart'>
         <div className='patient-count__pie-chart-number'>
           {props.pinnedCount}

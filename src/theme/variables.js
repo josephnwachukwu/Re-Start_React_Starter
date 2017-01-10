@@ -59,5 +59,8 @@ module.exports = {
   'fontDefault': '16px',
   'fontSm': '14px',
   'fontXs': '12px',
-  'fontXxs': '10px'
+  'fontXxs': '10px',
+
+  'maxPageWidth': '1640px',
+  'minPageWidth': '1024px'
 }

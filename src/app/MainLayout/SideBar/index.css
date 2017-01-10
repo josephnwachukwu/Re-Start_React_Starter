@@ -1,17 +1,15 @@
 .sidebar {
   width: 100px;
   letter-spacing: normal;
+  background-color: $white;
+  border-right: $gainsboro 1px solid;
 }
 
 .sideBar__menu {
   list-style: none;
-  background-color: $white;
   text-align: center;
   padding-left: 0;
   margin: 0;
-  border-right: $gainsboro 1px solid;
-  box-shadow: 5px 0 20px 1px rgba(0, 0, 0, 0.1);
-  min-height: 100%;
 }
 
 .sidebar__menu-item {
@@ -42,7 +40,7 @@
 
 .sidebar__menu-item.active {
   background-image: linear-gradient(0deg, $celestialBlue1 0%, $mayaBlue 100%);
-  border-right: none;
+  border-right: $lapisLazuli 1px solid;
 }
 
 .active .sidebar__menu-link-text {

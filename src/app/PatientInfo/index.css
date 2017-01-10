@@ -10,6 +10,9 @@
   background: $antiFlashWhite1;
 }
 
-.patient-info-container__loading-spinner {
-  margin: 200px auto;
+.patient-info-spinner-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,0 +1,24 @@
+.main-layout-container {
+  max-width: $maxPageWidth;
+  min-width: $minPageWidth;
+}
+
+.sidebar-and-content-container {
+  display: flex;
+}
+
+.main-content-container {
+  flex-grow: 1;
+  position: relative;
+}
+
+.main-content-container::before {
+  content: '';
+  display: block;
+  box-shadow: inset 0 0 20px 1px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

@@ -88,48 +88,42 @@ export default class Dashboard extends Component {
 
     if (loading) {
       return (
-        <LoadingSpinner className='dashboard-container__loading-spinner' />
+        <div className='dashboard-spinner-container'>
+          <LoadingSpinner />
+        </div>
       )
     } else {
       return (
         <div className='dashboard-container'>
           <div className='dashboard-container__header'>
-            <div className='grid'>
-              <div className='grid__col-4'>
-                <PatientCount
-                  pinnedCount={metrics.PinnedClaimsCount}
-                  totalCount={metrics.TotalClaimsCount}
-                />
-              </div>
-              <div className='grid__col-8'>
-                <ViewSwitcher
-                  cardExpanded={cardExpanded}
-                  cardLayout={cardLayout}
-                  toggleCardExpanded={this.toggleCardExpanded}
-                  toggleCardLayout={this.toggleCardLayout}
-                />
-              </div>
-            </div>
+            <PatientCount
+              pinnedCount={metrics.PinnedClaimsCount}
+              totalCount={metrics.TotalClaimsCount}
+            />
+            <ViewSwitcher
+              cardExpanded={cardExpanded}
+              cardLayout={cardLayout}
+              toggleCardExpanded={this.toggleCardExpanded}
+              toggleCardLayout={this.toggleCardLayout}
+            />
           </div>
           <div className='dashboard-container__body'>
-            <div className='grid'>
-              {
-                claims.map((claim) => {
-                  if (claim.PinnedStatus === true) {
-                    return (
-                      <PatientCard
-                        numActions='5'
-                        layout={cardLayout}
-                        expanded={cardExpanded}
-                        claim={claim}
-                        updatePinnedStatus={this.updatePinnedStatus}
-                        key={claim.ClaimSystemId}
-                      />
-                    )
-                  }
-                })
-              }
-            </div>
+            {
+              claims.map((claim) => {
+                if (claim.PinnedStatus === true) {
+                  return (
+                    <PatientCard
+                      numActions='5'
+                      layout={cardLayout}
+                      expanded={cardExpanded}
+                      claim={claim}
+                      updatePinnedStatus={this.updatePinnedStatus}
+                      key={claim.ClaimSystemId}
+                    />
+                  )
+                }
+              })
+            }
           </div>
         </div>
       )

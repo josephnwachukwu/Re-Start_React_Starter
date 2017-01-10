@@ -12,20 +12,16 @@ const ViewSwitcher = props => {
   function toggleCollapseExpand () {
     if (props.cardExpanded) {
       return (
-        <div className='grid__col-3 view-switcher__collapse-button' onClick={props.toggleCardExpanded}>
-          <div className='grid view-switcher__collapse-button--container'>
-            <span className='grid__col-8 view-switcher__collapse-button--text'>COLLAPSE ALL</span>
-            <span className={'grid__col-4 view-switcher__collapse-button--circle'} />
-          </div>
+        <div className='view-switcher__collapse-button' onClick={props.toggleCardExpanded}>
+          <div className='view-switcher__collapse-button-text'>COLLAPSE ALL</div>
+          <div className={'view-switcher__collapse-button-circle'} />
         </div>
       )
     } else if (!props.cardExpanded) {
       return (
-        <div className='grid__col-3 view-switcher__expand-button' onClick={props.toggleCardExpanded}>
-          <div className='grid view-switcher__expand-button--container'>
-            <span className={'grid__col-4 view-switcher__expand-button--circle'} />
-            <span className='grid__col-8 view-switcher__expand-button--text'>EXPAND ALL</span>
-          </div>
+        <div className='view-switcher__expand-button' onClick={props.toggleCardExpanded}>
+          <div className={'view-switcher__expand-button-circle'} />
+          <div className='view-switcher__expand-button-text'>EXPAND ALL</div>
         </div>
       )
     }
@@ -34,15 +30,15 @@ const ViewSwitcher = props => {
   // TODO: CF 01-03-2016: add sliding animation
   return (
     <div className='view-switcher'>
-      <div className='grid view-switcher__buttons'>
+      <div className='view-switcher__buttons'>
         {toggleCollapseExpand()}
         <div
-          className={props.cardLayout === 'row' ? 'grid__col-1 view-switcher__row-button--active' : 'grid__col-1 view-switcher__row-button'}
+          className={props.cardLayout === 'row' ? 'view-switcher__row-button--active' : 'view-switcher__row-button'}
           onClick={() => props.toggleCardLayout('row')}>
           {props.cardLayout === 'row' ? <ListViewActive /> : <ListView />}
         </div>
         <div
-          className={props.cardLayout === 'col' ? 'grid__col-1 view-switcher__col-button--active' : 'grid__col-1 view-switcher__col-button'}
+          className={props.cardLayout === 'col' ? 'view-switcher__col-button--active' : 'view-switcher__col-button'}
           onClick={() => props.toggleCardLayout('col')}>
           {props.cardLayout === 'col' ? <CardViewActive /> : <CardView />}
         </div>

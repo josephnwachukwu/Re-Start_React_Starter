@@ -1,7 +1,5 @@
 .patient-count {
   display: flex;
-  flex-direction: row;
-  z-index: 2;
   width: 450px;
 }
 
@@ -12,6 +10,7 @@
 
 .patient-count__pie-chart {
   padding-top: 15px;
+  position: relative;
 }
 
 .patient-count__pie-chart-number {
@@ -51,6 +50,8 @@
   height: 32px;
   margin-left: 20px;
   margin-top: 34px;
+  position: relative;
+  z-index: 2;
 }
 
 .patient-count__help:hover {

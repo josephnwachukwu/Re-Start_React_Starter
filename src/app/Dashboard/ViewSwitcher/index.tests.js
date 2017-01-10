@@ -14,7 +14,7 @@ describe('View Switcher component', function () {
   })
 
   it('displays the expected button text', function () {
-    expect(shallow(<ViewSwitcher cardExpanded />).find('.view-switcher__collapse-button--text').text()).to.equal('COLLAPSE ALL')
+    expect(shallow(<ViewSwitcher cardExpanded />).find('.view-switcher__collapse-button-text').text()).to.equal('COLLAPSE ALL')
   })
 
   it('has working buttons', function () {

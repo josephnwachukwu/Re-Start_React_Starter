@@ -1,3 +1,6 @@
-.claims-list-container__loading-spinner {
-  margin: 200px auto;
+.claims-list-spinner-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

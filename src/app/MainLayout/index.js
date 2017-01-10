@@ -4,6 +4,8 @@ import Header from './Header'
 import Footer from './Footer'
 import SideBar from './SideBar'
 
+import './index.css'
+
 class MainLayout extends Component {
   render () {
     const dropdown = [
@@ -12,22 +14,18 @@ class MainLayout extends Component {
     ]
 
     return (
-      <div className='grid'>
-        <div className='grid__col-12 grid__cell'>
-          <Header
-            name='Erica'
-            fields={dropdown}
-          />
-        </div>
-        <div>
+      <div className='main-layout-container'>
+        <Header
+          name='Erica'
+          fields={dropdown}
+        />
+        <div className='sidebar-and-content-container'>
           <SideBar location={this.props.location} />
+          <div className='main-content-container'>
+            {this.props.children}
+          </div>
         </div>
-        <div className='main-content grid__col-lg-auto grid__col-md-auto'>
-          {this.props.children}
-        </div>
-        <div className='grid__col-12'>
-          <Footer />
-        </div>
+        <Footer />
       </div>
     )
   }

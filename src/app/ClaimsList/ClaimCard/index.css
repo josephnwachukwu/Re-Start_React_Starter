@@ -49,6 +49,7 @@
   border-radius: $gutterXs $gutterXs 0 0;
   padding: $gutterSm;
   margin: 0 $gutterXs;
+  text-decoration: none;
 }
 
 .claim-card__order-button {
@@ -57,4 +58,5 @@
   border-radius: $gutterXs $gutterXs 0 0;
   padding: $gutterSm;
   margin: 0 $gutterXs;
+  text-decoration: none;
 }
