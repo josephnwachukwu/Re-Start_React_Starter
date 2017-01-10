@@ -22,7 +22,7 @@
 }
 
 .dropdown__trigger:hover {
-  background: $gainsboro;
+  color: $midnightBlue;
 }
 
 .dropdown__icon {
@@ -41,20 +41,14 @@
 .dropdown__content {
   display: none;
   position: absolute;
-  min-width: 150px;
+  min-width: 165px;
+  box-shadow: 0 -5px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .dropdown--active .dropdown__content {
   margin-top: $gutterXs;
-  right: 0;
+  right: -45px;
   display: block;
-}
-
-.dropdown ul {
-  background: $white;
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }
 
 .dropdown__link {
@@ -62,29 +56,60 @@
   color: $steelBlue;
 }
 
-.dropdown__first-item {
-  border: solid $gainsboro 1px;
-  border-radius: $gutterXs $gutterXs 0 0;
-  padding: $gutterXs $gutterSm;
-  margin: 0;
-}
-
 .dropdown__link {
   cursor: pointer;
+  text-decoration: none;
 }
 
 .dropdown__item {
   cursor: pointer;
-  border: solid $gainsboro 1px;
   padding: $gutterXs $gutterSm;
   margin: 0;
 }
 
-.dropdown__last-item {
-  border: solid $gainsboro 1px;
-  border-radius: 0 0 $gutterXs $gutterXs;
+.dropdown__item:first-of-type {
   padding: $gutterXs $gutterSm;
   margin: 0;
+  border-radius: 0 0 0 4px;
+}
+
+.dropdown__item:last-of-type::before {
+  content: "";
+  background: $gainsboro;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  height: 50%;
+  width: 1px;
+}
+
+.dropdown__last-item {
+  padding: $gutterXs $gutterSm;
+  margin: 0;
+  border-radius: 0 0 4px;
+}
+
+.dropdown__ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 4px solid $midnightBlue;
+}
+
+.dropdown__ul li {
+  background-color: $white;
+  float: left;
+  width: 50%;
+}
+
+.dropdown__link {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: $fontSm;
+  color: $steelBlue;
+  letter-spacing: -0.11px;
+  line-height: 29px;
 }
 
 .dropdown__link:hover {

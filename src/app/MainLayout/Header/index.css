@@ -24,3 +24,8 @@
 .header__settings {
   margin-right: 31px;
 }
+
+.header__login-figure:hover,
+.header__settings:hover {
+  background-color: $midnightBlue;
+}

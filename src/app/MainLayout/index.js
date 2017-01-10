@@ -6,13 +6,9 @@ import SideBar from './SideBar'
 
 class MainLayout extends Component {
   render () {
-    function onClick () {
-      alert('Dropdown Item Clicked')
-    }
-
     const dropdown = [
-      {key: 0, name: 'Profile', onClick},
-      {key: 1, name: 'Logout', onClick}
+      {key: 0, name: 'Profile', url: 'profile'},
+      {key: 1, name: 'Logout', url: 'logout'}
     ]
 
     return (
