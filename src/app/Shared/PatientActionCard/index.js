@@ -178,8 +178,11 @@ export default class PatientActionCard extends Component {
 
   render () {
     return (
-      <div className='patient-action-card-container'>
-        {this.renderView()}
+      <div>
+        <div className='patient-action-card-border' />
+        <div className='patient-action-card-container'>
+          {this.renderView()}
+        </div>
       </div>
     )
   }

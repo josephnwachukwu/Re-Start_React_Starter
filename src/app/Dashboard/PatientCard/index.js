@@ -45,7 +45,6 @@ export default class PatientCard extends Component {
         this.state.actions.map((action) => {
           return (
             <div key={action.ActionId}>
-              <div className='patient-card__border' />
               <PatientActionCard
                 action={action}
                 layout={layout}

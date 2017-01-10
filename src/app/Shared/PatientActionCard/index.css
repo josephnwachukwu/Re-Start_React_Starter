@@ -1,10 +1,14 @@
 .patient-action-card-container .patient-action-card {
-  margin: $gutterXs;
+  margin: 0 $gutterXs;
+  padding: $gutterXs 0;
+  width: calc(100% - $gutterSm);
 }
 
 .patient-action-card-container .patient-action-card--active {
   background: $whiteSmoke;
-  margin: $gutterXs;
+  margin: 0 $gutterXs;
+  padding: $gutterXs 0;
+  width: calc(100% - $gutterSm);
 }
 
 .patient-action-card__triangle-icon {
@@ -117,7 +121,8 @@
 .patient-action-card .patient-action-card__button,
 .patient-action-card--active .patient-action-card__button {
   float: right;
-  padding: $gutterDefault $gutterLg;
+  padding: $gutterLg;
+  margin: -$gutterXs 0;
   max-width: 68px;
   min-width: 34px;
   align-items: center;
@@ -125,11 +130,11 @@
 
 .patient-action-card__button:hover {
   cursor: pointer;
-  background-color: $mayaBlue;
+  background: linear-gradient(to right, $whiteSmoke, $gainsboro);
 }
 
 .patient-action-card__dropdown-border {
-  margin: -$gutterXs $gutterXs $gutterSm $gutterXs;
+  margin: -$gutterXs 0 $gutterSm 0;
   height: 1px;
   background: $gainsboro;
 }
@@ -163,4 +168,10 @@
   color: $deepSpace;
   text-align: left;
   overflow: hidden;
+}
+
+.patient-action-card-border {
+  margin: 0 $gutterXs;
+  height: 1px;
+  background: $gainsboro;
 }

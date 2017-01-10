@@ -18,6 +18,12 @@
   min-width: 60px;
 }
 
+.patient-card--row__header .patient-card--row__pin:hover,
+.patient-card--col__header .patient-card--col__pin:hover {
+  cursor: pointer;
+  background: linear-gradient(to right, $gainsboro, $whiteSmoke);
+}
+
 .patient-card--row__header .patient-card--row__title {
   padding: $gutterSm 0 $gutterDefault 0;
   text-align: left;
@@ -40,10 +46,14 @@
 }
 
 .patient-card--row__header .patient-card--row__icon {
-  padding: $gutterXxl 0;
-  margin-right: $gutterXl;
-  max-width: 15px;
-  min-width: 15px;
+  padding: $gutterXxl $gutterXl;
+  max-width: 65px;
+  min-width: 65px;
+}
+
+.patient-card--row__header .patient-card--row__icon:hover {
+  cursor: pointer;
+  background: linear-gradient(to right, $whiteSmoke, $gainsboro);
 }
 
 .patient-card__border {
@@ -76,10 +86,4 @@
   font-size: $fontSm;
   height: 15px;
   line-height: 15px;
-}
-
-.patient-card--col__border {
-  margin: 0 $gutterXs;
-  height: 1px;
-  background: $gainsboro;
 }
