@@ -58,4 +58,9 @@ PatientCount.propTypes = {
   totalCount: PropTypes.number
 }
 
+PatientCount.defaultProps = {
+  pinnedCount: 0,
+  totalCount: 0
+}
+
 export default PatientCount
