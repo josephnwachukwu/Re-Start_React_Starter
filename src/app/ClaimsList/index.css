@@ -1,6 +1,26 @@
 .claims-list-spinner-container {
+  position: relative;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: $antiFlashWhite2;
+  flex-grow: 1;
+}
+
+.claims-list-container {
+  position: relative;
+  background: $antiFlashWhite2;
+}
+
+.claims-list-container::before,
+.claims-list-spinner-container::before {
+  content: '';
+  display: block;
+  box-shadow: inset 0 0 20px 1px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

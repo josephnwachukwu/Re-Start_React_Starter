@@ -1,3 +1,7 @@
+.patient-card {
+  min-width: 380px;
+}
+
 .patient-card .patient-card--row,
 .patient-card .patient-card--col {
   margin: $gutterDefault $gutterLg;
@@ -8,8 +12,6 @@
 
 .patient-card--row .patient-card--row__header,
 .patient-card--col .patient-card--col__header {
-  margin: $gutterXs;
-  width: calc(100% - 10px);
   background: $whiteSmoke;
 }
 
@@ -21,7 +23,7 @@
 .patient-card--row__header .patient-card--row__pin:hover,
 .patient-card--col__header .patient-card--col__pin:hover {
   cursor: pointer;
-  background: linear-gradient(to right, $gainsboro, $whiteSmoke);
+  background: linear-gradient(to right, $oceanMist, $whiteSmoke);
 }
 
 .patient-card--row__header .patient-card--row__title {
@@ -55,7 +57,7 @@
 
 .patient-card--row__header .patient-card--row__icon:hover {
   cursor: pointer;
-  background: linear-gradient(to right, $whiteSmoke, $gainsboro);
+  background: linear-gradient(to right, $whiteSmoke, $oceanMist);
 }
 
 .patient-card__border {

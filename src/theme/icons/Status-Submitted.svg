@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Status - Submitted</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Asset-Boards" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dashboard" transform="translate(-949.000000, -3138.000000)" fill="#19638E">
+            <g id="Calendar-3" transform="translate(929.000000, 2489.000000)">
+                <g id="Base-Calendar-List" transform="translate(4.000000, 155.000000)">
+                    <g id="Status---Submitted" transform="translate(16.000000, 494.000000)">
+                        <path d="M1.992,8 C1.992,11.399 4.593,14 7.992,14 C11.391,14 13.992,11.399 13.992,8 C13.992,4.601 11.391,2 7.992,2 C4.593,2 1.992,4.601 1.992,8 Z M8,16 C3.581,16 0,12.418 0,8 C0,3.582 3.581,0 8,0 C12.418,0 16,3.582 16,8 C16,12.418 12.418,16 8,16 L8,16 Z" id="Fill-1"></path>
+                        <path d="M9,8 L9,4 L7,4 L7,8 L4,8 L8,12 L12,8 L9,8 Z" id="Combined-Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

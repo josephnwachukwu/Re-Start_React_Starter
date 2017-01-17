@@ -8,16 +8,18 @@ import LoadingSpinner from '../../theme/spinners/ring-alt-loader.svg'
 import Dashboard from './index.js'
 
 describe('Dashboard container component', function () {
-  it('should call the getClaimActions and getMetrics methods on componentDidMount and set loading state to false', function (done) {
+  it('should call the getClaimActions, getAppointments, and getMetrics methods on componentDidMount and set loading state to false', function (done) {
     const getClaimActions = sinon.stub().returns(Promise.resolve([]))
     const getMetrics = sinon.stub().returns(Promise.resolve([]))
+    const getAppointments = sinon.stub().returns(Promise.resolve([]))
 
     const DashboardPatched = proxyquire(
       './index.js',
       {
         './Api': {
           getClaimActions,
-          getMetrics
+          getMetrics,
+          getAppointments
         }
       }
     ).default
@@ -25,6 +27,7 @@ describe('Dashboard container component', function () {
     const dashboard = mount(<DashboardPatched />)
     expect(getClaimActions.called).to.equal(true)
     expect(getMetrics.called).to.equal(true)
+    expect(getAppointments.called).to.equal(true)
 
     expect(dashboard.state('loading')).to.equal(true)
 

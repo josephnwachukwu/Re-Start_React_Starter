@@ -29,6 +29,8 @@ import Canceled from '../../../theme/icons/Status-Canceled.svg'
 import Completed from '../../../theme/icons/Status-Completed.svg'
 import Missed from '../../../theme/icons/Status-Missed.svg'
 import Pending from '../../../theme/icons/Status-Pending.svg'
+import Processing from '../../../theme/icons/Status-Processing.svg'
+import Submitted from '../../../theme/icons/Status-Submitted.svg'
 
 import Plus from '../../../theme/icons/Plus-Expansion.svg'
 import Minus from '../../../theme/icons/Minus-Compression.svg'
@@ -74,9 +76,9 @@ export default class PatientActionCard extends Component {
   getStatusIcon (status) {
     switch (status) {
       case 'COMPLETED': return <Completed />
-      case 'SUBMITTED': return <Completed />
+      case 'SUBMITTED': return <Submitted />
       case 'PENDING': return <Pending />
-      case 'PROCESSED': return <Pending />
+      case 'PROCESSED': return <Processing />
       case 'CANCELED': return <Canceled />
       case 'MISSED': return <Missed />
       default: return ''

@@ -19,7 +19,7 @@
   font-family: 'Proxima Nova', sans-serif;
 }
 
-a[disabled],
-a[disabled]:hover {
+[disabled],
+[disabled]:hover {
   pointer-events: none;
 }

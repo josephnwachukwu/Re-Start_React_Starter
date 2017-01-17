@@ -1,8 +1,6 @@
 .patient-action-card-container .patient-action-card {
-  margin: 0 $gutterXs;
   background: $white;
   padding: $gutterXs 0;
-  width: calc(100% - $gutterSm);
 }
 
 .patient-action-card-container .patient-action-card--active {
@@ -23,8 +21,8 @@
 
 .patient-action-card--active .patient-action-card__icon,
 .patient-action-card .patient-action-card__icon {
-  max-width: 68px;
-  min-width: 68px;
+  max-width: 56px;
+  min-width: 56px;
   height: 40px;
   margin: $gutterXs 0;
   border-right: 1px solid $gainsboro;
@@ -33,15 +31,15 @@
 .patient-action-card__icon .patient-action-card__product-icon {
   width: 100%;
   height: 100%;
-  padding: $gutterSm $gutterLg;
+  padding: 9px 0;
   align-items: center;
 }
 
 .patient-action-card .patient-action-card__date {
   color: $auroMetalSaurus;
   margin: $gutterXs 0;
-  max-width: 68px;
-  min-width: 68px;
+  max-width: 66px;
+  min-width: 66px;
   height: 32px;
 }
 
@@ -101,7 +99,7 @@
 
 .patient-action-card--col__status {
   float: right;
-  padding: $gutterSm $gutterXl $gutterSsm $gutterXs;
+  padding: $gutterSm $gutterLg $gutterSsm $gutterXs;
   font-size: $fontXs;
 }
 
@@ -124,14 +122,14 @@
   float: right;
   padding: $gutterLg;
   margin: -$gutterXs 0;
-  max-width: 68px;
-  min-width: 34px;
+  max-width: 56px;
+  min-width: 56px;
   align-items: center;
 }
 
 .patient-action-card__button:hover {
   cursor: pointer;
-  background: linear-gradient(to right, $whiteSmoke, $gainsboro);
+  background: linear-gradient(to right, $white, $oceanMist);
 }
 
 .patient-action-card__dropdown-border {
@@ -172,7 +170,6 @@
 }
 
 .patient-action-card-border {
-  margin: 0 $gutterXs;
   height: 1px;
   background: $gainsboro;
 }

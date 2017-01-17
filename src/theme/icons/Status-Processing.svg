@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Status - Processing</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Asset-Boards" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dashboard" transform="translate(-949.000000, -3034.000000)" fill="#702F8A">
+            <g id="Calendar-3" transform="translate(929.000000, 2489.000000)">
+                <g id="Base-Calendar-List" transform="translate(4.000000, 155.000000)">
+                    <g id="Status---Processing" transform="translate(16.000000, 390.000000)">
+                        <path d="M7.992,2 C4.593,2 1.992,4.601 1.992,8 C1.992,11.399 4.593,14 7.992,14 C11.391,14 13.992,11.399 13.992,8 C13.992,4.601 11.391,2 7.992,2 L7.992,2 Z M0,8 C0,3.582 3.581,0 8,0 C12.418,0 16,3.582 16,8 C16,12.418 12.418,16 8,16 C3.581,16 0,12.418 0,8 Z" id="Fill-1"></path>
+                        <path d="M8,10 L8,10.1324463 L8,11.0290527 L8,12 C5.7905,12 4,10.209 4,8 C4,5.791 5.7905,4 8,4 C10.209,4 12,5.791 12,8 L10,8 C10,6.867 9.133,6 8,6 C6.867,6 6,6.867 6,8 C6,9.133 6.867,10 8,10 Z" id="Combined-Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

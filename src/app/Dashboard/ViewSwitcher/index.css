@@ -1,13 +1,13 @@
 .view-switcher {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   height: 100px;
   flex-grow: 1;
 }
 
 .view-switcher__buttons {
   background: $steelBlue;
-  padding: $gutterXxxl 0;
   z-index: 2;
   position: relative;
   display: flex;

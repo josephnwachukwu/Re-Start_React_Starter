@@ -1,11 +1,18 @@
 import React, { Component } from 'react'
+import startOfWeek from 'date-fns/start_of_week'
+import lastDayOfWeek from 'date-fns/last_day_of_week'
+import format from 'date-fns/format'
+import subDays from 'date-fns/sub_days'
+import addDays from 'date-fns/add_days'
 
-import { getClaimActions, getMetrics } from './Api'
+import { getClaimActions, getMetrics, getAppointments } from './Api'
 
 import PatientCard from './PatientCard'
 import ViewSwitcher from './ViewSwitcher'
-import LoadingSpinner from '../../theme/spinners/ring-alt-loader.svg'
 import PatientCount from './PatientCount'
+import AppointmentCalendar from './AppointmentCalendar'
+
+import LoadingSpinner from '../../theme/spinners/ring-alt-loader.svg'
 
 import './index.css'
 
@@ -16,6 +23,7 @@ export default class Dashboard extends Component {
     this.toggleCardExpanded = this.toggleCardExpanded.bind(this)
     this.toggleCardLayout = this.toggleCardLayout.bind(this)
     this.updatePinnedStatus = this.updatePinnedStatus.bind(this)
+    this.getMoreAppointments = this.getMoreAppointments.bind(this)
 
     // TODO: DC 12-12-2016: Figure out where adjusterId will be coming from
     this.state = {
@@ -24,6 +32,7 @@ export default class Dashboard extends Component {
       cardExpanded: true,
       cardLayout: 'col',
       metrics: {},
+      appointments: [],
       adjusterId: 'fdbdd892-8dd8-4fbf-8ea7-8c2dbdb40b2b'
     }
   }
@@ -43,7 +52,21 @@ export default class Dashboard extends Component {
         })
       })
 
-    Promise.all([getClaimsPromise, getMetricsPromise])
+    const startDate = format(startOfWeek(new Date()), 'MM-DD-YYYY')
+    const endDate = format(lastDayOfWeek(new Date()), 'MM-DD-YYYY')
+
+    let getAppointmentsPromise = getAppointments(this.state.adjusterId, startDate, endDate)
+      .then((response) => {
+        this.setState({
+          appointments: response.Payload
+        })
+      })
+
+    Promise.all([
+      getClaimsPromise,
+      getMetricsPromise,
+      getAppointmentsPromise
+    ])
       .then(() => {
         this.setState({
           loading: false
@@ -79,6 +102,26 @@ export default class Dashboard extends Component {
       })
   }
 
+  getMoreAppointments (week = 'prev') {
+    const currentStartDate = this.state.appointments[0].Date
+    let startDate
+
+    if (week === 'prev') {
+      startDate = format(subDays(currentStartDate, 7), 'MM-DD-YYYY')
+    } else {
+      startDate = format(addDays(currentStartDate, 7), 'MM-DD-YYYY')
+    }
+
+    const endDate = format(lastDayOfWeek(startDate), 'MM-DD-YYYY')
+
+    return getAppointments(this.state.adjusterId, startDate, endDate)
+      .then((response) => {
+        this.setState({
+          appointments: response.Payload
+        })
+      })
+  }
+
   render () {
     const loading = this.state.loading
     const claims = this.state.claims
@@ -94,36 +137,44 @@ export default class Dashboard extends Component {
       )
     } else {
       return (
-        <div className='dashboard-container'>
-          <div className='dashboard-container__header'>
-            <PatientCount
-              pinnedCount={metrics.PinnedClaimsCount}
-              totalCount={metrics.TotalClaimsCount}
-            />
-            <ViewSwitcher
-              cardExpanded={cardExpanded}
-              cardLayout={cardLayout}
-              toggleCardExpanded={this.toggleCardExpanded}
-              toggleCardLayout={this.toggleCardLayout}
-            />
+        <div className='dashboard'>
+          <div className='dashboard-main-container'>
+            <div className='dashboard-header'>
+              <PatientCount
+                pinnedCount={metrics.PinnedClaimsCount}
+                totalCount={metrics.TotalClaimsCount}
+              />
+              <ViewSwitcher
+                cardExpanded={cardExpanded}
+                cardLayout={cardLayout}
+                toggleCardExpanded={this.toggleCardExpanded}
+                toggleCardLayout={this.toggleCardLayout}
+              />
+            </div>
+            <div className='dashboard-body'>
+              {
+                claims.map((claim) => {
+                  if (claim.PinnedStatus === true) {
+                    return (
+                      <PatientCard
+                        numActions='5'
+                        layout={cardLayout}
+                        expanded={cardExpanded}
+                        claim={claim}
+                        updatePinnedStatus={this.updatePinnedStatus}
+                        key={claim.ClaimSystemId}
+                      />
+                    )
+                  }
+                })
+              }
+            </div>
           </div>
-          <div className='dashboard-container__body'>
-            {
-              claims.map((claim) => {
-                if (claim.PinnedStatus === true) {
-                  return (
-                    <PatientCard
-                      numActions='5'
-                      layout={cardLayout}
-                      expanded={cardExpanded}
-                      claim={claim}
-                      updatePinnedStatus={this.updatePinnedStatus}
-                      key={claim.ClaimSystemId}
-                    />
-                  )
-                }
-              })
-            }
+          <div className='dashboard-side-panel'>
+            <AppointmentCalendar
+              appointmentDays={this.state.appointments}
+              getMoreAppointments={this.getMoreAppointments}
+            />
           </div>
         </div>
       )

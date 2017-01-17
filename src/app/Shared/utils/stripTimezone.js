@@ -11,5 +11,5 @@ export default (isoDateString = (new Date()).toISOString()) => {
     parseInt(time[0]), // hour
     parseInt(time[1]), // min
     0 // sec
-  )
+  ).toISOString()
 }

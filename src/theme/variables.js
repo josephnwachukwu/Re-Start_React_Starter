@@ -14,6 +14,7 @@ module.exports = {
   'cadetGrey': '#9fa7b7',
   'pastelGray': '#ccc',
   'gainsboro': '#dfdfe2',
+  'oceanMist': '#d7dce8',
   'antiFlashWhite1': '#f1f1f3',
   'antiFlashWhite2': '#f4f4f3',
   'whiteSmoke': '#f6f6f8',

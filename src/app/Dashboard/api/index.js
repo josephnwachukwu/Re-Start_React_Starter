@@ -24,7 +24,20 @@ function getMetrics (adjusterId) {
   })
 }
 
+function getAppointments (adjusterId, startDate, endDate) {
+  const baseUrl = getAPIBaseURL()
+  const url = `${baseUrl}/adjuster/${adjusterId}/claims/appointments?startDate=${startDate}&endDate=${endDate}`
+
+  return fetch(url, {
+    credentials: 'omit',
+    mode: 'cors'
+  }).then((response) => {
+    return response.json()
+  })
+}
+
 export {
   getClaimActions,
-  getMetrics
+  getMetrics,
+  getAppointments
 }
