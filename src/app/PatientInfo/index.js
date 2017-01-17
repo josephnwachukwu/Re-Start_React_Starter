@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
+
+import { getClaimActions, getPatientInfo } from './Api'
 
 import PatientActionCard from '../Shared/PatientActionCard'
-import { getClaimActions } from './Api'
-
 import PatientHeader from './PatientHeader'
+import PatientInfoTabs from './PatientInfoTabs'
 import LoadingSpinner from '../../theme/spinners/ring-alt-loader.svg'
-import MockData from './Api/mockData.json'
 
 import './index.css'
 
@@ -15,16 +15,31 @@ export default class PatientInfo extends Component {
 
     this.state = {
       actions: [],
-      loading: true
+      claimInfo: [],
+      loading: true,
+      claimId: props.location.query.claimId
     }
   }
 
   componentDidMount () {
     const claimId = 'f389d478-a64b-4693-b6ad-923bd6f24716'
-    getClaimActions(claimId)
+    let getClaimPromise = getClaimActions(claimId)
       .then((response) => {
         this.setState({
-          actions: response.Payload.Actions,
+          actions: response.Payload.Actions
+        })
+      })
+
+    let getPatientPromise = getPatientInfo(this.state.claimId)
+      .then((response) => {
+        this.setState({
+          claimInfo: response.Payload
+        })
+      })
+
+    Promise.all([getClaimPromise, getPatientPromise])
+      .then(() => {
+        this.setState({
           loading: false
         })
       })
@@ -33,7 +48,7 @@ export default class PatientInfo extends Component {
   render () {
     const loading = this.state.loading
     const actions = this.state.actions || []
-    const claimInfo = MockData.Payload[0]
+    const claimInfo = this.state.claimInfo || []
 
     if (loading) {
       return (
@@ -43,12 +58,15 @@ export default class PatientInfo extends Component {
       )
     } else {
       return (
-        <div>
+        <div className='patient-info'>
           <PatientHeader
             patientFirstName={claimInfo.PatientFirstName}
             patientLastName={claimInfo.PatientLastName}
             claimNumber={claimInfo.ClaimNumber}
           />
+          <div className='patient-info-tab'>
+            <PatientInfoTabs info={claimInfo.Info} />
+          </div>
           <div className='grid patient-info-container'>
             <div className='grid__col-12'>
               <div className='grid__col-12 patient-info-container__title'>
@@ -72,4 +90,12 @@ export default class PatientInfo extends Component {
       )
     }
   }
+}
+
+PatientInfo.propTypes = {
+  location: PropTypes.shape({
+    query: PropTypes.shape({
+      claimId: PropTypes.string.isRequired
+    })
+  })
 }

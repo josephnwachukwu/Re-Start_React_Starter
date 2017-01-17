@@ -1,5 +1,6 @@
 .patient-action-card-container .patient-action-card {
   margin: 0 $gutterXs;
+  background: $white;
   padding: $gutterXs 0;
   width: calc(100% - $gutterSm);
 }

@@ -1,5 +1,6 @@
 .patient-header {
   height: 100px;
+  width: 100%;
   background: $steelBlue;
 }
 
@@ -8,6 +9,8 @@
   height: $gutterXxl;
   width: $gutterXxl;
   margin: 37px $gutterDefault 33px $gutterXxxxl;
+  position: relative;
+  z-index: 1;
 }
 
 .patient-header__icon:hover {
@@ -22,11 +25,14 @@
   float: left;
   text-align: left;
   color: $white;
+  position: relative;
+  z-index: 1;
+  height: 100px;
 }
 
 .patient-header__label-name {
   height: $gutterXxxxl;
-  margin: $gutterXl 0 -6px 0;
+  margin: $gutterLg 0 -3px 0;
   font-weight: 500;
   font-size: $fontXxxxl;
 }

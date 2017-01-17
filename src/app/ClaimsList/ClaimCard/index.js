@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import { Link } from 'react-router'
 import { stripTimezone } from '../../Shared/Utils'
 import format from 'date-fns/format'
 
@@ -27,9 +28,11 @@ export default class ClaimCard extends Component {
       stripTimezone(this.props.claim.DOB),
       'MM/DD/YYYY'
     )
+    const claimId = '8ad71dff-5aac-4853-aa20-10ae169aff22'
+    const url = 'patientinfo?claimId=' + claimId
 
     return (
-      <div className='grid claim-card' onClick={this.onClick}>
+      <div className='grid claim-card'>
         <div className='grid__col-1 claim-card__pin'>
           <PinButton
             claimId={this.props.claim.ClaimSystemId}
@@ -38,16 +41,24 @@ export default class ClaimCard extends Component {
           />
         </div>
         <div className='grid__col-2'>
-          <p className='claim-card__number'>{this.props.claim.ClaimNumber}</p>
+          <Link className='claim-card__link' to={url}>
+            <p className='claim-card__number'>{this.props.claim.ClaimNumber}</p>
+          </Link>
         </div>
         <div className='grid__col-2'>
-          <p className='claim-card__name'>{name}</p>
+          <Link to={url}>
+            <p className='claim-card__name'>{name}</p>
+          </Link>
         </div>
         <div className='grid__col-2'>
-          <p className='claim-card__birthday'>{DOB}</p>
+          <Link to={url}>
+            <p className='claim-card__birthday'>{DOB}</p>
+          </Link>
         </div>
         <div className='grid__col-2'>
-          <p className='claim-card__injury-date'>{DOI}</p>
+          <Link to={url}>
+            <p className='claim-card__injury-date'>{DOI}</p>
+          </Link>
         </div>
         <div className='grid__col-3'>
           <div className='claim-card__buttons'>

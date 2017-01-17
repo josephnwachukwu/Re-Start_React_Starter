@@ -35,6 +35,7 @@
   font-size: $fontXxxxl;
   height: 40px;
   line-height: 40px;
+  text-decoration: none;
 }
 
 .patient-card--row__num {
@@ -43,6 +44,7 @@
   font-size: $fontSm;
   height: 15px;
   line-height: 15px;
+  text-decoration: none;
 }
 
 .patient-card--row__header .patient-card--row__icon {
@@ -86,4 +88,9 @@
   font-size: $fontSm;
   height: 15px;
   line-height: 15px;
+}
+
+.patient-card--col__title a,
+.patient-card--row__title a {
+  text-decoration: none;
 }

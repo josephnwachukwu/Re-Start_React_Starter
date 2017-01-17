@@ -34,5 +34,17 @@ describe('Claim Card component', function () {
     expect(shallow(<ClaimCard claim={claimPinned} />).find('.claim-card__name').text()).to.equal('Draper, Don')
   })
 
-  // TODO: CF 12-05-2016: Add a test for onClick function when function is implemented”
+  it('redirects to the correct page when clicked', function () {
+    const claimPinned = {
+      IsPinned: true,
+      ClaimNumber: 'WC10003',
+      PatientFirstName: 'Don',
+      PatientLastName: 'Draper',
+      DOB: '1973-02-22T00:00:00.000Z',
+      DOI: '2016-04-19T00:00:00.000Z'
+    }
+
+    const claimCard = shallow(<ClaimCard claim={claimPinned} />)
+    expect(claimCard.find('.claim-card__link').props().to).to.equal('patientinfo?claimId=8ad71dff-5aac-4853-aa20-10ae169aff22')
+  })
 })

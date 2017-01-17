@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import { Link } from 'react-router'
 import _ from 'lodash'
 
 import PatientActionCard from '../../Shared/PatientActionCard'
@@ -61,6 +62,8 @@ export default class PatientCard extends Component {
     const claimNum = this.props.claim.ClaimNumber
     const name = this.props.claim.PatientFirstName + ' ' + this.props.claim.PatientLastName
     const expanded = this.state.expanded
+    const claimId = '8ad71dff-5aac-4853-aa20-10ae169aff22'
+    const url = 'patientinfo?claimId=' + claimId
 
     if (layout === 'col') {
       return (
@@ -75,8 +78,10 @@ export default class PatientCard extends Component {
                 />
               </div>
               <div className='grid__col-auto patient-card--col__title'>
-                <span className='patient-card--col__name'>{name}</span>
-                <span className='patient-card--col__num'>{claimNum}</span>
+                <Link to={url}>
+                  <div className='patient-card--col__name'>{name}</div>
+                  <div className='patient-card--col__num'>{claimNum}</div>
+                </Link>
               </div>
             </div>
             <QuickActions
@@ -102,8 +107,10 @@ export default class PatientCard extends Component {
                 />
               </div>
               <div className='grid__col-auto patient-card--row__title'>
-                <span className='patient-card--row__name'>{name}</span>
-                <span className='patient-card--row__num'>{claimNum}</span>
+                <Link to={url}>
+                  <div className='patient-card--row__name'>{name}</div>
+                  <div className='patient-card--row__num'>{claimNum}</div>
+                </Link>
               </div>
               <div className='grid__col-1 patient-card--row__icon' onClick={this.toggleExpanded}>
                 {expanded ? <Expanded /> : <Collapsed />}

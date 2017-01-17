@@ -1,5 +1,27 @@
+.patient-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.patient-info-tab {
+  flex-grow: 1;
+  text-align: center;
+  background: $antiFlashWhite2;
+  padding: $gutterXxxxl;
+  max-width: 460px;
+  min-width: 460px;
+}
+
+.patient-info-container {
+  flex-grow: 1;
+  background: $white;
+  max-width: calc(100% - 460px);
+  min-width: calc(100% - 460px);
+}
+
 .patient-info-container__title span {
   padding: $gutterLg 0;
+  margin: $gutterXs;
   background: $antiFlashWhite1;
   font-size: $fontXs;
   font-weight: bold;

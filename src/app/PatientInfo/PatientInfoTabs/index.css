@@ -1,0 +1,139 @@
+.patient-info-tabs {
+  background: $white;
+  position: relative;
+  width: 380px;
+  z-index: 1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.patient-info-tabs__tabs {
+  padding: 0 2px;
+}
+
+.patient-info-tabs__tab-button--injury,
+.patient-info-tabs__tab-button--demographics,
+.patient-info-tabs__tab-button--physician,
+.patient-info-tabs__tab-button--attorney {
+  font-weight: bold;
+  font-size: $fontSm;
+  padding: 14px;
+  margin: $gutterXs 2px 0 2px;
+  background: $gainsboro;
+  color: $outerSpace;
+  height: 46px;
+}
+
+.patient-info-tabs__tab-button--active {
+  font-weight: bold;
+  font-size: $fontSm;
+  padding: 14px;
+  margin: $gutterXs 2px 0 2px;
+  background: $steelBlue;
+  color: $white;
+  height: 46px;
+}
+
+.patient-info-tabs__tab-button--injury:hover,
+.patient-info-tabs__tab-button--demographics:hover,
+.patient-info-tabs__tab-button--physician:hover,
+.patient-info-tabs__tab-button--attorney:hover {
+  background: $midnightBlue;
+  color: $white;
+}
+
+.patient-info-tabs__content {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 $gutterXs;
+}
+
+.patient-info-tabs__title {
+  font-size: $fontSm;
+  color: $dimGray;
+  margin: 0;
+}
+
+.patient-info-tabs__details {
+  font-size: $fontDefault;
+  font-weight: bold;
+  color: $auroMetalSaurus;
+  margin: 0;
+}
+
+.patient-info-tabs__details--secondary {
+  font-size: $fontDefault;
+  color: $dimGray;
+  margin: 0;
+}
+
+.patient-info-tabs__content--100 {
+  padding: $gutterDefault;
+  text-align: left;
+  width: 100%;
+  border-bottom: 1px solid $gainsboro;
+}
+
+.patient-info-tabs__content--66 {
+  padding: $gutterDefault;
+  text-align: left;
+  border-bottom: 1px solid $gainsboro;
+  flex-grow: 1;
+  width: 66%;
+}
+
+.patient-info-tabs__content--50 {
+  padding: $gutterDefault;
+  text-align: left;
+  border-bottom: 1px solid $gainsboro;
+  flex-grow: 1;
+  width: 50%;
+}
+
+.patient-info-tabs__content--33 {
+  padding: $gutterDefault;
+  text-align: left;
+  border-bottom: 1px solid $gainsboro;
+  flex-grow: 1;
+  width: 33%;
+}
+
+.patient-info-tabs__content--25 {
+  padding: $gutterDefault;
+  text-align: left;
+  border-bottom: 1px solid $gainsboro;
+  flex-grow: 1;
+  width: 25%;
+}
+
+.patient-info-tabs__content--66 p,
+.patient-info-tabs__content--50 p,
+.patient-info-tabs__content--33 p,
+.patient-info-tabs__content--25 p {
+  border-right: 1px solid $gainsboro;
+}
+
+.patient-info-tabs__content .patient-info-tabs__content--100:last-child {
+  border-bottom: none;
+}
+
+.patient-info-tabs__section div:last-child p {
+  border-right: none;
+}
+
+.patient-info-tabs__title {
+  line-height: 17px;
+}
+
+.patient-info-tabs__details {
+  line-height: 21px;
+}
+
+.patient-info-tabs__details--secondary {
+  line-height: 21px;
+}
+
+.patient-info-tabs__section {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}

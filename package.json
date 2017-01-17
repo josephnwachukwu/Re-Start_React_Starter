@@ -91,7 +91,7 @@
     "babel-polyfill": "6.16.0",
     "date-fns": "1.9.0",
     "intl": "1.2.5",
-    "lodash": "4.16.5",
+    "lodash": "^4.16.5",
     "react": "^15.4.1",
     "react-document-title": "2.0.2",
     "react-dom": "^15.4.1",

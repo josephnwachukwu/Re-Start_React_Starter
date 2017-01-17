@@ -43,20 +43,23 @@
   margin: $gutterXs 0;
 }
 
-.claim-card__quote-button {
+.claim-card__buttons .claim-card__quote-button {
   color: $taupeGray;
   background: $whiteSmoke;
   border-radius: $gutterXs $gutterXs 0 0;
   padding: $gutterSm;
   margin: 0 $gutterXs;
-  text-decoration: none;
 }
 
-.claim-card__order-button {
+.claim-card__buttons .claim-card__order-button {
   color: $white;
   background: $steelBlue;
   border-radius: $gutterXs $gutterXs 0 0;
   padding: $gutterSm;
   margin: 0 $gutterXs;
+}
+
+.claim-card a {
   text-decoration: none;
+  color: $deepSpace;
 }
