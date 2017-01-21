@@ -1,5 +1,5 @@
 {
   "api": {
-    "path": "//app-d-polarisgatewayapi.azurewebsites.net/api/v0.1/gateway"
+    "path": "//app-d-polarisgatewayapi.azurewebsites.net/api/v0.2/gateway"
   }
 }
