@@ -12,7 +12,7 @@ import ViewSwitcher from './ViewSwitcher'
 import PatientCount from './PatientCount'
 import AppointmentCalendar from './AppointmentCalendar'
 
-import LoadingSpinner from '../../theme/spinners/ring-alt-loader.svg'
+import LoadingSpinner from '../../theme/spinners/Animation-Loader.svg'
 
 import './index.css'
 

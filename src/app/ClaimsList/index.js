@@ -7,7 +7,7 @@ import Section from './Section'
 import Subheader from './Subheader'
 import LetterNav from './LetterNav'
 import ColumnHeader from './ColumnHeader'
-import LoadingSpinner from '../../theme/spinners/ring-alt-loader.svg'
+import LoadingSpinner from '../../theme/spinners/Animation-Loader.svg'
 
 import './index.css'
 

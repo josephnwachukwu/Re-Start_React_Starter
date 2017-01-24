@@ -4,7 +4,7 @@ import { mount, shallow } from 'enzyme'
 import sinon from 'sinon'
 import proxyquire from 'proxyquire'
 
-import LoadingSpinner from '../../theme/spinners/ring-alt-loader.svg'
+import LoadingSpinner from '../../theme/spinners/Animation-Loader.svg'
 import Dashboard from './index.js'
 
 describe('Dashboard container component', function () {
@@ -104,6 +104,72 @@ describe('Dashboard container component', function () {
     expect(dashboard.state('claims')[0].PinnedStatus).to.equal(true)
     dashboard.instance().updatePinnedStatus('cf2de328-e9f0-46ff-80c6-4de61af1177d', false)
     expect(dashboard.state('claims')[0].PinnedStatus).to.equal(false)
+  })
+
+  it('has a getMoreAppointments method that grabs the correct chunk of previous week appointments and updates the state with them', function (done) {
+    const getAppointments = sinon.stub().returns(Promise.resolve(
+      {
+        Payload: [
+          { Date: '2017-01-08T05:00:00.000Z' }
+        ]
+      }
+    ))
+
+    const DashboardPatched = proxyquire(
+      './index.js',
+      {
+        './Api': {
+          getAppointments
+        }
+      }
+    ).default
+
+    const dashboard = shallow(<DashboardPatched />)
+    dashboard.setState({
+      appointments: [
+        { Date: '2017-01-15T05:00:00.000Z' }
+      ]
+    })
+
+    dashboard.instance().getMoreAppointments('prev')
+    setImmediate(() => {
+      expect(getAppointments.calledWith('fdbdd892-8dd8-4fbf-8ea7-8c2dbdb40b2b', '01-08-2017', '01-14-2017')).to.be.true
+      expect(dashboard.state().appointments[0].Date).to.equal('2017-01-08T05:00:00.000Z')
+      done()
+    })
+  })
+
+  it('has a getMoreAppointments method that grabs the correct chunk of next week appointments and updates the state with them', function (done) {
+    const getAppointments = sinon.stub().returns(Promise.resolve(
+      {
+        Payload: [
+          { Date: '2017-01-22T05:00:00.000Z' }
+        ]
+      }
+    ))
+
+    const DashboardPatched = proxyquire(
+      './index.js',
+      {
+        './Api': {
+          getAppointments
+        }
+      }
+    ).default
+
+    const dashboard = shallow(<DashboardPatched />)
+    dashboard.setState({
+      appointments: [
+        { Date: '2017-01-15T05:00:00.000Z' }
+      ]
+    })
+
+    dashboard.instance().getMoreAppointments('next')
+    setImmediate(() => {
+      expect(getAppointments.calledWith('fdbdd892-8dd8-4fbf-8ea7-8c2dbdb40b2b', '01-22-2017', '01-28-2017')).to.be.true
+      expect(dashboard.state().appointments[0].Date).to.equal('2017-01-22T05:00:00.000Z')
+      done()
+    })
   })
 
   it('has a working toggleCardExpanded function', function () {

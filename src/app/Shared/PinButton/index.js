@@ -4,7 +4,7 @@ import { setPinnedStatus } from './Api'
 
 import Pin from '../../../theme/icons/Pinned.svg'
 import Unpin from '../../../theme/icons/Unpinned.svg'
-import LoadingSpinner from '../../../theme/spinners/ring-alt-loader.svg'
+import LoadingSpinner from '../../../theme/spinners/Animation-Loader.svg'
 
 import './index.css'
 

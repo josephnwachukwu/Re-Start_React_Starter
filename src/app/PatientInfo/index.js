@@ -6,7 +6,7 @@ import PatientActionCard from '../Shared/PatientActionCard'
 import PatientHeader from './PatientHeader'
 import PatientInfoTabs from './PatientInfoTabs'
 
-import LoadingSpinner from '../../theme/spinners/ring-alt-loader.svg'
+import LoadingSpinner from '../../theme/spinners/Animation-Loader.svg'
 
 import './index.css'
 

@@ -6,14 +6,11 @@
 }
 
 .pin-button--loading {
-  height: 31px;
+  height: 24px;
 }
 
 .pin-button {
   cursor: pointer;
-  height: 31px;
-  width: 30px;
-  padding-top: 4px;
 }
 
 .pin-button--pinned g {

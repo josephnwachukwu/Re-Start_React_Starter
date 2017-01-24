@@ -17,7 +17,7 @@ import Pending from '../../../theme/icons/Status-Pending.svg'
 import Processing from '../../../theme/icons/Status-Processing.svg'
 import Submitted from '../../../theme/icons/Status-Submitted.svg'
 
-import LoadingSpinner from '../../../theme/spinners/ring-alt-loader.svg'
+import LoadingSpinner from '../../../theme/spinners/Animation-Loader.svg'
 
 import './index.css'
 
@@ -148,7 +148,7 @@ export default class AppointmentCalendar extends Component {
         return (
           <div
             key={`${day.dayOfWeek}_${day.dayOfMonth}`}
-            className={`appointment-calendar__day-tab ${extraTabClass}`}
+            className={`appointment-calendar__day-tab ${extraTabClass} appointment-calendar__day-tab-${day.dayOfWeek}_${day.dayOfMonth}`}
             onClick={() => { this.updateActiveDay(day) }}>
             <div className='appointment-calendar__day-of-week'>
               {day.dayOfWeek}
