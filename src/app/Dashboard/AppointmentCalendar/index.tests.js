@@ -115,7 +115,7 @@ describe('AppointmentCalendar Component', function () {
         Claims: []
       },
       {
-        Date: '2017-01-24T00:00:00.000Z',
+        Date: '2017-01-22T00:00:00.000Z',
         Claims: []
       }
     ]
