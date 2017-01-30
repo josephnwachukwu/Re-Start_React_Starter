@@ -12,7 +12,7 @@
     "lint:js": "eslint \"./src\"",
     "lint:css": "stylelint \"./src/**/*.css\"",
     "precommit": "npm run lint && npm run test",
-    "test": "mocha --require ignore-styles tests/ignore-utils.js tests/helpers/setup.js tests/**/*tests.js src/**/*tests.js",
+    "test": "mocha --require ignore-styles --reporter mocha-multi-reporters --reporter-options configFile=config/mocha-multi-reporters.json tests/ignore-utils.js tests/helpers/setup.js tests/**/*tests.js src/**/*tests.js",
     "prestart": "npm prune && npm install",
     "start": "webpack-dev-server --config \"config/webpack.serve.dev\" --progress --inline"
   },
@@ -58,6 +58,8 @@
     "jsdom": "^9.8.3",
     "json-loader": "0.5.4",
     "mocha": "^3.2.0",
+    "mocha-junit-reporter": "^1.13.0",
+    "mocha-multi-reporters": "^1.1.3",
     "npm": "^4.0.2",
     "postcss": "5.2.5",
     "postcss-cssnext": "2.8.0",
