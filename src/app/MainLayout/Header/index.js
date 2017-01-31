@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react'
 
-import HeaderDropdown from './HeaderDropdown'
+import LinkDropdown from '../../Shared/LinkDropdown'
 import Search from '../../Shared/Search'
 
 import Logo from '../../../theme/icons/Logo.svg'
@@ -10,8 +10,8 @@ import SettingsIcon from '../../../theme/icons/Top-Nav-Settings.svg'
 import './index.css'
 
 const Header = props => {
-  var name = props.name
-  var fields = props.fields
+  let name = props.name
+  let fields = props.fields
 
   return (
     <div className='header'>
@@ -23,7 +23,9 @@ const Header = props => {
           debounceTime={500}
         />
       </div>
-      <HeaderDropdown name={name} fields={fields} />
+      <div className='header__dropdown'>
+        <LinkDropdown name={name} fields={fields} />
+      </div>
       <div className='header__login-figure'>
         <LoginFigure />
       </div>

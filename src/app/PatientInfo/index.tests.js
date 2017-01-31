@@ -10,20 +10,16 @@ import LoadingSpinner from '../../theme/spinners/Animation-Loader.svg'
 proxyquire.noCallThru()
 
 describe('PatientInfo container component', function () {
-  it('should call the getClaimActions and getPatientInfo methods on componentDidMount and set loading state to false', function (done) {
-    const getClaimActions = sinon.stub().returns(Promise.resolve({
-      Payload: {
-        Actions: []
-      }
-    }))
+  it('should call the getPatientInfo, and getResourceValue methods on componentDidMount and set loading state to false', function (done) {
     const getPatientInfo = sinon.stub().returns(Promise.resolve([]))
+    const getDropdownData = sinon.stub().returns(Promise.resolve([]))
 
     const PatientInfoPatched = proxyquire(
       './index.js',
       {
         './Api': {
-          getClaimActions,
-          getPatientInfo
+          getPatientInfo,
+          getDropdownData
         }
       }
     ).default
@@ -31,8 +27,8 @@ describe('PatientInfo container component', function () {
     const location = { query: { claimId: 'test' } }
 
     const patientInfo = mount(<PatientInfoPatched location={location} />)
-    expect(getClaimActions.called).to.equal(true)
     expect(getPatientInfo.called).to.equal(true)
+    expect(getDropdownData.called).to.equal(true)
 
     expect(patientInfo.state('loading')).to.equal(true)
 

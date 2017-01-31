@@ -1,0 +1,122 @@
+.multi-select-dropdown {
+  text-align: left;
+  font-weight: bold;
+  width: 100%;
+  font-size: $fontXs;
+  color: $outerSpace;
+}
+
+.multi-select-dropdown-container .multi-select-dropdown-label {
+  text-align: left;
+  font-weight: 500;
+  font-size: $fontSm;
+  color: $dimGray;
+  line-height: 17px;
+  margin-bottom: $gutterSm;
+}
+
+.multi-select-dropdown .Select-control {
+  height: 32px;
+  border-color: $gainsboro;
+  color: $outerSpace;
+  table-layout: fixed;
+  border-radius: 2px;
+}
+
+.multi-select-dropdown .Select-multi-value-wrapper {
+  width: 100%;
+}
+
+.multi-select-dropdown .is-open > .Select-control {
+  border-color: $gainsboro;
+}
+
+.multi-select-dropdown .Select-placeholder,
+.multi-select-dropdown .Select--single > .Select-control .Select-value {
+  line-height: 30px;
+  color: $outerSpace;
+}
+
+.multi-select-dropdown .has-value.Select--single > .Select-control .Select-value .Select-value-label,
+.multi-select-dropdown .has-value.is-pseudo-focused.Select--single > .Select-control .Select-value .Select-value-label {
+  color: $outerSpace;
+}
+
+.multi-select-dropdown .has-value.Select--single > .Select-control .Select-value a.Select-value-label:hover,
+.multi-select-dropdown .has-value.is-pseudo-focused.Select--single > .Select-control .Select-value a.Select-value-label:hover,
+.multi-select-dropdown .has-value.Select--single > .Select-control .Select-value a.Select-value-label:focus,
+.multi-select-dropdown .has-value.is-pseudo-focused.Select--single > .Select-control .Select-value a.Select-value-label:focus {
+  color: $outerSpace;
+}
+
+.multi-select-dropdown .Select-input {
+  height: 30px;
+}
+
+.multi-select-dropdown .Select-arrow {
+  border-color: $steelBlue transparent transparent;
+}
+
+.multi-select-dropdown .is-open .Select-arrow,
+.multi-select-dropdown .Select-arrow-zone:hover > .Select-arrow {
+  border-top-color: $midnightBlue;
+}
+
+.multi-select-dropdown .is-open .Select-arrow-zone,
+.multi-select-dropdown .Select-arrow-zone:hover {
+  background: linear-gradient(to right, $white, $oceanMist);
+}
+
+.multi-select-dropdown .Select-menu-outer {
+  border-top-color: $gainsboro;
+}
+
+.multi-select-dropdown .Select-option {
+  color: $outerSpace;
+}
+
+.multi-select-dropdown .Select-option.is-selected {
+  color: $outerSpace;
+  background-color: $white;
+}
+
+.multi-select-dropdown .Select-option.is-focused {
+  color: $midnightBlue;
+  background-color: $whiteSmoke;
+}
+
+.multi-select-dropdown .Select-option:last-child {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.multi-select-dropdown-container .Select--multi .Select-value {
+  border-radius: 0;
+  color: $outerSpace;
+  background-color: $whiteSmoke;
+  border: 1px solid $gainsboro;
+  white-space: nowrap;
+  max-width: calc(100% - 15px);
+}
+
+.multi-select-dropdown-container .Select--multi .Select-value-label {
+  color: $outerSpace;
+  max-width: calc(100% - 15px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.multi-select-dropdown-container .Select--multi .Select-value-icon {
+  border-right: 1px solid $gainsboro;
+}
+
+.multi-select-dropdown-container .Select--multi .Select-value-icon:hover,
+.multi-select-dropdown-container .Select--multi .Select-value-icon:focus {
+  background-color: $midnightBlue;
+  color: $white;
+}
+
+.multi-select-dropdown-container .Select--multi .Select-value-icon:active {
+  background-color: $midnightBlue;
+  color: $white;
+}

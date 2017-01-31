@@ -35,3 +35,9 @@
 .header__settings:hover {
   background-color: $midnightBlue;
 }
+
+.header .header__dropdown {
+  display: inline-block;
+  float: right;
+  width: 135px;
+}

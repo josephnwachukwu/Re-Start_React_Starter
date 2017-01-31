@@ -5,9 +5,7 @@
 
 .patient-action-card-container .patient-action-card--active {
   background: $whiteSmoke;
-  margin: 0 $gutterXs;
   padding: $gutterXs 0;
-  width: calc(100% - $gutterSm);
 }
 
 .patient-action-card__triangle-icon {
@@ -33,6 +31,7 @@
   height: 100%;
   padding: 9px 0;
   align-items: center;
+  text-align: center;
 }
 
 .patient-action-card .patient-action-card__date {
@@ -47,8 +46,8 @@
   color: $deepSpace;
   margin: $gutterXs 0;
   padding: 0 $gutterDefault;
-  max-width: 68px;
-  min-width: 68px;
+  max-width: 66px;
+  min-width: 66px;
   height: 32px;
 }
 
@@ -93,19 +92,19 @@
 
 .patient-action-card--row__status {
   float: right;
-  padding: $gutterSm 0;
+  padding: 12px 0;
   font-size: $fontXs;
 }
 
 .patient-action-card--col__status {
   float: right;
-  padding: $gutterSm $gutterLg $gutterSsm $gutterXs;
+  padding: 12px $gutterLg 12px $gutterXs;
   font-size: $fontXs;
 }
 
 .patient-action-card__tag {
   float: right;
-  padding: $gutterSm $gutterLg $gutterSsm $gutterXs;
+  padding: 12px $gutterLg $gutterSm $gutterXs;
   color: $outerSpace;
   font-size: $fontXs;
   font-weight: bold;
@@ -120,7 +119,7 @@
 .patient-action-card .patient-action-card__button,
 .patient-action-card--active .patient-action-card__button {
   float: right;
-  padding: $gutterLg;
+  padding: 22px $gutterLg;
   margin: -$gutterXs 0;
   max-width: 56px;
   min-width: 56px;
@@ -148,8 +147,8 @@
 }
 
 .patient-action-card__dropdown .patient-action-card__dropdown-padding {
-  max-width: 56px;
-  min-width: 56px;
+  max-width: 55px;
+  min-width: 55px;
   align-self: flex-start;
 }
 

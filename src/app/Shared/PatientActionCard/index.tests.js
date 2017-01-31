@@ -149,7 +149,46 @@ describe('Patient Action Card component', function () {
 
     const component = shallow(<PatientActionCard action={patientAction} />)
     component.find('.patient-action-card__button').simulate('click')
-    expect(component.state('dropdownActive')).to.equal(true)
+    expect(component.state('expanded')).to.equal(true)
     expect(component.find('.patient-action-card__dropdown').length).to.equal(1)
+  })
+
+  it('updates when new props are passed', function () {
+    const patientAction = {
+      ProductLine: 'DIAGNOSTICS',
+      ServiceType: 'STANDARD',
+      Status: 'PENDING',
+      StatusDetail: null,
+      ActionTitle: 'Language Appointment',
+      ActionDate: '2016-12-05T00:00:00.000Z',
+      ActionDetail: [
+        {
+          Name: 'Service Type',
+          Value: 'In-person Standard'
+        },
+        {
+          Name: 'Language Type',
+          Value: 'German'
+        },
+        {
+          Name: 'Appointment Details',
+          Value: 'Doctor'
+        },
+        {
+          Name: 'Location Details',
+          Value: '1111 Wynnton Road\nColumbus, GA 12345'
+        },
+        {
+          Name: 'Service Date',
+          Value: '8/18/2016 12:30 PM'
+        }
+      ]
+    }
+
+    const actionCard = shallow(<PatientActionCard action={patientAction} />)
+
+    expect(actionCard.state('expanded')).to.equal(false)
+    actionCard.setProps({expanded: true})
+    expect(actionCard.state('expanded')).to.equal(true)
   })
 })

@@ -19,7 +19,8 @@ describe('Patient Info Tabs component', function () {
         'Title': 'Demographics',
         'Details': [
           {
-            'DOB': '1970-07-27T00:00:00.000Z'
+            'DOB': '1970-07-27T00:00:00.000Z',
+            'Address': ''
           }
         ]
       }
@@ -45,19 +46,25 @@ describe('Patient Info Tabs component', function () {
         'Title': 'Demographics',
         'Details': [
           {
-            'DOB': '1970-07-27T00:00:00.000Z'
+            'DOB': '1970-07-27T00:00:00.000Z',
+            'Address': ''
           }
         ]
       },
       {
         'Title': 'Physician',
-        'Details': []
+        'Details': [
+          {
+            'Address': ''
+          }
+        ]
       },
       {
         'Title': 'Attorney',
         'Details': [
           {
-            'AttorneyName': 'Katherine M. Massa\nMorgan & Morgan PA'
+            'AttorneyName': 'Katherine M. Massa\nMorgan & Morgan PA',
+            'Address': ''
           }
         ]
       }
@@ -82,7 +89,8 @@ describe('Patient Info Tabs component', function () {
         'Title': 'Demographics',
         'Details': [
           {
-            'DOB': '2016-12-05T00:00:00.000Z'
+            'DOB': '2016-12-05T00:00:00.000Z',
+            'Address': ''
           }
         ]
       }

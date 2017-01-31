@@ -1,0 +1,102 @@
+.link-dropdown {
+  margin: 4px $gutterDefault 0;
+  position: relative;
+  display: inline-block;
+  float: right;
+  width: 100%;
+  color: $outerSpace;
+  font-size: $fontDefault;
+  text-align: center;
+  z-index: 1000;
+}
+
+.link-dropdown .Select-control {
+  height: 32px;
+  border: none;
+  table-layout: fixed;
+  overflow: visible;
+}
+
+.link-dropdown .Select-control:hover {
+  box-shadow: none;
+  background: $whiteSmoke;
+}
+
+.link-dropdown .is-open > .Select-control {
+  border-color: $white;
+}
+
+.link-dropdown .is-open > .Select-control > .Select-arrow {
+  border-color: transparent transparent $white;
+  border-width: 0 5px 5px;
+}
+
+.link-dropdown .Select-placeholder,
+.link-dropdown .Select--single > .Select-control .Select-value {
+  line-height: 30px;
+  color: $outerSpace;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+.link-dropdown .has-value.Select--single > .Select-control .Select-value .Select-value-label,
+.link-dropdown .has-value.is-pseudo-focused.Select--single > .Select-control .Select-value .Select-value-label {
+  color: $outerSpace;
+}
+
+.link-dropdown .has-value.Select--single > .Select-control .Select-value a.Select-value-label:hover,
+.link-dropdown .has-value.is-pseudo-focused.Select--single > .Select-control .Select-value a.Select-value-label:hover,
+.link-dropdown .has-value.Select--single > .Select-control .Select-value a.Select-value-label:focus,
+.link-dropdown .has-value.is-pseudo-focused.Select--single > .Select-control .Select-value a.Select-value-label:focus {
+  color: $outerSpace;
+}
+
+.link-dropdown .Select-input {
+  height: 30px;
+}
+
+.link-dropdown .Select-arrow-zone {
+  display: none;
+  width: 0;
+  padding-right: 5px;
+}
+
+.link-dropdown .Select-arrow {
+  border-color: $white;
+  display: none;
+}
+
+.link-dropdown .is-open .Select-arrow,
+.link-dropdown .Select-arrow-zone:hover > .Select-arrow {
+  border-top-color: $white;
+}
+
+.link-dropdown .is-open .Select-arrow-zone,
+.link-dropdown .Select-arrow-zone:hover {
+  background: $white;
+}
+
+.link-dropdown .Select-menu-outer {
+  border: 1px solid $white;
+  border-top-color: $white;
+}
+
+.link-dropdown .Select-option {
+  color: $outerSpace;
+  padding: $gutterXs $gutterSm;
+}
+
+.link-dropdown .Select-option.is-selected {
+  color: $outerSpace;
+  background-color: $white;
+}
+
+.link-dropdown .Select-option.is-focused {
+  color: $midnightBlue;
+  background-color: $whiteSmoke;
+}
+
+.link-dropdown .Select-option:last-child {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}

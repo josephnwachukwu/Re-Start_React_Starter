@@ -47,35 +47,42 @@ export default class PatientActionCard extends Component {
     this.getDropdownIcon = this.getDropdownIcon.bind(this)
     this.renderDropdown = this.renderDropdown.bind(this)
     this.renderView = this.renderView.bind(this)
+
     this.state = {
-      dropdownActive: false
+      expanded: props.expanded
     }
+  }
+
+  componentWillReceiveProps (props) {
+    this.setState({
+      expanded: props.expanded
+    })
   }
 
   onClick () {
     this.setState({
-      dropdownActive: !this.state.dropdownActive
+      expanded: !this.state.expanded
     })
   }
 
   getIcon (productLine) {
     switch (productLine.toUpperCase()) {
-      case 'DENTAL': return (this.state.dropdownActive ? <DentalActive /> : <Dental />)
-      case 'DIAGNOSTICS': return (this.state.dropdownActive ? <DiagnosticsActive /> : <Diagnostics />)
-      case 'EQUIPMENT & DEVICES': return (this.state.dropdownActive ? <EDMActive /> : <EDM />)
-      case 'HOME HEALTH CARE': return (this.state.dropdownActive ? <HomeHealthActive /> : <HomeHealth />)
-      case 'LANGUAGE': return (this.state.dropdownActive ? <LanguageActive /> : <Language />)
-      case 'PHYSICAL MEDICINE': return (this.state.dropdownActive ? <PhysicalMedicineActive /> : <PhysicalMedicine />)
-      case 'QUOTE': return (this.state.dropdownActive ? <QuoteActive /> : <Quote />)
-      case 'REPORT': return (this.state.dropdownActive ? <ReportActive /> : <Report />)
-      case 'TRANSPORTATION': return (this.state.dropdownActive ? <TransportationActive /> : <Transportation />)
+      case 'DENTAL': return (this.state.expanded ? <DentalActive /> : <Dental />)
+      case 'DIAGNOSTICS': return (this.state.expanded ? <DiagnosticsActive /> : <Diagnostics />)
+      case 'EQUIPMENT & DEVICES': return (this.state.expanded ? <EDMActive /> : <EDM />)
+      case 'HOME HEALTH CARE': return (this.state.expanded ? <HomeHealthActive /> : <HomeHealth />)
+      case 'LANGUAGE': return (this.state.expanded ? <LanguageActive /> : <Language />)
+      case 'PHYSICAL MEDICINE': return (this.state.expanded ? <PhysicalMedicineActive /> : <PhysicalMedicine />)
+      case 'QUOTE': return (this.state.expanded ? <QuoteActive /> : <Quote />)
+      case 'REPORT': return (this.state.expanded ? <ReportActive /> : <Report />)
+      case 'TRANSPORTATION': return (this.state.expanded ? <TransportationActive /> : <Transportation />)
       default: return <TemporaryIcon />
     }
   }
 
   getStatusIcon (status) {
     switch (status) {
-      case 'COMPLETED': return <Completed />
+      case 'COMPLETE': return <Completed />
       case 'SUBMITTED': return <Submitted />
       case 'PENDING': return <Pending />
       case 'PROCESSED': return <Processing />
@@ -86,11 +93,11 @@ export default class PatientActionCard extends Component {
   }
 
   getDropdownIcon () {
-    return this.state.dropdownActive ? <Plus /> : <Minus />
+    return this.state.expanded ? <Plus /> : <Minus />
   }
 
   renderDropdown (actionDetail) {
-    if (this.state.dropdownActive && actionDetail) {
+    if (this.state.expanded && actionDetail) {
       return (
         <div className='grid__col-12 patient-action-card__dropdown'>
           <div className='patient-action-card__dropdown-border' />
@@ -128,9 +135,9 @@ export default class PatientActionCard extends Component {
 
     if (layout === 'col') {
       return (
-        <div className={this.state.dropdownActive ? 'grid patient-action-card--active' : 'grid patient-action-card'}>
+        <div className={this.state.expanded ? 'grid patient-action-card--active' : 'grid patient-action-card'}>
           <div className='grid--align-self-stretch__col-1 patient-action-card__icon'>
-            <div className={this.state.dropdownActive ? 'patient-action-card__triangle-icon' : ''} />
+            <div className={this.state.expanded ? 'patient-action-card__triangle-icon' : ''} />
             <div className='patient-action-card__product-icon'>{this.getIcon(action.ProductLine)}</div>
           </div>
           <div className='grid__col-1 patient-action-card__date'>
@@ -153,9 +160,9 @@ export default class PatientActionCard extends Component {
       )
     } else if (layout === 'row') {
       return (
-        <div className={this.state.dropdownActive ? 'grid patient-action-card--active' : 'grid patient-action-card'}>
+        <div className={this.state.expanded ? 'grid patient-action-card--active' : 'grid patient-action-card'}>
           <div className='grid--align-self-stretch__col-1 patient-action-card__icon'>
-            <div className={this.state.dropdownActive ? 'patient-action-card__triangle-icon' : ''} />
+            <div className={this.state.expanded ? 'patient-action-card__triangle-icon' : ''} />
             <div className='patient-action-card__product-icon'>{this.getIcon(action.ProductLine)}</div>
           </div>
           <div className='grid__col-1 patient-action-card__date'>
@@ -195,11 +202,13 @@ export default class PatientActionCard extends Component {
 }
 
 PatientActionCard.defaultProps = {
-  layout: 'row'
+  layout: 'row',
+  expanded: false
 }
 
 PatientActionCard.propTypes = {
   layout: PropTypes.string,
+  expanded: PropTypes.bool,
   action: PropTypes.shape({
     ProductLine: PropTypes.string,
     ServiceType: PropTypes.string,
