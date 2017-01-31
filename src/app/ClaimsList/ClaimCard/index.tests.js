@@ -41,7 +41,8 @@ describe('Claim Card component', function () {
       PatientFirstName: 'Don',
       PatientLastName: 'Draper',
       DOB: '1973-02-22T00:00:00.000Z',
-      DOI: '2016-04-19T00:00:00.000Z'
+      DOI: '2016-04-19T00:00:00.000Z',
+      ClaimSystemId: '8ad71dff-5aac-4853-aa20-10ae169aff22'
     }
 
     const claimCard = shallow(<ClaimCard claim={claimPinned} />)

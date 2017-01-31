@@ -1,8 +1,10 @@
 import React, { PropTypes } from 'react'
-import './index.css'
+import { browserHistory } from 'react-router'
 
 import QuickActions from './QuickActions'
 import ReturnButton from '../../../theme/icons/Return-to-Page.svg'
+
+import './index.css'
 
 const PatientHeader = props => {
   const name = props.patientFirstName + ' ' + props.patientLastName
@@ -10,7 +12,7 @@ const PatientHeader = props => {
   return (
     <div className='patient-header'>
       <div className='patient-header__icon'>
-        <ReturnButton />
+        <ReturnButton onClick={browserHistory.goBack} />
       </div>
       <div className='patient-header__label'>
         <p className='patient-header__label-name'>{name}</p>

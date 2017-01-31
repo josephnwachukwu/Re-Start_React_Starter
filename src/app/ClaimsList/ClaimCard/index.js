@@ -28,8 +28,7 @@ export default class ClaimCard extends Component {
       stripTimezone(this.props.claim.DOB),
       'MM/DD/YYYY'
     )
-    const claimId = '8ad71dff-5aac-4853-aa20-10ae169aff22'
-    const url = 'patientinfo?claimId=' + claimId
+    const url = 'patientinfo?claimId=' + this.props.claim.ClaimSystemId
 
     return (
       <div className='grid claim-card'>

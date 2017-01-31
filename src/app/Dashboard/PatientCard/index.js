@@ -62,8 +62,7 @@ export default class PatientCard extends Component {
     const claimNum = this.props.claim.ClaimNumber
     const name = this.props.claim.PatientFirstName + ' ' + this.props.claim.PatientLastName
     const expanded = this.state.expanded
-    const claimId = '8ad71dff-5aac-4853-aa20-10ae169aff22'
-    const url = 'patientinfo?claimId=' + claimId
+    const url = 'patientinfo?claimId=' + this.props.claim.ClaimSystemId
 
     if (layout === 'col') {
       return (
