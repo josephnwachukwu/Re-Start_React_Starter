@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import format from 'date-fns/format'
 import { find } from 'lodash'
 
-import { stripTimezone } from '../../Shared/Utils'
+import { stripTimezone, MultiLineRender } from '../../Shared/Utils'
 
 import './index.css'
 
@@ -63,6 +63,7 @@ export default class PatientInfoTabs extends Component {
       case 'Demographics':
         const demoDetails = find(this.props.info, {Title: 'Demographics'}).Details[0]
         const demoBirthday = format(stripTimezone(demoDetails.DOB), 'MMMM D, YYYY')
+        const demoAddress = MultiLineRender(demoDetails.Address)
         return (
           <div className='patient-info-tabs__content'>
             <div className='patient-info-tabs__section'>
@@ -91,7 +92,7 @@ export default class PatientInfoTabs extends Component {
             </div>
             <div className='patient-info-tabs__content--100'>
               <p className='patient-info-tabs__title'>Address</p>
-              <p className='patient-info-tabs__details'>{demoDetails.Address}</p>
+              <div className='patient-info-tabs__details'>{demoAddress}</div>
             </div>
             <div className='patient-info-tabs__section'>
               <div className='patient-info-tabs__content--50'>

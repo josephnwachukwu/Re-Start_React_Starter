@@ -94,12 +94,14 @@ export default class PatientActionCard extends Component {
       return (
         <div className='grid__col-12 patient-action-card__dropdown'>
           <div className='patient-action-card__dropdown-border' />
-          {
+          <div className='grid patient-action-card__dropdown-card' >
+            <div className='grid__col-1 patient-action-card__dropdown-padding' />
+            <div className='grid__col-auto patient-action-card__info-blocks'>
+              {
             actionDetail.map((field, index) => {
               return (
-                <div className='grid patient-action-card__dropdown-card' key={index}>
-                  <div className='grid__col-2 patient-action-card__dropdown-padding' />
-                  <div className='grid__col-4 patient-action-card__dropdown-tag'>
+                <div key={index} className='patient-action-card__info-block'>
+                  <div className='grid__col-auto patient-action-card__dropdown-tag'>
                     {field.Name}
                   </div>
                   <div className='grid__col-auto patient-action-card__dropdown-content'>
@@ -109,6 +111,8 @@ export default class PatientActionCard extends Component {
               )
             })
           }
+            </div>
+          </div>
         </div>
       )
     }
