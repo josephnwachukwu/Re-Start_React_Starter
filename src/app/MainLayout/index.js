@@ -6,7 +6,7 @@ import SideBar from './SideBar'
 
 import './index.css'
 
-class MainLayout extends Component {
+export default class MainLayout extends Component {
   render () {
     const dropdown = [
       {key: 0, name: 'Profile', url: 'profile'},
@@ -35,5 +35,3 @@ MainLayout.propTypes = {
   children: PropTypes.node,
   location: PropTypes.object
 }
-
-export default MainLayout

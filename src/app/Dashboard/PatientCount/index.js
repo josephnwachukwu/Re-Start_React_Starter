@@ -6,6 +6,9 @@ import variables from '../../../theme/variables.js'
 import './index.css'
 
 const PatientCount = props => {
+  const pinnedCount = props.pinnedCount
+  const unpinnedCount = props.totalCount - props.pinnedCount
+
   return (
     <div className='patient-count'>
       <div className='patient-count__pie-chart'>
@@ -14,8 +17,8 @@ const PatientCount = props => {
         </div>
         <VictoryPie
           data={[
-            {patients: 'pinned', number: props.pinnedCount},
-            {patients: 'total', number: props.totalCount}
+            {patients: 'pinned', number: pinnedCount},
+            {patients: 'unpinned', number: unpinnedCount}
           ]}
           x='month'
           y={(datum) => datum.number}
@@ -23,7 +26,7 @@ const PatientCount = props => {
             data: {
               fill: (d) => {
                 switch (d.patients) {
-                  case 'total':
+                  case 'unpinned':
                     return variables.lapisLazuli
                   case 'pinned':
                     return variables.mintGreen

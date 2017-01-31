@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react'
 
 import HeaderDropdown from './HeaderDropdown'
+import Search from '../../Shared/Search'
 
 import Logo from '../../../theme/icons/Logo.svg'
 import LoginFigure from '../../../theme/icons/Top-Nav-Login-Figure.svg'
@@ -15,13 +16,20 @@ const Header = props => {
   return (
     <div className='header'>
       <Logo className='header__icon' />
-      <div className='header__settings'>
-        <SettingsIcon />
+      <div className='header__search-bar'>
+        <Search
+          minNumCharacters={2}
+          resultLimit={25}
+          debounceTime={500}
+        />
       </div>
+      <HeaderDropdown name={name} fields={fields} />
       <div className='header__login-figure'>
         <LoginFigure />
       </div>
-      <HeaderDropdown name={name} fields={fields} />
+      <div className='header__settings'>
+        <SettingsIcon />
+      </div>
     </div>
   )
 }

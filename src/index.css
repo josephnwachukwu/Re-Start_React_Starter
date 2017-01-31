@@ -23,3 +23,7 @@
 [disabled]:hover {
   pointer-events: none;
 }
+
+.bolden {
+  font-weight: bold;
+}

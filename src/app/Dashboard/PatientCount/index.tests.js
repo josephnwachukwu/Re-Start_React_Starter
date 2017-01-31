@@ -6,9 +6,9 @@ import PatientCount from './index.js'
 
 describe('PatientCount component', function () {
   it('should show the correct pinned and total counts from passed props', function () {
-    const patientCount = shallow(<PatientCount pinnedCount={50} totalCount={100} />)
+    const patientCount = shallow(<PatientCount pinnedCount={45} totalCount={100} />)
 
-    expect(patientCount.find('.patient-count__fraction').text()).to.equal('You have 50 out of 100')
-    expect(patientCount.find('.patient-count__pie-chart-number').text()).to.equal('50')
+    expect(patientCount.find('.patient-count__fraction').text()).to.equal('You have 45 out of 100')
+    expect(patientCount.find('.patient-count__pie-chart-number').text()).to.equal('45')
   })
 })
