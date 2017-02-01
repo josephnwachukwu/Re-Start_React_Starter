@@ -100,6 +100,7 @@ export default class PatientInfo extends Component {
             <PatientHistory
               expanded={this.state.cardExpanded}
               selectedValues={this.state.selectedValues}
+              claimId={this.state.claimId}
             />
           </div>
         </div>

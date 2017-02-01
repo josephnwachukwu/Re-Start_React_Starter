@@ -26,8 +26,7 @@ export default class PatientHistory extends Component {
   }
 
   componentDidMount () {
-    const claimId = 'f389d478-a64b-4693-b6ad-923bd6f24716'
-    getClaimActions(claimId, [], [], format(subDays(Date(), 14), 'MM-DD-YYYY'), format(Date(), 'MM-DD-YYYY'))
+    getClaimActions(this.props.claimId, [], [], format(subDays(Date(), 14), 'MM-DD-YYYY'), format(Date(), 'MM-DD-YYYY'))
       .then((response) => {
         this.setState({
           actions: response.Payload.Actions,
@@ -55,8 +54,7 @@ export default class PatientHistory extends Component {
   componentDidUpdate () {
     if (this.state.update) {
       const values = this.state.values
-      const claimId = 'f389d478-a64b-4693-b6ad-923bd6f24716'
-      getClaimActions(claimId, values.selectedType, values.selectedStatus, values.selectedDate[1], values.selectedDate[2])
+      getClaimActions(this.props.claimId, values.selectedType, values.selectedStatus, values.selectedDate[1], values.selectedDate[2])
         .then((response) => {
           this.setState({
             actions: response.Payload.Actions,
@@ -125,5 +123,6 @@ PatientHistory.propTypes = {
     selectedDate: PropTypes.array.isRequired,
     selectedType: PropTypes.array.isRequired,
     selectedStatus: PropTypes.array.isRequired
-  })
+  }),
+  claimId: PropTypes.string.isRequired
 }
