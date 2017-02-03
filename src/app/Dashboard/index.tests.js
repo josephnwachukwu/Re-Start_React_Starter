@@ -10,7 +10,12 @@ import Dashboard from './index.js'
 describe('Dashboard container component', function () {
   it('should call the getClaimActions, getAppointments, and getMetrics methods on componentDidMount and set loading state to false', function (done) {
     const getClaimActions = sinon.stub().returns(Promise.resolve([]))
-    const getMetrics = sinon.stub().returns(Promise.resolve([]))
+    const getMetrics = sinon.stub().returns(Promise.resolve({
+      Payload: {
+        PinnedClaimsCount: 0,
+        TotalClaimsCount: 0
+      }
+    }))
     const getAppointments = sinon.stub().returns(Promise.resolve([]))
 
     const DashboardPatched = proxyquire(
@@ -31,22 +36,20 @@ describe('Dashboard container component', function () {
 
     expect(dashboard.state('loading')).to.equal(true)
 
-    // wait for setState to be called by throwing this other expect
-    // to the end of the processing queue via setImmediate
     setImmediate(() => {
       expect(dashboard.state('loading')).to.equal(false)
       done()
     })
   })
 
-  it('has an updatePinnedStatus method that updates the pinned status for a claim and gets the latest metrics', function () {
-    const getMetrics = sinon.stub().returns(Promise.resolve([]))
+  it('has an updatePinnedStatus method that updates the pinned status for a claim and gets the latest metrics', function (done) {
+    const setPinnedStatus = sinon.stub().returns(Promise.resolve([]))
 
     const DashboardPatched = proxyquire(
       './index.js',
       {
         './Api': {
-          getMetrics
+          setPinnedStatus
         }
       }
     ).default
@@ -100,10 +103,13 @@ describe('Dashboard container component', function () {
     dashboard.setState({
       claims: initialClaims
     })
-
     expect(dashboard.state('claims')[0].PinnedStatus).to.equal(true)
     dashboard.instance().updatePinnedStatus('cf2de328-e9f0-46ff-80c6-4de61af1177d', false)
-    expect(dashboard.state('claims')[0].PinnedStatus).to.equal(false)
+
+    setImmediate(() => {
+      expect(dashboard.state('claims')[0].PinnedStatus).to.equal(false)
+      done()
+    })
   })
 
   it('has a getMoreAppointments method that grabs the correct chunk of previous week appointments and updates the state with them', function (done) {

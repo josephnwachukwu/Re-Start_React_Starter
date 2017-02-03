@@ -24,6 +24,21 @@ function getMetrics (adjusterId) {
   })
 }
 
+function setPinnedStatus (claimId, pinnedStatus) {
+  const baseUrl = getAPIBaseURL()
+  const url = `${baseUrl}/claims/${claimId}/pinnedstatus`
+
+  return fetch(url, {
+    method: 'put',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(pinnedStatus)
+  }).then((response) => {
+    return response.json()
+  })
+}
+
 function getAppointments (adjusterId, startDate, endDate) {
   const baseUrl = getAPIBaseURL()
   const url = `${baseUrl}/adjusters/${adjusterId}/claims/appointments?startDate=${startDate}&endDate=${endDate}`
@@ -39,5 +54,6 @@ function getAppointments (adjusterId, startDate, endDate) {
 export {
   getClaimActions,
   getMetrics,
+  setPinnedStatus,
   getAppointments
 }

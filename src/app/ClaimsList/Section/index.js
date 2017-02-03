@@ -5,6 +5,9 @@ import './index.css'
 const Section = props => {
   const claims = props.claims || []
   const title = props.title
+  const undo = props.undo
+
+  const showUndoBar = props.showUndoBar
   const emptySectionTitleText = `You have no patients with last name beginning with ${title}`
 
   return (
@@ -23,13 +26,17 @@ const Section = props => {
       <div className='grid__col-12 section__cards'>
         {
           claims.map((claim, key) => {
-            return (
-              <ClaimCard
-                claim={claim}
-                key={claim.ClaimSystemId || key}
-                updatePinnedStatus={props.updatePinnedStatus}
-              />
-            )
+            if (undo.showUndo && claim.ClaimSystemId === undo.lastClaimId) {
+              return showUndoBar()
+            } else {
+              return (
+                <ClaimCard
+                  claim={claim}
+                  key={claim.ClaimSystemId || key}
+                  updatePinnedStatus={props.updatePinnedStatus}
+                />
+              )
+            }
           })
         }
       </div>
@@ -40,7 +47,9 @@ const Section = props => {
 Section.propTypes = {
   title: PropTypes.string,
   claims: PropTypes.array,
-  updatePinnedStatus: PropTypes.func
+  updatePinnedStatus: PropTypes.func,
+  undo: PropTypes.object,
+  showUndoBar: PropTypes.func
 }
 
 export default Section

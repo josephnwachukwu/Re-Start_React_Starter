@@ -20,7 +20,7 @@ const PatientCount = props => {
             {patients: 'pinned', number: pinnedCount},
             {patients: 'unpinned', number: unpinnedCount}
           ]}
-          x='month'
+          x='patients'
           y={(datum) => datum.number}
           style={{
             data: {

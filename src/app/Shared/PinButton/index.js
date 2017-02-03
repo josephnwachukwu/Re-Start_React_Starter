@@ -1,7 +1,5 @@
 import React, { Component, PropTypes } from 'react'
 
-import { setPinnedStatus } from './Api'
-
 import Pin from '../../../theme/icons/Pinned.svg'
 import Unpin from '../../../theme/icons/Unpinned.svg'
 import LoadingSpinner from '../../../theme/spinners/Animation-Loader.svg'
@@ -31,16 +29,12 @@ export default class PinButton extends Component {
           loading: true
         },
         () => {
-          setPinnedStatus(this.props.claimId, newPinnedStatus)
-            .then((response) => {
-              // Call parent handler on success of API call
-              this.props.updatePinnedStatus(this.props.claimId, newPinnedStatus)
-                .then(() => {
-                  this.setState({
-                    clickable: true,
-                    loading: false
-                  })
-                })
+          this.props.updatePinnedStatus(this.props.claimId, newPinnedStatus)
+            .then(() => {
+              this.setState({
+                clickable: true,
+                loading: false
+              })
             })
         }
       )

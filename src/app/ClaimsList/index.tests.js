@@ -12,6 +12,17 @@ proxyquire.noCallThru()
 
 describe('ClaimsList container component', function () {
   it('has an updatePinnedStatus method that updates the pinned status for a claim', function () {
+    const setPinnedStatus = sinon.stub().returns(Promise.resolve([]))
+
+    const ClaimListPatched = proxyquire(
+      './index.js',
+      {
+        './Api': {
+          setPinnedStatus
+        }
+      }
+    ).default
+
     const initialClaims = [
       {
         'PatientFirstName': 'Jon',
@@ -27,7 +38,7 @@ describe('ClaimsList container component', function () {
       }
     ]
 
-    const claimsList = shallow(<ClaimsList />)
+    const claimsList = shallow(<ClaimListPatched />)
 
     claimsList.setState({
       claims: initialClaims
@@ -324,5 +335,53 @@ describe('ClaimsList container component', function () {
     ).default
     mount(<ClaimsListPatched />)
     expect(getClaimsList.called).to.equal(true)
+  })
+
+  it('should have initial state as false for showUndo state', function () {
+    const wrapper = shallow(<ClaimsList />)
+    expect(wrapper.state().undo.showUndo).to.equal(false)
+  })
+
+  it('has an updatePinnedStatus method that updates the undo state for undoBar and closeUndoBar method that closes undoBar', function (done) {
+    const setPinnedStatus = sinon.stub().returns(Promise.resolve([]))
+    const getClaimsList = sinon.stub().returns(Promise.resolve([]))
+
+    const ClaimListPatched = proxyquire(
+      './index.js',
+      {
+        './Api': {
+          setPinnedStatus,
+          getClaimsList
+        }
+      }
+    ).default
+
+    const initialClaims = [
+      {
+        'ClaimSystemId': 'cf2de328-e9f0-46ff-80c6-4de61af1177d',
+        'AdjusterId': 'fdbdd892-8dd8-4fbf-8ea7-8c2dbdb40b2b',
+        'ClaimNumber': 'WC200240',
+        'PatientFirstName': 'Afirst',
+        'PatientLastName': 'Alast',
+        'PinnedStatus': true
+      }
+    ]
+
+    const claimList = shallow(<ClaimListPatched />)
+
+    claimList.setState({
+      claims: initialClaims
+    })
+
+    claimList.instance().updatePinnedStatus('cf2de328-e9f0-46ff-80c6-4de61af1177d', false)
+
+    setImmediate(() => {
+      expect(claimList.state().undo.showUndo).to.equal(true)
+      expect(claimList.state().undo.lastClaimId).to.equal('cf2de328-e9f0-46ff-80c6-4de61af1177d')
+      expect(claimList.state().undo.lastPinnedState).to.equal(false)
+      claimList.instance().closeUndoBar()
+      expect(claimList.state().undo.showUndo).to.equal(false)
+      done()
+    })
   })
 })
