@@ -20,6 +20,7 @@ export default class PinButton extends Component {
 
   onClick (e) {
     e.stopPropagation()
+
     const newPinnedStatus = !this.props.pinned
 
     if (this.state.clickable) {

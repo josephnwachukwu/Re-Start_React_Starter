@@ -136,10 +136,6 @@
   border-bottom: 4px solid $gainsboro;
 }
 
-.search__result-link {
-  text-decoration: none;
-}
-
 .search__result {
   display: flex;
   align-items: center;

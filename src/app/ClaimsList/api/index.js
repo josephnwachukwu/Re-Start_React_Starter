@@ -27,4 +27,7 @@ function setPinnedStatus (claimId, pinnedStatus) {
   })
 }
 
-export { getClaimsList, setPinnedStatus }
+export {
+  getClaimsList,
+  setPinnedStatus
+}

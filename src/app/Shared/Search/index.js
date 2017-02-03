@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react'
-import { Link } from 'react-router'
 import _ from 'lodash'
 
 import PinButton from '../PinButton'
-import { getSearchResults } from './Api'
+import { getSearchResults, setPinnedStatus } from './Api'
+
 import LoadingSpinner from '../../../theme/spinners/Animation-Loader.svg'
 import SearchIcon from '../../../theme/icons/Top-Nav-Search.svg'
 
@@ -20,8 +20,10 @@ export default class Search extends Component {
     this.clickPlaceholder = this.clickPlaceholder.bind(this)
     this.clickOutsideSearch = this.clickOutsideSearch.bind(this)
     this.closeDropdown = this.closeDropdown.bind(this)
+    this.redirect = this.redirect.bind(this)
     this.renderDropdown = this.renderDropdown.bind(this)
     this.highlightKeyword = this.highlightKeyword.bind(this)
+    this.updatePinnedStatus = this.updatePinnedStatus.bind(this)
     this.getResults = _.debounce(this.getResults.bind(this), props.debounceTime)
 
     this.ajaxRequest = null
@@ -158,38 +160,61 @@ export default class Search extends Component {
     )
   }
 
+  updatePinnedStatus (claimId, newPinnedStatus) {
+    // Set local claim pinnedStatus to newPinnedStatus
+    let results = this.state.results
+
+    for (let i = 0; i < results.length; i++) {
+      let result = results[i]
+      if (result.ClaimId === claimId) {
+        result.IsPinned = newPinnedStatus
+        break
+      }
+    }
+
+    // Set remote pinnedStatus on the server
+    return setPinnedStatus(claimId, newPinnedStatus)
+      .then((response) => {
+        return this.setState({
+          results
+        })
+      })
+  }
+
+  redirect (url) {
+    this.closeDropdown()
+
+    this.context.router.push(url)
+  }
+
   renderDropdown (results = []) {
     let patientName
 
     return (
       results.map((result) => {
-        const claimId = '8ad71dff-5aac-4853-aa20-10ae169aff22' // result.ClaimId
+        const claimId = result.ClaimId
         const claimUrl = `patientinfo?claimId=${claimId}`
         const activeStatusClass = result.IsActive ? 'search__result-active-status--active' : 'search__result-active-status--inactive'
         patientName = `${result.PatientFirstName} ${result.PatientLastName}`
 
         return (
-          <Link
+          <div
             key={result.ClaimId}
-            to={claimUrl}
-            onClick={this.closeDropdown}
-            className='search__result-link'>
-            <div
-              className='search__result'>
-              <div className='search__result-title'>
-                <div className='search__result-patient-name'>{this.highlightKeyword(patientName, this.state.keyword)}</div>
-                <div className='search__result-claim-number'>{this.highlightKeyword(result.ClaimNumber, this.state.keyword)}</div>
-              </div>
-              <div className={`search__result-active-status ${activeStatusClass}`}>{result.IsActive ? 'ACTIVE' : 'INACTIVE'}</div>
-              <div className='search__result-pin-container'>
-                <PinButton
-                  claimId={result.ClaimId}
-                  pinned={result.IsPinned}
-                  updatePinnedStatus={() => {}}
-                />
-              </div>
+            onClick={() => this.redirect(claimUrl)}
+            className='search__result'>
+            <div className='search__result-title'>
+              <div className='search__result-patient-name'>{this.highlightKeyword(patientName, this.state.keyword)}</div>
+              <div className='search__result-claim-number'>{this.highlightKeyword(result.ClaimNumber, this.state.keyword)}</div>
             </div>
-          </Link>
+            <div className={`search__result-active-status ${activeStatusClass}`}>{result.IsActive ? 'ACTIVE' : 'INACTIVE'}</div>
+            <div className='search__result-pin-container'>
+              <PinButton
+                claimId={result.ClaimId}
+                pinned={result.IsPinned}
+                updatePinnedStatus={this.updatePinnedStatus}
+              />
+            </div>
+          </div>
         )
       })
     )
@@ -297,6 +322,10 @@ export default class Search extends Component {
       </div>
     )
   }
+}
+
+Search.contextTypes = {
+  router: PropTypes.object
 }
 
 Search.defaultPropTypes = {
