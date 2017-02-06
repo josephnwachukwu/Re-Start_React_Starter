@@ -95,6 +95,7 @@ export default class Search extends Component {
             showNoResults: response.Payload.ResultCount === 0,
             loading: false
           })
+          this.searchInput.focus()
         })
       }
     )
