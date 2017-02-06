@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 import DatePicker from '../Shared/DatePicker'
 
@@ -8,33 +8,34 @@ require('ms-signalr-client')
 
 import './index.css'
 
-var connection = $.hubConnection('https://polarisgatewayapi.azurewebsites.net/signalr')
-var proxy = connection.createHubProxy('gatewayHub')
+export default class Sandbox extends Component {
+  render () {
+    const connection = $.hubConnection('https://polarisgatewayapi.azurewebsites.net/signalr')
+    const proxy = connection.createHubProxy('gatewayHub')
 
-// receives broadcast messages from a hub function, called "broadcastMessage"
-proxy.on('broadcastMessage', function (message) {
-  console.log(message)
-})
+    // receives broadcast messages from a hub function, called "broadcastMessage"
+    proxy.on('broadcastMessage', function (message) {
+      console.log(message)
+    })
 
-// atempt connection, and handle errors
-connection.start({ jsonp: true })
+    // atempt connection, and handle errors
+    connection.start({
+      jsonp: false,
+      withCredentials: false
+    })
    .done(function () { console.log('Now connected, connection ID=' + connection.id) })
    .fail(function () { console.log('Could not connect') })
 
-const Sandbox = props => {
-  return (
-    <div className='sandbox'>
-      <p>
+    return (
+      <div className='sandbox'>
+        <p>
         SandBox Page
-      </p>
+        </p>
 
-      <DatePicker />
+        <DatePicker />
 
-    </div>
-  )
+      </div>
+    )
+  }
 }
 
-Sandbox.propTypes = {
-}
-
-export default Sandbox
