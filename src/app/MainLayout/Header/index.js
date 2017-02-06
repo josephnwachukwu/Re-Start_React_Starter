@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react'
 
 import LinkDropdown from '../../Shared/LinkDropdown'
-import Search from '../../Shared/Search'
+import Search from './Search'
 
 import Logo from '../../../theme/icons/Logo.svg'
 import LoginFigure from '../../../theme/icons/Top-Nav-Login-Figure.svg'

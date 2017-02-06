@@ -112,8 +112,8 @@ PatientHistory.defaultProps = {
   expanded: false,
   selectedValues: {
     selectedDate: ['', '', ''],
-    selectedType: '',
-    selectedStatus: ''
+    selectedType: [''],
+    selectedStatus: ['']
   }
 }
 

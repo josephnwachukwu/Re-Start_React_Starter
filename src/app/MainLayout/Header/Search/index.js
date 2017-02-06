@@ -1,11 +1,10 @@
 import React, { Component, PropTypes } from 'react'
 import _ from 'lodash'
 
-import PinButton from '../PinButton'
+import PinButton from '../../../Shared/PinButton'
 import { getSearchResults, setPinnedStatus } from './Api'
-
-import LoadingSpinner from '../../../theme/spinners/Animation-Loader.svg'
-import SearchIcon from '../../../theme/icons/Top-Nav-Search.svg'
+import LoadingSpinner from '../../../../theme/spinners/Animation-Loader.svg'
+import SearchIcon from '../../../../theme/icons/Top-Nav-Search.svg'
 
 import './index.css'
 
@@ -185,7 +184,9 @@ export default class Search extends Component {
   redirect (url) {
     this.closeDropdown()
 
-    this.context.router.push(url)
+    if (this.context.router) {
+      this.context.router.push(url)
+    }
   }
 
   renderDropdown (results = []) {

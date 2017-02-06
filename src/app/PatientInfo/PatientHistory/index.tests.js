@@ -1,10 +1,9 @@
 import React from 'react'
 import { expect } from 'chai'
-import { mount, shallow } from 'enzyme'
+import { mount } from 'enzyme'
 import sinon from 'sinon'
 import proxyquire from 'proxyquire'
 
-import PatientHistory from './index.js'
 import LoadingSpinner from '../../../theme/spinners/Animation-Loader.svg'
 
 proxyquire.noCallThru()
@@ -26,7 +25,8 @@ describe('Patient History container component', function () {
       }
     ).default
 
-    const patientHistory = mount(<PatientHistoryPatched />)
+    const patientHistory = mount(<PatientHistoryPatched claimId='123' />)
+
     expect(getClaimActions.called).to.equal(true)
     expect(patientHistory.state('loading')).to.equal(true)
 
@@ -39,7 +39,23 @@ describe('Patient History container component', function () {
   })
 
   it('displays the loading spinner while loading', function () {
-    const patientHistory = shallow(<PatientHistory />)
+    const getClaimActions = sinon.stub().returns(Promise.resolve({
+      Payload: {
+        Actions: []
+      }
+    }))
+
+    const PatientHistoryPatched = proxyquire(
+      './index.js',
+      {
+        '../Api': {
+          getClaimActions
+        }
+      }
+    ).default
+
+    const patientHistory = mount(<PatientHistoryPatched claimId='123' />)
+
     expect(patientHistory.state().loading).to.equal(true)
     expect(patientHistory.find(LoadingSpinner).length).to.equal(1)
     patientHistory.setState({loading: false})
@@ -62,7 +78,7 @@ describe('Patient History container component', function () {
       }
     ).default
 
-    const patientHistory = mount(<PatientHistoryPatched />)
+    const patientHistory = mount(<PatientHistoryPatched claimId='123' />)
 
     expect(patientHistory.state('loading')).to.equal(true)
     expect(getClaimActions.called).to.equal(true)
@@ -108,7 +124,7 @@ describe('Patient History container component', function () {
       }
     ).default
 
-    const patientHistory = mount(<PatientHistoryPatched />)
+    const patientHistory = mount(<PatientHistoryPatched claimId='123' />)
 
     setImmediate(() => {
       expect(patientHistory.find('.patient-history__title').text()).to.equal('Week of January 15th, 2017')
