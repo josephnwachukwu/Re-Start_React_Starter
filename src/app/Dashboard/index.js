@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import _ from 'lodash'
 
+import stripTimezone from '../Shared/Utils/stripTimezone'
 import startOfWeek from 'date-fns/start_of_week'
 import lastDayOfWeek from 'date-fns/last_day_of_week'
 import format from 'date-fns/format'
@@ -172,7 +173,7 @@ export default class Dashboard extends Component {
   }
 
   getMoreAppointments (week = 'prev') {
-    const currentStartDate = this.state.appointments[0].Date
+    const currentStartDate = stripTimezone(this.state.appointments[0].Date)
     let startDate
 
     if (week === 'prev') {

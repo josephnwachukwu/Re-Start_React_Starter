@@ -1,6 +1,6 @@
 import React from 'react'
 import { expect } from 'chai'
-import { mount, shallow } from 'enzyme'
+import { mount } from 'enzyme'
 import sinon from 'sinon'
 import proxyquire from 'proxyquire'
 
@@ -36,7 +36,7 @@ describe('Search container component', function () {
       }
     ).default
 
-    const searchBar = shallow(
+    const searchBar = mount(
       <SearchBarPatched
         minNumCharacters={1}
         resultLimit={0}
@@ -47,22 +47,18 @@ describe('Search container component', function () {
 
     input.simulate('focus')
     input.simulate('change', {target: {value: 'first'}})
-
     expect(searchBar.state('openDropdown')).to.equal(true)
     expect(searchBar.state('keyword')).to.equal('first')
 
     setTimeout(() => {
-      expect(searchBar.state('loading')).to.equal(true)
       expect(getSearchResults.called).to.equal(true)
-
-      setImmediate(() => {
-        expect(searchBar.state('loading')).to.equal(false)
-        expect(searchBar.state('showNoResults')).to.equal(false)
-        expect(searchBar.find('.search__result-patient-name').text()).to.equal('Afirst Plastxx')
-        expect(searchBar.find('.search__result-claim-number').text()).to.equal('WC20060')
-        done()
-      })
-    }, 0)
+      expect(getSearchResults.callCount).to.equal(1)
+      expect(searchBar.state('loading')).to.equal(false)
+      expect(searchBar.state('showNoResults')).to.equal(false)
+      expect(searchBar.update().find('.search__result-patient-name').text()).to.equal('Afirst Plastxx')
+      expect(searchBar.update().find('.search__result-claim-number').text()).to.equal('WC20060')
+      done()
+    }, 10)
   })
 
   it('does not call the getSearchResults method when less than 3 characters are input', function (done) {
@@ -83,7 +79,7 @@ describe('Search container component', function () {
       }
     ).default
 
-    const searchBar = shallow(
+    const searchBar = mount(
       <SearchBarPatched
         minNumCharacters={3}
         resultLimit={0}
@@ -123,7 +119,7 @@ describe('Search container component', function () {
       }
     ).default
 
-    const searchBar = shallow(
+    const searchBar = mount(
       <SearchBarPatched
         minNumCharacters={1}
         resultLimit={0}
@@ -139,20 +135,16 @@ describe('Search container component', function () {
     expect(searchBar.state('keyword')).to.equal('test')
 
     setTimeout(() => {
-      expect(searchBar.state('loading')).to.equal(true)
       expect(getSearchResults.called).to.equal(true)
-
-      setImmediate(() => {
-        expect(searchBar.state('loading')).to.equal(false)
-        expect(searchBar.state('showNoResults')).to.equal(true)
-        expect(searchBar.find('.search_no-results-text').text()).to.equal('No Results Found.')
-        done()
-      })
-    }, 0)
+      expect(searchBar.state('loading')).to.equal(false)
+      expect(searchBar.state('showNoResults')).to.equal(true)
+      expect(searchBar.find('.search_no-results-text').text()).to.equal('No Results Found.')
+      done()
+    }, 10)
   })
 
   it('displays view all claims and adds new patient links', function () {
-    const searchBar = shallow(<Search />)
+    const searchBar = mount(<Search />)
     const input = searchBar.find('.search__input-box')
 
     input.simulate('focus')
