@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import DatePicker from '../Shared/DatePicker'
+import TypeAhead from '../Shared/TypeAhead'
 
 import $ from 'jquery'
 window.jQuery = $
@@ -31,8 +31,13 @@ export default class Sandbox extends Component {
         <p>
         SandBox Page
         </p>
-
-        <DatePicker />
+        <TypeAhead
+          label='Type Ahead'
+          placeholder='Placeholder'
+          minNumCharacters={3}
+          onChange={(v) => { console.log(v) }}
+          fieldName='Procedure'
+        />
 
       </div>
     )

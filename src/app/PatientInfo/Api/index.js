@@ -1,13 +1,13 @@
-import { getAPIBaseURL } from '../../Shared/Utils'
+import { getAPIBaseURL, constructURL } from '../../Shared/Utils'
 
 function getClaimActions (claimId, productLineId, statusId, startDate, endDate) {
   const baseUrl = getAPIBaseURL()
   let url = `${baseUrl}/claims/${claimId}/actions?`
 
-  url = constructUrl(productLineId, 'productLineId', url)
-  url = constructUrl(statusId, 'statusId', url)
-  url = constructUrl([startDate], 'startDate', url)
-  url = constructUrl([endDate], 'endDate', url)
+  url = constructURL(productLineId, 'productLineId', url)
+  url = constructURL(statusId, 'statusId', url)
+  url = constructURL([startDate], 'startDate', url)
+  url = constructURL([endDate], 'endDate', url)
 
   return fetch(url, {
     credentials: 'omit',
@@ -39,21 +39,6 @@ function getDropdownData () {
   }).then((response) => {
     return response.json()
   })
-}
-
-function constructUrl (dataArray, fieldName, url) {
-  if (dataArray) {
-    dataArray.map((data) => {
-      if (url.substr(url.length - 1) !== '&' &&
-        url.substr(url.length - 1) !== '?') {
-        url = url.concat('&')
-      }
-
-      url = url.concat(fieldName + '=' + data)
-    })
-  }
-
-  return url
 }
 
 export {
