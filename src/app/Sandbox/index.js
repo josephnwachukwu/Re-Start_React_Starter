@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import TypeAhead from '../Shared/TypeAhead'
+import TypeAhead from '../Shared/Fields/TypeAhead'
 
 import $ from 'jquery'
 window.jQuery = $
@@ -43,4 +43,3 @@ export default class Sandbox extends Component {
     )
   }
 }
-

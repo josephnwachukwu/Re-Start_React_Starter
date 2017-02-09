@@ -4,8 +4,8 @@ import Select from 'react-select'
 
 import { getSearchResults } from './Api'
 
-import SearchIcon from '../../../theme/icons/Search.svg'
-import ExpandIcon from '../../../theme/icons/PatientCard/Expanded.svg'
+import SearchIcon from '../../../../theme/icons/Search.svg'
+import ExpandIcon from '../../../../theme/icons/PatientCard/Expanded.svg'
 
 import 'react-select/dist/react-select.css'
 import './index.css'

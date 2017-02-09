@@ -1,4 +1,4 @@
-import { getAPIBaseURL } from '../../../Shared/Utils'
+import { getAPIBaseURL } from '../../../../Shared/Utils'
 import $ from 'jquery'
 
 function getSearchResults (keyword, fieldName) {
