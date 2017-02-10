@@ -27,3 +27,8 @@
 .bolden {
   font-weight: bold;
 }
+
+.error-field {
+  border: 1px solid $carnelian;
+  border-radius: 2px;
+}
