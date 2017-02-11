@@ -22,7 +22,7 @@ module.exports = {
       },
       {
         test: /\.(jpg|png|gif|otf|eot|ttf|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url'
+        loader: 'url-loader'
       },
       { test: /\.json$/,
         loader: 'json-loader',
