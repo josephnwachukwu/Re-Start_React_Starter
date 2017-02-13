@@ -8,6 +8,8 @@ import Theme from './theme'
 import MainLayout from './app/MainLayout'
 import Dashboard from './app/Dashboard'
 import ClaimsList from './app/ClaimsList'
+import CreateOrder from './app/CreateOrder'
+import ProductPage from './app/CreateOrder/ProductPage'
 import PatientInfo from './app/PatientInfo'
 import NotFound from './app/NotFound'
 import Sandbox from './app/Sandbox'
@@ -21,6 +23,9 @@ ReactDOM.render(
         <Route path='dashboard' component={Dashboard} />
         <Route path='patientinfo' component={PatientInfo} />
         <Route path='sandbox' component={Sandbox} />
+        <Route path='createorder' component={CreateOrder}>
+          <Route path='product' component={ProductPage} />
+        </Route>
       </Route>
       <Route path='*' component={NotFound} />
     </Router>

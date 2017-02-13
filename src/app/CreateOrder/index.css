@@ -1,0 +1,107 @@
+.create-order__spinner-container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $antiFlashWhite2;
+  flex-grow: 1;
+}
+
+.create-order__main-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background: $antiFlashWhite2;
+}
+
+.create-order__main-container::before {
+  content: '';
+  display: block;
+  box-shadow: inset 0 0 20px 1px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.create-order__header-container {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  background: $steelBlue;
+}
+
+.create-order__header-top,
+.create-order__header-bottom {
+  flex-grow: 1;
+  min-height: 100px;
+  flex-basis: 100px;
+}
+
+.create-order__header-top {
+  padding: 0 40px;
+}
+
+.create-order__header-bottom {
+  display: flex;
+  align-items: center;
+  box-shadow: -5px 0 20px 1px rgba(0, 0, 0, 0.1);
+}
+
+.create-order__header-content {
+  color: $white;
+  font-weight: 500;
+  font-size: $fontXxxxl;
+}
+
+.create-order__info-container {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  background: $white;
+  padding: 4px;
+}
+
+.create-order__patient-info {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  height: 92px;
+  background: $whiteSmoke;
+  margin-right: 4px;
+  padding-left: 40px;
+}
+
+.create-order__patient-id {
+  font-size: $fontXl;
+  color: $steelBlue;
+  font-weight: 500;
+}
+
+.create-order__patient-name {
+  color: $auroMetalSaurus;
+  font-size: $fontXl;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.create-order__product-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 270px;
+  height: 92px;
+  background: $antiFlashWhite1;
+}
+
+.create-order__body-container {
+  flex-grow: 1;
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px;
+}

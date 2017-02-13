@@ -14,7 +14,7 @@ import ClaimsIcon from '../../../theme/icons/Left-Nav-Claims.svg'
 const SideBar = props => {
   const dashboardClass = props.location.pathname === '/dashboard' || props.location.pathname === '/' ? 'active' : ''
   const claimsClass = props.location.pathname === '/activeclaims' ? 'active' : ''
-  const ordersClass = props.location.pathname === '/orders' ? 'active' : ''
+  const createorderClass = props.location.pathname.match(/^\/createorder/i) ? 'active' : ''
   const quoteClass = props.location.pathname === '/quote' ? 'active' : ''
   const contactClass = props.location.pathname === '/contact' ? 'active' : ''
   const chatClass = props.location.pathname === '/chat' ? 'active' : ''
@@ -36,8 +36,8 @@ const SideBar = props => {
             <span className='sidebar__menu-link-text'>Claims</span>
           </Link>
         </li>
-        <li className={'sidebar__menu-item ' + ordersClass}>
-          <Link to='orders'>{<OrderIcon /> }
+        <li className={'sidebar__menu-item ' + createorderClass}>
+          <Link to='createorder'>{<OrderIcon /> }
             <span className='sidebar__menu-link-text'>Order</span>
           </Link>
         </li>
