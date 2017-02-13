@@ -53,7 +53,8 @@ export default class CreateOrder extends Component {
   renderOrderInfo () {
     const { patientId, patientName } = this.state.patientInfo
     const nonBreakingSpaceHTMLEntity = String.fromCharCode(0xA0)
-    const separator = `${nonBreakingSpaceHTMLEntity}|${nonBreakingSpaceHTMLEntity}`
+    const wideSpace = `${nonBreakingSpaceHTMLEntity}${nonBreakingSpaceHTMLEntity}`
+    const separator = `${wideSpace}|${wideSpace}`
 
     return (
       <div className='create-order__info-container'>

@@ -36,6 +36,8 @@
 
 .create-order__header-top,
 .create-order__header-bottom {
+  display: flex;
+  align-items: center;
   flex-grow: 1;
   min-height: 100px;
   flex-basis: 100px;
@@ -46,8 +48,6 @@
 }
 
 .create-order__header-bottom {
-  display: flex;
-  align-items: center;
   box-shadow: -5px 0 20px 1px rgba(0, 0, 0, 0.1);
 }
 

@@ -50,6 +50,7 @@
   font-weight: bold;
   letter-spacing: 0;
   color: $white;
+  padding-top: 2px;
 }
 
 .product-page__hint-message {
@@ -74,4 +75,5 @@
   font-weight: bold;
   font-size: $fontXs;
   color: $steelBlue;
+  padding-top: 2px;
 }
