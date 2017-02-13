@@ -5,7 +5,7 @@ import { mount } from 'enzyme'
 import PatientInfoTabs from './index.js'
 
 describe('Patient Info Tabs component', function () {
-  it('has the correct dates', function () {
+  it('has the correct dates and displays an empty attorney tab', function () {
     const mockData = [
       {
         'Title': 'Injury',
@@ -30,6 +30,7 @@ describe('Patient Info Tabs component', function () {
     expect(infoTabs.find('.patient-info-tabs__injury-date').text()).to.equal('December 5, 2016')
     infoTabs.find('.patient-info-tabs__tab-button--demographics').simulate('click')
     expect(infoTabs.find('.patient-info-tabs__birthday').text()).to.equal('July 27, 1970')
+    expect(infoTabs.find('.patient-info-tabs__tab-button--none').length).to.equal(1)
   })
 
   it('has the correct attorney name', function () {

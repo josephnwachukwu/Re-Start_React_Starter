@@ -154,17 +154,6 @@
   border-radius: 2px;
 }
 
-.patient-history-filter__invalid-date .flatpickr-input {
-  font-family: "Proxima Nova", sans-serif;
-  font-size: $fontXs;
-  color: $auroMetalSaurus;
-  height: 32px;
-  width: 150px;
-  border: 1px solid $carnelian;
-  padding: $gutterXs $gutterSm;
-  border-radius: 2px;
-}
-
 .patient-history-filter__calendar-icon {
   height: 32px;
   margin-left: -$gutterXxxl;

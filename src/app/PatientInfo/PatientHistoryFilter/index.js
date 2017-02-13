@@ -3,7 +3,7 @@ import format from 'date-fns/format'
 import subDays from 'date-fns/sub_days'
 import isBefore from 'date-fns/is_before'
 
-import MultiDropdown from '../../Shared/MultiSelectDropdown'
+import MultiSelect from '../../Shared/Fields/MultiSelect'
 import DatePicker from '../../Shared/DatePicker'
 
 import CalendarIcon from '../../../theme/icons/Calendar-History-Filter.svg'
@@ -176,19 +176,21 @@ export default class PatientHistoryFilter extends Component {
 
       return (
         <div className='patient-history-filter__custom-date'>
-          <div className={this.state.customDatesValid[0] ? 'patient-history-filter__custom-date-input' : 'patient-history-filter__invalid-date'}>
+          <div className='patient-history-filter__custom-date-input'>
             <DatePicker
               onChange={this.onFirstCustomDateChange}
               options={options}
-              placeholder='MM / DD / YYYY' />
+              placeholder='MM / DD / YYYY'
+              status={this.state.customDatesValid[0] ? '' : 'error'} />
             <CalendarIcon className='patient-history-filter__calendar-icon' />
           </div>
           <span className='patient-history-filter__custom-date-to'>To</span>
-          <div className={this.state.customDatesValid[1] ? 'patient-history-filter__custom-date-input' : 'patient-history-filter__invalid-date'}>
+          <div className='patient-history-filter__custom-date-input'>
             <DatePicker
               onChange={this.onLastCustomDateChange}
               options={options}
-              placeholder='MM / DD / YYYY' />
+              placeholder='MM / DD / YYYY'
+              status={this.state.customDatesValid[1] ? '' : 'error'} />
             <CalendarIcon className='patient-history-filter__calendar-icon' />
           </div>
         </div>
@@ -228,7 +230,7 @@ export default class PatientHistoryFilter extends Component {
           </div>
           <div className='patient-history-filter__dropdown'>
             <div className='patient-history-filter__type'>
-              <MultiDropdown
+              <MultiSelect
                 label='Type:'
                 placeholder='All'
                 value={this.state.selectedType}
@@ -236,7 +238,7 @@ export default class PatientHistoryFilter extends Component {
                 onChange={this.changeType} />
             </div>
             <div className='patient-history-filter__status'>
-              <MultiDropdown
+              <MultiSelect
                 label='Status:'
                 placeholder='All'
                 value={this.state.selectedStatus}

@@ -6,7 +6,7 @@
   color: $outerSpace;
 }
 
-.type-ahead__container .type-ahead__label {
+.type-ahead__label {
   text-align: left;
   font-weight: 500;
   font-size: $fontSm;
@@ -38,6 +38,10 @@
   font-size: $fontXs;
   color: $auroMetalSaurus;
   max-width: 50%;
+}
+
+.type-ahead__dropdown {
+  margin-bottom: $gutterXs;
 }
 
 .type-ahead__dropdown .Select-control {

@@ -3,6 +3,7 @@ import _ from 'lodash'
 import Select from 'react-select'
 
 import { getSearchResults } from './Api'
+import ErrorMessage from '../../ErrorMessage'
 
 import SearchIcon from '../../../../theme/icons/Search.svg'
 import ExpandIcon from '../../../../theme/icons/PatientCard/Expanded.svg'
@@ -122,11 +123,14 @@ export default class TypeAhead extends Component {
   }
 
   render () {
+    const status = this.props.status
+    const showError = status === 'error'
+
     return (
       <div className='type-ahead__container'>
-        <div className='type-ahead__label'>{this.props.label}</div>
+        <div className={showError ? 'type-ahead__label error-text' : 'type-ahead__label'}>{this.props.label}</div>
         <Select
-          className='type-ahead__dropdown'
+          className={showError ? 'type-ahead__dropdown error-border' : 'type-ahead__dropdown'}
           name='type-ahead__input'
           placeholder={this.props.placeholder}
           value={this.state.value}
@@ -141,6 +145,10 @@ export default class TypeAhead extends Component {
           isLoading={this.state.loading}
           clearable={false}
         />
+        <ErrorMessage
+          message='required'
+          showError={showError}
+        />
       </div>
     )
   }
@@ -151,14 +159,16 @@ TypeAhead.defaultPropTypes = {
   fieldName: '',
   label: '',
   minNumCharacters: 1,
-  placeholder: ''
+  placeholder: '',
+  status: ''
 }
 
 TypeAhead.propTypes = {
   debounceTime: PropTypes.number,
+  fieldName: PropTypes.string.isRequired,
   label: PropTypes.string,
   minNumCharacters: PropTypes.number,
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
-  fieldName: PropTypes.string.isRequired
+  status: PropTypes.string
 }

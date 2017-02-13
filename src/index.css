@@ -28,11 +28,11 @@
   font-weight: bold;
 }
 
-.error-border {
+body .error-border {
   border: 1px solid $carnelian;
   border-radius: 2px;
 }
 
-.error-text {
+body .error-text {
   color: $carnelian;
 }

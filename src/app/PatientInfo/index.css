@@ -9,6 +9,8 @@
 
 .patient-info-tab {
   flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 460px;
   text-align: center;
   background: $antiFlashWhite2;
   padding: $gutterXxxxl;
@@ -18,6 +20,8 @@
 
 .patient-info-container {
   flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: calc(100% - 460px);
   min-height: 600px;
   background: $white;
   max-width: calc(100% - 460px);

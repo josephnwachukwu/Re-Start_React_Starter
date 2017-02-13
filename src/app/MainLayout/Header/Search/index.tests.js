@@ -43,6 +43,7 @@ describe('Search container component', function () {
         debounceTime={0}
       />)
 
+    searchBar.find('.search__placeholder').simulate('click')
     const input = searchBar.find('.search__input-box')
 
     input.simulate('focus')
@@ -86,6 +87,7 @@ describe('Search container component', function () {
         debounceTime={0}
       />)
 
+    searchBar.find('.search__placeholder').simulate('click')
     const input = searchBar.find('.search__input-box')
 
     input.simulate('focus')
@@ -126,6 +128,7 @@ describe('Search container component', function () {
         debounceTime={0}
       />)
 
+    searchBar.find('.search__placeholder').simulate('click')
     const input = searchBar.find('.search__input-box')
 
     input.simulate('focus')
@@ -145,6 +148,8 @@ describe('Search container component', function () {
 
   it('displays view all claims and adds new patient links', function () {
     const searchBar = mount(<Search />)
+
+    searchBar.find('.search__placeholder').simulate('click')
     const input = searchBar.find('.search__input-box')
 
     input.simulate('focus')
@@ -157,6 +162,8 @@ describe('Search container component', function () {
 
   it('resets state when dropdown is not focused', function () {
     const searchBar = mount(<Search />)
+
+    searchBar.find('.search__placeholder').simulate('click')
     const input = searchBar.find('.search__input-box')
 
     input.simulate('focus')

@@ -7,6 +7,9 @@
 }
 
 .patient-info-tabs__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   padding: 0 2px;
 }
 
@@ -30,6 +33,13 @@
   margin: $gutterXs 2px 0 2px;
   background: $steelBlue;
   color: $white;
+  height: 46px;
+}
+
+.patient-info-tabs__tab-button--none {
+  background: $antiFlashWhite1;
+  margin: $gutterXs 2px 0 2px;
+  width: 83px;
   height: 46px;
 }
 

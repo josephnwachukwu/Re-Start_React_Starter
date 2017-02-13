@@ -82,7 +82,7 @@ export default class PatientActionCard extends Component {
 
   getStatusIcon (status) {
     switch (status) {
-      case 'COMPLETE': return <Completed />
+      case 'COMPLETED': return <Completed />
       case 'SUBMITTED': return <Submitted />
       case 'PENDING': return <Pending />
       case 'PROCESSED': return <Processing />

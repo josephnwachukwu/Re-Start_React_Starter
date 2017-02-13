@@ -56,7 +56,8 @@ export default class Search extends Component {
   onMouseLeaveSearchBox (e) {
     if (this.state.resultCount === 0 &&
         this.state.loading === false &&
-        this.state.keyword.length === 0) {
+        this.state.keyword.length === 0 &&
+        this.state.showPlaceholder === false) {
       this.searchInput.blur()
       this.closeDropdown()
     }
@@ -239,15 +240,22 @@ export default class Search extends Component {
         onMouseEnter={this.onMouseEnterSearchBox}
         onMouseLeave={this.onMouseLeaveSearchBox}
         className='search'>
-        <input
-          className='search__input-box'
-          type='text'
-          disabled={loading}
-          value={this.state.keyword}
-          onChange={this.onChangeInput}
-          onFocus={this.onFocusInput}
-          ref={(input) => { this.searchInput = input }}
-        />
+        {
+          (!showPlaceholder && !loading) &&
+          (
+            <input
+              className='search__input-box'
+              type='text'
+              disabled={loading}
+              value={this.state.keyword}
+              onChange={this.onChangeInput}
+              onFocus={this.onFocusInput}
+              ref={(input) => {
+                this.searchInput = input
+              }}
+            />
+          )
+        }
         {
           loading &&
             <div className='search__loading-container'>

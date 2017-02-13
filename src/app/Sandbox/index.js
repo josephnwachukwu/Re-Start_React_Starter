@@ -37,6 +37,7 @@ export default class Sandbox extends Component {
           minNumCharacters={3}
           onChange={(v) => { console.log(v) }}
           fieldName='Procedure'
+          status='error'
         />
 
       </div>

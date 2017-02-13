@@ -40,6 +40,7 @@ describe('Patient History Filter component', function () {
     filter.find('.patient-history-filter__show-last-buttons--last').simulate('click')
     expect(filter.find('.patient-history-filter__custom-date').length).to.equal(1)
     filter.find('.patient-history-filter__apply-button').simulate('click')
-    expect(filter.find('.patient-history-filter__invalid-date').length).to.equal(2)
+    expect(filter.state('customDatesValid')[0]).to.equal(false)
+    expect(filter.state('customDatesValid')[1]).to.equal(false)
   })
 })

@@ -12,6 +12,7 @@ export default class PatientInfoTabs extends Component {
 
     this.onTabClick = this.onTabClick.bind(this)
     this.renderContent = this.renderContent.bind(this)
+    this.renderEmptyTab = this.renderEmptyTab.bind(this)
 
     this.state = {
       selected: this.props.info[0].Title
@@ -209,12 +210,22 @@ export default class PatientInfoTabs extends Component {
     }
   }
 
+  renderEmptyTab (hasAttorney) {
+    if (!hasAttorney) {
+      return (
+        <div className='patient-info-tabs__tab-button--none' />
+      )
+    }
+  }
+
   render () {
+    let hasAttorney = false
     return (
       <div className='patient-info-tabs'>
         <div className='patient-info-tabs__tabs'>
           {
             this.props.info.map((tab) => {
+              hasAttorney = tab.Title === 'Attorney'
               return (
                 <button
                   className={tab.Title === this.state.selected ? 'patient-info-tabs__tab-button--active' : 'patient-info-tabs__tab-button--' + tab.Title.toLowerCase()}
@@ -225,6 +236,7 @@ export default class PatientInfoTabs extends Component {
               )
             })
           }
+          {this.renderEmptyTab(hasAttorney)}
         </div>
         {this.renderContent()}
       </div>
