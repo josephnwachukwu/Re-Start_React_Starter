@@ -41,3 +41,27 @@
   float: right;
   width: 135px;
 }
+
+/* fix for IE11 */
+.header .header__icon {
+  flex: 1;
+  max-width: 300px;
+}
+
+/* fix for IE11 */
+.header__search-bar {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* fix for IE11 */
+.header__login-figure,
+.header__settings {
+  display: inline-block;
+}
+
+/* fix for IE11 */
+.header .header__dropdown {
+  float: left;
+}

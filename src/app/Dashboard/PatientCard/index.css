@@ -10,6 +10,12 @@
   background: $white;
 }
 
+/* fix for IE11 */
+.patient-card .patient-card--row,
+.patient-card .patient-card--col {
+  overflow: hidden;
+}
+
 .patient-card--row .patient-card--row__header,
 .patient-card--col .patient-card--col__header {
   background: $whiteSmoke;

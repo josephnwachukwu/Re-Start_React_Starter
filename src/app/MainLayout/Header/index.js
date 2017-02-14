@@ -23,14 +23,16 @@ const Header = props => {
           debounceTime={500}
         />
       </div>
-      <div className='header__dropdown'>
-        <LinkDropdown name={name} fields={fields} />
-      </div>
-      <div className='header__login-figure'>
-        <LoginFigure />
-      </div>
-      <div className='header__settings'>
-        <SettingsIcon />
+      <div className='header__dropdown-wrap'>
+        <div className='header__dropdown'>
+          <LinkDropdown name={name} fields={fields} />
+        </div>
+        <div className='header__login-figure'>
+          <LoginFigure />
+        </div>
+        <div className='header__settings'>
+          <SettingsIcon />
+        </div>
       </div>
     </div>
   )

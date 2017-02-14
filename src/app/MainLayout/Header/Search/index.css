@@ -41,6 +41,11 @@
   cursor: text;
 }
 
+/* fix for IE11 */
+.search__placeholder {
+  position: relative;
+}
+
 .search__placeholder-text {
   color: $outerSpace;
   font-size: $fontDefault;

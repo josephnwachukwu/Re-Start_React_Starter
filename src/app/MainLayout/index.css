@@ -12,3 +12,8 @@
   display: flex;
   flex-direction: column;
 }
+
+/* fix for IE11 */
+.main-content-container {
+  flex: 1;
+}

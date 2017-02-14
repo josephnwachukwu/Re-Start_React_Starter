@@ -47,6 +47,16 @@
   padding: 0 40px;
 }
 
+/* fix for IE11 */
+.dashboard-main-container {
+  width: 100%;
+}
+
+/* fix for IE11 */
+.dashboard-header {
+  min-height: 100px;
+}
+
 .dashboard-side-panel {
   width: 380px;
   min-width: 380px;
