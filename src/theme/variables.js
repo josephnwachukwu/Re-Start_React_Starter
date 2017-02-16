@@ -19,6 +19,7 @@ module.exports = {
   'antiFlashWhite2': '#f4f4f3',
   'whiteSmoke': '#f6f6f8',
   'white': '#fff',
+  'smokeGray': '#d5d5d8',
 
   // Supportive & Highlight Application Colors
   'maroon': '#790007',
