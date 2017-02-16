@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import TypeAhead from '../Shared/Fields/TypeAhead'
+import MultiLineText from '../Shared/Fields/MultiLineText'
 
 import $ from 'jquery'
 window.jQuery = $
@@ -38,6 +39,20 @@ export default class Sandbox extends Component {
           onChange={(v) => { console.log(v) }}
           fieldName='Procedure'
           status='error'
+        />
+
+        <MultiLineText
+          label='Multi Line Text'
+          selection=''
+          onChange={(v) => { console.log(v) }}
+        />
+
+        <MultiLineText
+          label='Multi Line Text with error'
+          status='error'
+          errorMessage='- sample error message'
+          selection=''
+          onChange={(v) => { console.log(v) }}
         />
 
       </div>
