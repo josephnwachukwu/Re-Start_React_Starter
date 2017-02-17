@@ -50,7 +50,8 @@ export default class Checkboxes extends Component {
     }
 
     return (
-      <li key={index}
+      <li
+        key={index}
         className='checkboxes__checkbox-container'>
         <input
           className='checkbox__input'
