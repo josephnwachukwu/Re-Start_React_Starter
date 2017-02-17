@@ -21,7 +21,7 @@
     "url": "https://occm.visualstudio.com/_git/PolarisUI"
   },
   "engines": {
-    "node": "6.9.1"
+    "node": "7"
   },
   "keywords": [],
   "author": "",
