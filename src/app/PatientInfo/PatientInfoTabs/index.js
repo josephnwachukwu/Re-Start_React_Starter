@@ -135,6 +135,7 @@ export default class PatientInfoTabs extends Component {
         )
       case 'Physician':
         const physDetails = find(this.props.info, {Title: 'Physician'}).Details[0]
+        const physAddress = MultiLineRender(physDetails.Address)
         return (
           <div className='patient-info-tabs__content'>
             <div className='patient-info-tabs__content--100'>
@@ -143,7 +144,7 @@ export default class PatientInfoTabs extends Component {
             </div>
             <div className='patient-info-tabs__content--100'>
               <p className='patient-info-tabs__title'>Address</p>
-              <p className='patient-info-tabs__details'>{physDetails.Address}</p>
+              <p className='patient-info-tabs__details'>{physAddress}</p>
             </div>
             <div className='patient-info-tabs__section'>
               <div className='patient-info-tabs__content--50'>
@@ -172,6 +173,7 @@ export default class PatientInfoTabs extends Component {
       case 'Attorney':
         const attDetails = find(this.props.info, {Title: 'Attorney'}).Details[0]
         const attName = attDetails.AttorneyName.split('\n')
+        const attAddress = MultiLineRender(attDetails.Address)
         return (
           <div className='patient-info-tabs__content'>
             <div className='patient-info-tabs__content--100'>
@@ -181,7 +183,7 @@ export default class PatientInfoTabs extends Component {
             </div>
             <div className='patient-info-tabs__content--100'>
               <p className='patient-info-tabs__title'>Address</p>
-              <p className='patient-info-tabs__details'>{attDetails.Address}</p>
+              <p className='patient-info-tabs__details'>{attAddress}</p>
             </div>
             <div className='patient-info-tabs__section'>
               <div className='patient-info-tabs__content--50'>
