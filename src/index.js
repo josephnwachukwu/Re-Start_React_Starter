@@ -15,7 +15,7 @@ import NotFound from './app/NotFound'
 import Sandbox from './app/Sandbox'
 
 import loadScript from './app/Shared/Utils/loadScript'
-import { googleMapsApi } from './app/Shared/Utils/googleMapsApi'
+import googleMapsApi from './app/Shared/Utils/googleMapsApi'
 
 function launchApp () {
   ReactDOM.render(
