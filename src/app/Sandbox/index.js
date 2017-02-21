@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import DatePicker from '../Shared/DatePicker'
 import TypeAhead from '../Shared/Fields/TypeAhead'
+import SingleLineText from '../Shared/Fields/SingleLineText'
 import MultiLineText from '../Shared/Fields/MultiLineText'
 
 import $ from 'jquery'
@@ -63,6 +64,26 @@ export default class Sandbox extends Component {
           onChange={(v) => { console.log(v) }}
           fieldName='Procedure'
           status='error'
+        />
+
+        <SingleLineText
+          label='Single Line Text'
+          selection=''
+          onChange={(v) => { console.log(v) }}
+        />
+
+        <SingleLineText
+          label='Single Line Text with value'
+          selection='Joseph Nwachukwu'
+          onChange={(v) => { console.log(v) }}
+        />
+
+        <SingleLineText
+          label='Single Line Text with value and error'
+          selection='Joseph Nwachukwu'
+          status='error'
+          errorMessage='- sample error message'
+          onChange={(v) => { console.log(v) }}
         />
 
         <MultiLineText
