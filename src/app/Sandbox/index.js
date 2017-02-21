@@ -4,6 +4,7 @@ import DatePicker from '../Shared/DatePicker'
 import TypeAhead from '../Shared/Fields/TypeAhead'
 import SingleLineText from '../Shared/Fields/SingleLineText'
 import MultiLineText from '../Shared/Fields/MultiLineText'
+import PhoneNumber from '../Shared/Fields/PhoneNumber'
 
 import $ from 'jquery'
 window.jQuery = $
@@ -98,6 +99,24 @@ export default class Sandbox extends Component {
           errorMessage='- sample error message'
           selection=''
           onChange={(v) => { console.log(v) }}
+        />
+
+        <PhoneNumber
+          label='Phone Number'
+          onChange={(v) => { console.log(v) }}
+        />
+
+        <PhoneNumber
+          label='Phone Number with value'
+          selection='1234567890'
+          onChange={(v) => { console.log(v) }}
+        />
+
+        <PhoneNumber
+          label='Phone Number with error'
+          onChange={(v) => { console.log(v) }}
+          status='error'
+          errorMessage='- sample error message'
         />
 
       </div>

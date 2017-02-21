@@ -1,0 +1,25 @@
+.phone-number__input input {
+  border: $smokeGray 1px solid;
+  width: 153px;
+  height: 32px;
+  padding: 1px 12px;
+  color: $auroMetalSaurus;
+  font-size: $fontXs;
+  border-radius: 2px;
+  min-width: 180px;
+  margin-bottom: 10px;
+}
+
+.phone-number__input input:focus,
+.phone-number__input input:active {
+  border: $deepSpace 1px solid;
+}
+
+.phone-number__label {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.phone-number__input.error input {
+  border: 1px solid $carnelian;
+}
