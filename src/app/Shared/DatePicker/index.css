@@ -59,3 +59,40 @@ span.flatpickr-weekday {
 .flatpickr-prev-month {
   top: 15px;
 }
+
+input.flatpickr-input {
+  background-image: url('../../../theme/icons/Calendar-History-Filter.svg');
+  border: $smokeGray 1px solid;
+  width: 153px;
+  height: 32px;
+  padding: 1px 12px;
+  color: $auroMetalSaurus;
+  font-size: $fontXs;
+  border-radius: 2px;
+  min-width: 180px;
+}
+
+input.flatpickr-input.error {
+  border: $maroon 1px solid;
+}
+
+input.flatpickr-input:focus,
+input.flatpickr-input:active {
+  border: $deepSpace 1px solid;
+}
+
+.date-picker__container svg {
+  margin-left: -30px;
+  margin-top: 1px;
+}
+
+.date-picker__error input {
+  border: 1px solid $carnelian;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+.date-picker__label {
+  font-size: 14px;
+  margin-bottom: 10px;
+}

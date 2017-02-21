@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+import DatePicker from '../Shared/DatePicker'
 import TypeAhead from '../Shared/Fields/TypeAhead'
 import MultiLineText from '../Shared/Fields/MultiLineText'
 
@@ -24,14 +25,37 @@ export default class Sandbox extends Component {
       jsonp: false,
       withCredentials: false
     })
-   .done(function () { console.log('Now connected, connection ID=' + connection.id) })
-   .fail(function () { console.log('Could not connect') })
+      .done(function () { console.log('Now connected, connection ID=' + connection.id) })
+      .fail(function () { console.log('Could not connect') })
 
     return (
       <div className='sandbox'>
         <p>
         SandBox Page
         </p>
+
+        <DatePicker
+          label='Date From Form Generator with error'
+          status='error'
+          onChange={(v) => { console.log(v) }}
+          errorMessage='- sample error message'
+        />
+
+        <DatePicker
+          label='Date From Form Generator with time'
+          enableTime
+          selection='1985-01-11'
+          onChange={(v) => { console.log(v) }}
+        />
+
+        <DatePicker
+          label='Date From Form Generator default date and error'
+          selection='1985-01-11'
+          status='error'
+          onChange={(v) => { console.log(v) }}
+          errorMessage='- sample error message'
+        />
+
         <TypeAhead
           label='Type Ahead'
           placeholder='Placeholder'
