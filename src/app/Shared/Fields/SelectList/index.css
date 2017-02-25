@@ -4,7 +4,6 @@
   width: 100%;
   font-size: $fontXs;
   color: $outerSpace;
-  margin-bottom: $gutterXs;
 }
 
 .select-list__label {
@@ -12,12 +11,11 @@
   font-weight: 500;
   font-size: $fontSm;
   color: $dimGray;
-  line-height: 17px;
-  margin-bottom: $gutterSm;
+  margin-bottom: 3px;
 }
 
 .select-list__dropdown .Select-control {
-  height: 34px;
+  height: 32px;
   border-color: $gainsboro;
   color: $outerSpace;
   table-layout: fixed;
@@ -113,4 +111,9 @@
 .select-list__dropdown .Select-option:last-child {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+}
+
+.is-focused:not(.is-open) > .Select-control {
+  box-shadow: none;
+  border-color: $gainsboro;
 }
