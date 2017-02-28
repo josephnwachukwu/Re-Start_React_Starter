@@ -143,13 +143,13 @@
 }
 
 .patient-action-card__dropdown-card {
-  align-items: center;
+  display: flex;
+  flex-grow: 1;
 }
 
 .patient-action-card__dropdown .patient-action-card__dropdown-padding {
-  max-width: 55px;
-  min-width: 55px;
-  align-self: flex-start;
+  max-width: 56px;
+  min-width: 56px;
 }
 
 .patient-action-card__dropdown-card .patient-action-card__dropdown-tag {
@@ -158,7 +158,7 @@
   border-left: 1px solid $gainsboro;
   color: $deepSpace;
   font-weight: bold;
-  text-align: left;
+  text-align: right;
   max-width: 180px;
 }
 
@@ -167,6 +167,7 @@
   color: $deepSpace;
   text-align: left;
   overflow: hidden;
+  max-width: 180px;
 }
 
 .patient-action-card-border {
@@ -174,29 +175,21 @@
   background: $gainsboro;
 }
 
-.patient-action-card__info-blocks {
+div.patient-action-card__info {
+}
+
+div.patient-action-card__info-block {
+  flex-grow: 1;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
-.patient-action-card__info-block {
-  flex-wrap: wrap;
-  align-self: stretch;
-  border-right: 1px solid $gainsboro;
-  border-left: 1px solid $gainsboro;
-  min-width: 157px;
+.patient-card--col .patient-action-card__dropdown-card .patient-action-card__dropdown-tag {
+  width: 157px;
   max-width: 157px;
-  vertical-align: text-top;
 }
 
-.patient-action-card__info-block .patient-action-card__dropdown-tag {
-  border-right: none;
-  border-left: none;
-  padding: $gutterSm $gutterLg 0 $gutterLg;
-}
-
-.patient-action-card__info-block .patient-action-card__dropdown-content {
-  padding: 0 $gutterLg $gutterSm $gutterLg;
-  word-wrap: break-word;
+.patient-card--col .patient-action-card__dropdown-card .patient-action-card__dropdown-content {
+  width: 157px;
+  max-width: 157px;
 }

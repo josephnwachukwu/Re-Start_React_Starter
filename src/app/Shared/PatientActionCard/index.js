@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import format from 'date-fns/format'
 
-import { stripTimezone } from '../../Shared/Utils'
+import { stripTimezone, MultiLineRender } from '../../Shared/Utils'
 
 import Dental from '../../../theme/icons/PatientCard/Dental.svg'
 import Diagnostics from '../../../theme/icons/PatientCard/Diagnostics.svg'
@@ -103,21 +103,22 @@ export default class PatientActionCard extends Component {
           <div className='patient-action-card__dropdown-border' />
           <div className='grid patient-action-card__dropdown-card' >
             <div className='grid__col-1 patient-action-card__dropdown-padding' />
-            <div className='grid__col-auto patient-action-card__info-blocks'>
+            <div className='patient-action-card__info-block'>
               {
-            actionDetail.map((field, index) => {
-              return (
-                <div key={index} className='patient-action-card__info-block'>
-                  <div className='grid__col-auto patient-action-card__dropdown-tag'>
-                    {field.Name}
+              actionDetail.map((field, index) => {
+                return (
+                  <div className='patient-action-card__info grid ' key={index}>
+
+                    <div className='grid__col-auto patient-action-card__dropdown-tag'>
+                      {field.Name}
+                    </div>
+                    <div className='grid__col-auto patient-action-card__dropdown-content'>
+                      {MultiLineRender(field.Value)}
+                    </div>
                   </div>
-                  <div className='grid__col-auto patient-action-card__dropdown-content'>
-                    {field.Value}
-                  </div>
-                </div>
-              )
-            })
-          }
+                )
+              })
+            }
             </div>
           </div>
         </div>
