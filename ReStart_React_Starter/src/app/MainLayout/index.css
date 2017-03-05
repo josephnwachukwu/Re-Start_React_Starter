@@ -1,0 +1,19 @@
+.main-layout-container {
+  max-width: $maxPageWidth;
+  min-width: $minPageWidth;
+}
+
+.sidebar-and-content-container {
+  display: flex;
+}
+
+.main-content-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* fix for IE11 */
+.main-content-container {
+  flex: 1;
+}

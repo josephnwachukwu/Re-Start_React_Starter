@@ -1,0 +1,12 @@
+.footer {
+  background: $white;
+  border: 1px solid #ccc;
+  height: 160px;
+  width: 100%;
+  min-width: 1005px;
+  overflow: hidden;
+  text-align: left;
+  bottom: 0;
+  position: absolute;
+}
+

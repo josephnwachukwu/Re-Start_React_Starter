@@ -1,0 +1,19 @@
+.error-message__main-container {
+  display: flex;
+  align-items: center;
+}
+
+.error-message__main-container > * {
+  flex-grow: 1;
+}
+
+.error-message {
+  color: $carnelian;
+  letter-spacing: 0;
+  font-size: $fontXs;
+  font-weight: bold;
+}
+
+.error-message__no-error {
+  display: none;
+}
