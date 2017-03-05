@@ -1,26 +1,26 @@
 # Re-Start React Starter
 ## React Starter/Boilerplate for Scaffolding apps
 
-## Features
+## Key Features
 * [react](https://github.com/facebook/react)
 * [react-router](https://github.com/rackt/react-router)
-* [react-dom](http://eslint.org)
+* [react-dom](https://facebook.github.io/react/docs/react-dom.html)
 
 * [webpack](https://github.com/webpack/webpack)
 * [babel](https://github.com/babel/babel)
 * [eslint](http://eslint.org)
 
 
-* [mocha](http://eslint.org)
-* [sinon](http://eslint.org)
-* [enzyme](http://eslint.org)
-* [chai](http://eslint.org)
+* [mocha](https://mochajs.org/)
+* [sinon](http://sinonjs.org/)
+* [enzyme](https://github.com/airbnb/enzyme)
+* [chai](https://github.com/chaijs/chai)
 
-* [reflex](http://eslint.org)
-* [santize](http://eslint.org)
-* [postcss](http://eslint.org)
+* [reflex](leejordan.github.io/reflex/docs/)
+* [santize](https://github.com/jonathantneal/sanitize.css/)
+* [postcss](https://github.com/postcss/postcss)
 
-* [fetch](http://eslint.org)
+* [fetch](https://github.com/github/fetch)
 
 ## Requirements
 * node `7`
