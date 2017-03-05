@@ -1,5 +1,5 @@
 .footer {
-  background: $white;
+  background: black;
   border: 1px solid #ccc;
   height: 160px;
   width: 100%;
@@ -8,5 +8,6 @@
   text-align: left;
   bottom: 0;
   position: absolute;
+  color: white;
 }
 
