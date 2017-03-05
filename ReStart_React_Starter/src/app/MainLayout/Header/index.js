@@ -4,8 +4,10 @@ import './index.css'
 
 const Header = props => {
   return (
-    <header className='header'>
-      <h2>ReStart</h2>
+    <header className='header grid'>
+      <div className='grid__col-auto'>
+        <h2>Re Start <span>A React Scaffold</span></h2>
+      </div>
     </header>
   )
 }
