@@ -2,24 +2,30 @@
 ## React Starter/Boilerplate for Scaffolding apps
 
 ## Key Features
+#### Core
 * [react](https://github.com/facebook/react)
 * [react-router](https://github.com/rackt/react-router)
 * [react-dom](https://facebook.github.io/react/docs/react-dom.html)
 
+#### Packing 
 * [webpack](https://github.com/webpack/webpack)
 * [babel](https://github.com/babel/babel)
 * [eslint](http://eslint.org)
 
-
+#### Testing
 * [mocha](https://mochajs.org/)
 * [sinon](http://sinonjs.org/)
 * [enzyme](https://github.com/airbnb/enzyme)
 * [chai](https://github.com/chaijs/chai)
+* [husky](https://github.com/typicode/husky) 
 
+#### CSS
 * [reflex](leejordan.github.io/reflex/docs/)
 * [santize](https://github.com/jonathantneal/sanitize.css/)
 * [postcss](https://github.com/postcss/postcss)
+* [stylelint](https://www.npmjs.com/package/stylelint)
 
+#### Requests
 * [fetch](https://github.com/github/fetch)
 
 ## Requirements
