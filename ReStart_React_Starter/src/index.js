@@ -7,6 +7,7 @@ import './index.css'
 import Theme from './theme'
 import MainLayout from './app/MainLayout'
 import Dashboard from './app/Dashboard'
+import Home from './app/Home'
 import NotFound from './app/NotFound'
 
 function launchApp () {
@@ -15,7 +16,8 @@ function launchApp () {
       <Theme>
         <Router history={hashHistory}>
           <Route path='/' component={MainLayout}>
-            <IndexRoute component={Dashboard} />
+            <IndexRoute component={Home} />
+            <Route path='home' component={Home} />
             <Route path='dashboard' component={Dashboard} />
           </Route>
           <Route path='*' component={NotFound} />
