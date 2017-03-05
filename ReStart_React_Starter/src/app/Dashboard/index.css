@@ -1,0 +1,5 @@
+.dashboard {
+  background: $white;
+  display: flex;
+  flex-grow: 1;
+}
