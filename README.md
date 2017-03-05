@@ -2,17 +2,17 @@
 ## React Starter/Boilerplate for Scaffolding apps
 
 
-## Application Structure
+### Application Structure
 
 This application strcuture here as a suggestion and can be changed to fit your needs. It is meant to be a guideline.
 
 ```
 .
 ├── config                          # Project and build configurations
-│   ├── webpack.build.prod.js       # Server application entry point
-│   ├── webpack.js                  # Server application entry point
-│   ├── webpack.serve.dev.js        # Server application entry point
-│   ├── webpack.serve.prod.js       # Server application entry point
+│   ├── webpack.build.prod.js       # Build for Production
+│   ├── webpack.js                  # Main Build for development
+│   ├── webpack.serve.dev.js        # Build for dev server
+│   ├── webpack.serve.prod.js       # Build for production
 │   └── mocha-multi-reporters.json  # 
 ├── src                             # Application source code
 │   ├── index.html                  # Main HTML page container for app
