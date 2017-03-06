@@ -1,9 +1,10 @@
 header.header {
   height: 100px;
   text-align: left;
-  background: #000;
+  background: #333;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   color: #fff;
+  text-shadow: 2px 2px 2px #000;
 }

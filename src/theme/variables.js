@@ -2,6 +2,7 @@ module.exports = {
   // Foundation Application Colors
   'white': '#fff',
   'smokeGray': '#d5d5d8',
+  'neonGreen': '#33cc00',
 
   // Supportive & Highlight Application Colors
   'gutterXxxxl': '40px',

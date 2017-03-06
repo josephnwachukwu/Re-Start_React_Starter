@@ -8,8 +8,10 @@ export default class Home extends Component {
     return (
       <div className='grid'>
         <div className='grid__col-auto hero'>
-          <h1>Re-Start</h1>
-        A Mobile first responsive library of layouts and components
+          <h1>Re-Start <span>A React Scaffold</span></h1>
+          <p>
+            A <strong>Mobile First</strong> responsive library of layouts and components for building outstanding Projects
+          </p>
         </div>
       </div>
     )

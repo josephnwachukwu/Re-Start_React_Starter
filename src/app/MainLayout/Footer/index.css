@@ -1,6 +1,5 @@
 .footer {
   background: black;
-  border: 1px solid #ccc;
   height: 160px;
   width: 100%;
   min-width: 1005px;
@@ -9,5 +8,9 @@
   bottom: 0;
   position: absolute;
   color: white;
+  font-size: 11px;
 }
 
+.footer p {
+  margin: 5px 0;
+}

@@ -4,3 +4,10 @@
   color: white;
 }
 
+.hero h1 {
+  font-size: 60px;
+}
+
+.hero h1 span {
+  font-size: 30px;
+}
