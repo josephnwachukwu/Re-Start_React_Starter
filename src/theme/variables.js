@@ -3,6 +3,12 @@ module.exports = {
   'white': '#fff',
   'smokeGray': '#d5d5d8',
   'neonGreen': '#33cc00',
+  'orangeRed': '#FF2400',
+  'bloodOrange': '#CC1100',
+  'royalBlue3': '#3A5FCD',
+  'royalBlue4': '#27408B',
+  'gumbiGreen': '#24D330',
+  'hoverGreen': '#4BB74C',
 
   // Supportive & Highlight Application Colors
   'gutterXxxxl': '40px',

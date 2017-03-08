@@ -2,6 +2,10 @@ import React from 'react'
 
 import './index.css'
 
+import TwitterIcon from '../../../static/images/twitter.svg'
+import FacebookIcon from '../../../static/images/facebook.svg'
+import EmailIcon from '../../../static/images/email.svg'
+
 const Footer = props => {
   return (
     <footer className='footer grid'>
@@ -18,9 +22,9 @@ const Footer = props => {
         <p>Fax: 718-842-3787</p>
       </div>
       <div className='grid__col-3'>
-        <p>Email: <a href='javascript:;'>genisystems@gmail.com</a></p>
-        <p>Twitter: <a href='javascript:;'>@jovoxo</a></p>
-        <p>facebook: <a href='javascript:;'>@joehasfreshswag</a></p>
+        <p><EmailIcon /> Email: <a href='javascript:;'>genisystems@gmail.com</a></p>
+        <p><TwitterIcon /> Twitter: <a href='javascript:;'>@jovoxo</a></p>
+        <p><FacebookIcon /> Facebook: <a href='javascript:;'>@joehasfreshswag</a></p>
 
       </div>
     </footer>

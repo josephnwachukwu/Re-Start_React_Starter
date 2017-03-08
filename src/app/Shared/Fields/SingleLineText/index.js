@@ -12,6 +12,7 @@ export default class SingleLineText extends Component {
 
     this.state = {
       value: ''
+      classes: ['pristine', 'valid', ]
     }
   }
 
@@ -22,6 +23,15 @@ export default class SingleLineText extends Component {
       this.props.onChange(this.state.value)
     })
   }
+
+  onFocus (event) {
+    this.setState({
+      classes: ['touched']
+    })
+  }
+
+  on
+
 
   render () {
     const selection = this.props.selection || this.state.value

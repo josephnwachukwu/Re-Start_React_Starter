@@ -1,16 +1,18 @@
 .main-layout-container {
-  max-width: $maxPageWidth;
-  min-width: $minPageWidth;
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar-and-content-container {
   display: flex;
+  flex: 1;
 }
 
 .main-content-container {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
 /* fix for IE11 */
@@ -18,6 +20,3 @@
   flex: 1;
 }
 
-body {
-  text-shadow: 2px 2px 2px #000;
-}
