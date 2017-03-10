@@ -11,8 +11,8 @@ export default class SingleLineText extends Component {
     this.onChange = this.onChange.bind(this)
 
     this.state = {
-      value: ''
-      classes: ['pristine', 'valid', ]
+      value: '',
+      classes: [ 'pristine', 'valid' ]
     }
   }
 
@@ -29,9 +29,6 @@ export default class SingleLineText extends Component {
       classes: ['touched']
     })
   }
-
-  on
-
 
   render () {
     const selection = this.props.selection || this.state.value
