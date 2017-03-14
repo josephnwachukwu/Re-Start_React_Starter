@@ -1,5 +1,15 @@
 import React, { Component } from 'react'
 
+import Username from '../Shared/Fields/Username'
+import Password from '../Shared/Fields/Password'
+import Email from '../Shared/Fields/Email'
+import Address from '../Shared/Fields/Address'
+import State from '../Shared/Fields/State'
+import ZipCode from '../Shared/Fields/ZipCode'
+import Button from '../Shared/Buttons'
+import Radio from '../Shared/Fields/Radio'
+import Checkbox from '../Shared/Fields/Checkbox'
+
 import './index.css'
 
 export default class Home extends Component {
@@ -44,40 +54,32 @@ export default class Home extends Component {
             </div>
             <div className=''>
               <h3>Buttons</h3>
-              <p><button type='button' className='btn btn__success'>Submit</button></p>
-              <p><button type='button' className='btn btn__neutral'>Cancel</button></p>
-              <p><button type='button' className='btn btn__delete'>Delete</button></p>
-              <p><button type='button' className='btn btn__proceed'>Learn More > </button></p>
+              <p>
+                <Button label='Success' type='success' />
+              </p>
+              <p>
+                <Button label='Cancel' type='neutral' />
+              </p>
+              <p>
+                <Button label='Delete' type='delete' />
+              </p>
+              <p>
+                <Button label='Learn More >' type='proceed' />
+              </p>
             </div>
             <div className=''>
               <h3>Forms</h3>
               <form className='form-row-layout'>
-                <div className='form-row'>
-                  <label className='form-row__label'>Username</label>
-                  <input className='form-row__input' type='text' name='username' />
-                </div>
-                <div className='form-row'>
-                  <label className='form-row__label'>Password</label>
-                  <input className='form-row__input' type='password' name='password' />
-                </div>
-                <div className='form-row'>
-                  <label className='form-row__label'>Email</label>
-                  <input className='form-row__input' type='email' name='email' placeholder='someone@example.com' />
-                </div>
-                <div className='form-row'>
-                  <label className='form-row__label'>Address</label>
-                  <input className='form-row__input' type='text' name='Address' />
-                </div>
-                <div className='form-row'>
-                  <label className='form-row__label'>State</label>
-                  <select className='form-row__input'>
-                    <option>Select a State</option>
-                  </select>
-                </div>
-                <div className='form-row'>
-                  <label className='form-row__label'>Zip</label>
-                  <input className='form-row__input' type='text' name='password' />
-                </div>
+                <Username />
+                <Password />
+                <Email />
+                <Address />
+                <State />
+                <ZipCode />
+                <Radio value='Yes' name='Agree' label='Yes' />
+                <Radio value='Yes' name='Agree' label='No' />
+                <Checkbox value='Left' name='Direction' label='Left' />
+                <Checkbox value='Right' name='Direction' label='Right' />
               </form>
             </div>
           </div>

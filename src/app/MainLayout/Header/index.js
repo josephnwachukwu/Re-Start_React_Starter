@@ -9,25 +9,22 @@ export default class Header extends Component {
     super(props)
 
     this.toggleMenu.bind(this)
+    this.onClick.bind(this)
 
     this.state = {
       menuOpen: false
     }
   }
 
-  toggleMenu(event) {
-    if(this.state.menuOpen) {
-      console.log(true)
-      this.setState({ menuOpen: false})
-    }
-    else {
-      this.setState({ menuOpen: true})
-      console.log(false)
+  onClick (event) {
+    if (this.state.menuOpen) {
+      this.setState({ menuOpen: false })
+    } else {
+      this.setState({ menuOpen: true })
     }
   }
 
   render () {
-
     let active = false
 
     if (this.state.menuOpen) {
@@ -40,7 +37,7 @@ export default class Header extends Component {
       <div>
         <header className='header'>
           <div className='logo'>
-            <h2>ReStart <span className='header__menu-icon'><MenuIcon onClick={this.toggleMenu.bind(this)} /></span></h2>
+            <h2>ReStart <span className='header__menu-icon'><MenuIcon onClick={this.onClick} /></span></h2>
           </div>
           <div className={'header__menu-item ' + (active ? 'open' : '')}>
             <a href=''>Item 1</a>

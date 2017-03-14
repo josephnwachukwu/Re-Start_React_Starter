@@ -1,0 +1,39 @@
+.btn {
+  padding: 10px;
+  box-shadow: 2px 2px 2px #ccc;
+  border-radius: 3px;
+  color: $white;
+}
+
+.btn__success {
+  background: $royalBlue3;
+}
+
+.btn__success:hover {
+  background: $royalBlue4;
+}
+
+.btn__proceed {
+  background: $gumbiGreen;
+}
+
+.btn__proceed:hover {
+  background: $hoverGreen;
+}
+
+.btn__delete {
+  background: $orangeRed;
+}
+
+.btn__delete:hover {
+  background: $bloodOrange;
+}
+
+.btn__neutral {
+  background: #eee;
+  color: #666;
+}
+
+.btn__neutral:hover {
+  background: #ddd;
+}
