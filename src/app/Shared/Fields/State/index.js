@@ -49,7 +49,7 @@ export default class State extends Component {
   render () {
     const placeholder = this.props.placeholder
     const label = this.props.label
-    const name = this.prop.name
+    const name = this.props.name
 
     var options = {}
     if (this.props.disabled) {

@@ -23,17 +23,15 @@ export default class Home extends Component {
             <h2>
               A <strong>Mobile First</strong> responsive library of layouts and components for building outstanding Projects
             </h2>
-            <p>
-              Features:
-              <ul>
-                <li>React Router with Predefined Routes</li>
-                <li>Reflex Grid</li>
-                <li>Style Guide</li>
-                <li>Tested Components</li>
-                <li>Full Header and Footer</li>
-                <li>Meta and Open Graph Tags</li>
-              </ul>
-            </p>
+            <p>Features:</p>
+            <ul>
+              <li>React Router with Predefined Routes</li>
+              <li>Reflex Grid</li>
+              <li>Style Guide</li>
+              <li>Tested Components</li>
+              <li>Full Header and Footer</li>
+              <li>Meta and Open Graph Tags</li>
+            </ul>
           </div>
         </div>
 
