@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/josephnwachukwu/Re-Start_React_Starter.svg?branch=master)](https://travis-ci.org/josephnwachukwu/Re-Start_React_Starter)
 
 # Re-Start React Starter
 ## React Starter/Boilerplate for Scaffolding apps
