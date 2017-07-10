@@ -1,5 +1,10 @@
 import { getAPIBaseURL } from '../../Shared/Utils'
 
+function login (username, password) {
+  const baseUrl = getApiBaseURL()
+}
+
+
 function getClaimActions (adjusterId) {
   const baseUrl = getAPIBaseURL()
   const url = `${baseUrl}/adjusters/${adjusterId}/claimactions?type=pinned`
