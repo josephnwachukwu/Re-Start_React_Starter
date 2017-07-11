@@ -2,6 +2,21 @@ import { getAPIBaseURL } from '../../Shared/Utils'
 
 function login (username, password) {
   const baseUrl = getApiBaseURL()
+  const url = `${baseUrl}/login`
+  
+  return fetch(url, {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(
+      {
+        "username": username,
+        "password": password
+      })
+    }).then((response) => {
+    return response.json()
+  })
 }
 
 
@@ -57,8 +72,5 @@ function getAppointments (adjusterId, startDate, endDate) {
 }
 
 export {
-  getClaimActions,
-  getMetrics,
-  setPinnedStatus,
-  getAppointments
+  login
 }
