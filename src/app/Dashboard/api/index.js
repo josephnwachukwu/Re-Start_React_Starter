@@ -19,6 +19,22 @@ function login (username, password) {
   })
 }
 
+function register (registerObj) {
+  const baseUrl = getApiBaseURL()
+  const url = `{baseUrl}/register`
+
+  return fetch(url, {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({registerObj})
+      .then((response) => {
+        return response.json()
+      })
+  }
+}
+
 
 function getClaimActions (adjusterId) {
   const baseUrl = getAPIBaseURL()
